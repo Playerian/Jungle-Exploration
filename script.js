@@ -87,7 +87,8 @@ function Compass(){
 
 //Gathering of Events
 function Events(){
-    eval(arguments[Randoming(0,arguments.length)]+"()");
+    eval(arguments[Randoming(0,(arguments.length-1))]+"()");
+    
 }
 
 //Everystep you take before
