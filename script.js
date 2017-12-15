@@ -95,11 +95,19 @@ function Origin(){
     Say("You look around, its the same place that you started!");
 }
 
+function FertileLand()}
+    Say("You found a fertile land, you plant all your food, and they are double up.");
+    Food *= 2;
+}
+
 //Gathering of Events
 function Events(){
     eval(arguments[Randoming(0,arguments.length-1)]+"()");
 }
 
+$(".B").click(function(){
+    Step ++;
+});
 //Everystep you take before
 
 //Clicking
@@ -125,16 +133,18 @@ $("#b4").click(function(){
 
 //Everystep you take after
 $(".B").click(function(){
-    if (X !== 0 || Y !== 0){
+    if (X !== 0 || Y !== 0 || Step != 10){
     Events("Shrub","Herb","Wilding","Shrub","Herb","Wilding","Monkey","Sharpen","Compass");
     }
     if (X === 0 && Y === 0){
     Origin();
     }
+    if (Step === 10){
+    FertileLand();
+    }
 });
 
 $(".B").click(function(){
-    Step ++;
     GainFood(-1);
     $("#Food").html("Food: "+Food);
     $("#CC").html("Compass Component: "+CC);
