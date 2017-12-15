@@ -1,0 +1,13 @@
+#word{
+    display:none;
+    font-size:30px;
+}
+
+#wiseword{
+    font-style: italic;
+    display:none;
+}
+
+#data{
+    font-size:20px;
+}
