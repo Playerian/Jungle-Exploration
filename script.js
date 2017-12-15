@@ -86,14 +86,13 @@ function Compass(){
 }
 
 //Gathering of Events
-function Events("Shurb","Herb","Wilding","Monkey","Sharpen","Compass"){
-    eval(argument[Randoming(0,arguments.length)]+"()");
-  }
+function Events(){
+    eval(arguments[Randoming(0,arguments.length)]+"()");
 }
 
 //Everystep you take before
 $(".B").click(function(){
-    Events();
+    Events("Shurb","Herb","Wilding","Monkey","Sharpen","Compass");
 });
 
 //Clicking
@@ -127,4 +126,3 @@ $(".B").click(function(){
         Say("You starve to death!");
     }
 });
-
