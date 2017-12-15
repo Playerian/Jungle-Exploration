@@ -87,13 +87,12 @@ function Compass(){
 
 //Gathering of Events
 function Events(){
-    eval(arguments[Randoming(0,(arguments.length-1))]+"()");
-    
+    eval(arguments[Randoming(0,arguments.length-1)]+"()");
 }
 
 //Everystep you take before
 $(".B").click(function(){
-    Events("Shurb","Herb","Wilding","Monkey","Sharpen","Compass");
+    Events("Shrub","Herb","Wilding","Monkey","Sharpen","Compass");
 });
 
 //Clicking
