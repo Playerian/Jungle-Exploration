@@ -2,6 +2,8 @@
 var Food = 10;
 var CC = 0;
 var WD = 1;
+var X = 0;
+var Y = 0;
 
 //Function declare
     //Shortcuts
