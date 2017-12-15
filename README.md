@@ -4,10 +4,9 @@ Popcode project
 This project is meant to be for people who like to explore new stuffs, so contribute!
 
 Aims:
-1. Random number generator function
-2. Direction modulo function
+1. A BIG function that randomly choose events
+2. Direction modulo function (which leads to locking outcome by different x, y, or step)
 3. Stuffs
-4. More stuffs.
 
 /*
 we voyage far
