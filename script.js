@@ -95,7 +95,7 @@ function Origin(){
     Say("You look around, its the same place that you started!");
 }
 
-function FertileLand()}
+function FertileLand(){
     Say("You found a fertile land, you plant all your food, and they are double up.");
     Food *= 2;
 }
