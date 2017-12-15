@@ -119,7 +119,7 @@ $("#b4").click(function(){
 
 //Everystep you take after
 $(".B").click(function(){
-    if (X != 0 && Y != 0){
+    if (X !== 0 && Y !== 0){
     Events("Shrub","Herb","Wilding","Shrub","Herb","Wilding","Monkey","Sharpen","Compass");
     }
     if (X === 0 && Y === 0){
