@@ -54,12 +54,12 @@ function Wilding(){
 
 function Monkey(){
     if ( WD === 0){ // Got Stole
-    Say("A monkey lunge at you, you fall onto the ground, and the monkey steal one of your food.")
+    Say("A monkey lunge at you, you fall onto the ground, and the monkey steal one of your food.");
     Food --;
     }
 
     if ( WD>=1 && WD<=4 ){ // Block off
-    Say("A monkey lunge at you, you block him off with your weapon")
+    Say("A monkey lunge at you, you block him off with your weapon");
     WD --;
     }
     
