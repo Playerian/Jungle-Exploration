@@ -85,40 +85,58 @@ function Compass(){
     CC ++;
 }
 
+function Origin(){
+    Say("You look around, its the same place that you started!");
+}
+
 //Gathering of Events
 function Events(){
     eval(arguments[Randoming(0,arguments.length-1)]+"()");
 }
 
 //Everystep you take before
-$(".B").click(function(){
-    Events("Shrub","Herb","Wilding","Shrub","Herb","Wilding","Monkey","Sharpen","Compass");
-});
 
 //Clicking
     //North
 $("#b1").click(function(){
+    Y --;
 });
 
     //West
 $("#b2").click(function(){
+    X --;
 });
 
     //East
 $("#b3").click(function(){
+    X ++;
 });
 
     //South
 $("#b4").click(function(){
+    Y --;
 });
 
 //Everystep you take after
+$(".B").click(function(){
+    if (X != 0 && Y != 0){
+    Events("Shrub","Herb","Wilding","Shrub","Herb","Wilding","Monkey","Sharpen","Compass");
+    }
+    if (X === 0 && Y === 0){
+    
+    }
+});
+
 $(".B").click(function(){
     Step ++;
     GainFood(-1);
     $("#Food").html("Food: "+Food);
     $("#CC").html("Compass Component: "+CC);
     $("#WD").html("Weapon Endurance: "+WD);
+    
+    if (CC > 9){
+    $("Body").html("You have voyaged out of the jungle!");
+    }
     
     if (Food < 0){
         Food = 0;
