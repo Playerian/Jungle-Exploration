@@ -22,6 +22,10 @@ function GainFood(fooding){
     Food += fooding;
 }
 
+function Randoming(min, max) { // Random Integer Generator
+    return Math.floor(Math.random() * (max + 1 - min) ) + min;
+}
+
     //Events
 function Shrub(){
     Say("You found a shrub from a tree, get 2 foods");
@@ -71,6 +75,7 @@ function Compass(){
     CC ++;
 }
 
+//Gathering of Events
 
 //Clicking
     //North
