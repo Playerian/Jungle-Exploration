@@ -39,15 +39,19 @@ function Compass(){
 
 
 //Clicking
+    //North
 $("#b1").click(function(){
 });
 
+    //West
 $("#b2").click(function(){
 });
 
+    //East
 $("#b3").click(function(){
 });
 
+    //South
 $("#b4").click(function(){
 });
 
