@@ -4,6 +4,7 @@ var CC = 0;
 var WD = 1;
 var X = 0;
 var Y = 0;
+var Step = 0;
 
 //Function declare
     //Shortcuts
@@ -57,6 +58,7 @@ $("#b4").click(function(){
 
 //Everystep you take
 $(".B").click(function(){
+    Step ++;
     GainFood(-1);
     $("#Food").html("Food: "+Food);
     $("#CC").html("Compass Component: "+CC);
