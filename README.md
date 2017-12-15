@@ -4,9 +4,8 @@ Popcode project
 This project is meant to be for people who like to explore new stuffs, so contribute!
 
 Aims:
-1. A BIG function that randomly choose events
-2. Direction modulo function (which leads to locking outcome by different x, y, or step)
-3. Stuffs
+1. Direction modulo function that do certain thing after you step in something. (which leads to locking outcome by different x, y, or step)
+2. Stuffs
 
 /*
 we voyage far
