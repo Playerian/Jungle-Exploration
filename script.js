@@ -29,22 +29,22 @@ function Randoming(min, max) { // Random Integer Generator
 
     //Events
 function Shrub(){
-    Say("You found a shrub from a tree, get 2 foods");
-    GainFood(2);
+    Say("You found a shrub from a tree, get 3 foods");
+    GainFood(3);
 }
 
 function Herb(){
     Randomer = Randoming(0,100);
     if (Randomer <= 25){
-    Say("You picked a flower from the ground and eat it. Mmm, tasty. (get 1 food)");
+    Say("You picked a flower from the ground and eat it. Mmm, tasty. (get 2 food)");
     } else if (Randomer > 25 && Randomer <=50) {
-    Say("You picked up a nicely looked plant, get 1 food.");
+    Say("You picked up a nicely looked plant, get 2 food.");
     } else if (Randomer > 50 && Randomer <=75) {
     Say("A nut is on the ground, so you pick it up and eat");
     } else {
     Say("An apple fall onto your head, so you just simply eat it while ignoring the pain.");
     }
-    GainFood(1);
+    GainFood(2);
 }
 
 function Wilding(){
@@ -77,7 +77,7 @@ function Sharpen(){
     if (WD > 0){
     Say("You sharpen your blade on a sharp stone.");
     }
-    WD ++;
+    WD += 2;
 }
 
 function Compass(){
@@ -92,7 +92,7 @@ function Events(){
 
 //Everystep you take before
 $(".B").click(function(){
-    Events("Shrub","Herb","Wilding","Monkey","Sharpen","Compass");
+    Events("Shrub","Herb","Wilding","Shrub","Herb","Wilding","Monkey","Sharpen","Compass");
 });
 
 //Clicking
