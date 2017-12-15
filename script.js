@@ -5,6 +5,7 @@ var WD = 1;
 var X = 0;
 var Y = 0;
 var Step = 0;
+var Randomer = 0;
 
 //Function declare
     //Shortcuts
@@ -33,7 +34,16 @@ function Shrub(){
 }
 
 function Herb(){
+    Randomer = Randoming(0,100);
+    if (Randomer <= 25){
     Say("You picked a flower from the ground and eat it. Mmm, tasty. (get 1 food)");
+    } else if (Randomer > 25 && Randomer <=50) {
+    Say("You picked up a nicely looked plant, get 1 food.");
+    } else if (Randomer > 50 && Randomer <=75) {
+    Say("A nut is on the ground, so you pick it up and eat");
+    } else {
+    Say("An apple fall onto your head, so you just simply eat it while ignoring the pain.");
+    }
     GainFood(1);
 }
 
