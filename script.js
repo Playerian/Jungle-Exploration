@@ -81,8 +81,14 @@ function Sharpen(){
 }
 
 function Compass(){
+    Randomer = Randoming(0,100);
+    if (Randomer <= 33){
     Say("You picked up one compass component");
     CC ++;
+    } else {
+    Say("You saw one compass component, but soon being eaten by a naughty squirrel, but it dies afterward, so you eat the squirrel.");
+    Food ++;
+    }
 }
 
 function Origin(){
