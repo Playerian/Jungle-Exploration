@@ -86,6 +86,15 @@ function Compass(){
 }
 
 //Gathering of Events
+function Events("Shurb","Herb","Wilding","Monkey","Sharpen","Compass"){
+    eval(argument[Randoming(0,arguments.length)]+"()");
+  }
+}
+
+//Everystep you take before
+$(".B").click(function(){
+    Events();
+});
 
 //Clicking
     //North
@@ -104,7 +113,7 @@ $("#b3").click(function(){
 $("#b4").click(function(){
 });
 
-//Everystep you take
+//Everystep you take after
 $(".B").click(function(){
     Step ++;
     GainFood(-1);
