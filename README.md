@@ -10,10 +10,10 @@ Aims:
 4. More stuffs.
 
 /*
-we voyage far
-for tresures thats lost 
-in the shadows of history
-remain unknown to man
+we voyage far#
+for tresures thats lost #
+in the shadows of history#
+remain unknown to man#
 */
 
 
