@@ -1,7 +1,7 @@
 # Jungle-Exploration
 Popcode project
 
-This project is meant to be for people who like to explore new stuffs, so contribute!
+This project is meant to be for people who like to explore new stuffs， so contribute!
 
 Aims:
 1. Random number generator function
@@ -10,3 +10,7 @@ Aims:
 4. More stuffs.
 
 /* we voyage far */
+
+
+
+
