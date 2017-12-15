@@ -6,6 +6,8 @@ This project is meant to be for people who like to explore new stuffs, so contri
 Aims:
 1. Direction function that do certain thing after you step in something. (which leads to locking outcome by different x, y, or step)
 2. Recruit one debugger for balancing the game 
+3. Need a person to add a link to the README that can load the codes.
+
 
 (goal: to make the game harder to lose and harder to win)
 
