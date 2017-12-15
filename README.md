@@ -9,4 +9,12 @@ Aims:
 3. Stuffs
 4. More stuffs.
 
-/* we voyage far for tresures lost in the shadows of history and remain unknown to man, until now?
+/*
+we voyage far
+for tresures thats lost 
+in the shadows of history
+remain unknown to man
+*/
+
+
+
