@@ -33,6 +33,29 @@ function Herb(){
     GainFood(1);
 }
 
+function Wilding(){
+    Say("The sun is too hot for you to continue walking. You have to eat one more food.");
+    GainFood(-1);
+}
+
+function Monkey(){
+    if ( WD === 0){ // Got Stole
+    Say("A monkey lunge at you, you fall onto the ground, and the monkey steal one of your food.")
+    Food --;
+    }
+
+    if ( WD>=1 && WD<=4 ){ // Block off
+    Say("A monkey lunge at you, you block off him with your weapon")
+    WD --;
+    }
+    
+    if ( WD>=5 ){
+    Say("A monkey lunge at you, you swing your weapon and kill it. Then you cook it fresh and easy, but your weapon lose some endurance.");
+    WD -= 2;
+    Food += 3;
+    }
+}
+
 function Compass(){
     Say("You picked up one compass component");
     CC ++;
