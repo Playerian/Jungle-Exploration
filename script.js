@@ -45,7 +45,7 @@ function Monkey(){
     }
 
     if ( WD>=1 && WD<=4 ){ // Block off
-    Say("A monkey lunge at you, you block off him with your weapon")
+    Say("A monkey lunge at you, you block him off with your weapon")
     WD --;
     }
     
@@ -54,6 +54,16 @@ function Monkey(){
     WD -= 2;
     Food += 3;
     }
+}
+
+function Sharpen(){
+    if (WD === 0){
+    Say("You pick up a blade. It's shining under the sunlight. It looks broke, but still usable.");
+    }
+    if (WD > 0){
+    Say("You sharpen your blade on a sharp stone.");
+    }
+    WD ++;
 }
 
 function Compass(){
