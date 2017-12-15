@@ -9,4 +9,4 @@ Aims:
 3. Stuffs
 4. More stuffs.
 
-/* we voyage far */
+/* we voyage far for tresures lost in the shadows of history and remain unknown to man, until now?
