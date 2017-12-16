@@ -134,7 +134,7 @@ function Sharpen(){
 
 function Compass(){
     Randomer = Randoming(0,100);
-    if (Randomer <= 33){
+    if (Randomer <= 20){
     Say("You picked up one compass component");
     CC ++;
     } else {
@@ -358,7 +358,7 @@ $(".B").click(function(){
             Murmur("I should have notice it.");
         }
         if (Dialogue === 25){
-            Murmur("Now, kill me, as fast as you can.");
+            Murmur("Now... kill me... as fast as you can...");
         }
     }
     
