@@ -34,8 +34,29 @@ function Randoming(min, max) { // Random Integer Generator
 }
 
     //Events
+function Nothing(){
+    Randomer = Randoming(0,100);
+    Food ++;
+    if (Randomer <= 25){
+        Say("The night has makes you feel happier, you don't need to eat food today.");
+    } else if (Randomer <= 50 && Randomer >= 26) {
+        Say("You eat some peanuts from the ground, sounds good, get 1 food.");
+    } else if (Randomer <= 75 && Randomer >= 51) {
+        Say("You try to skip meal, and its a success.");
+    } else if (Randomer <= 100 && Randomer >= 76) {
+        Say("You eat some dirt, and it tastes bad.");
+    }
+}
+
 function Shrub(){
+    Randomer = Randoming(0,100);
+    if (Randomer <=50){
     Say("You found a shrub from a tree, get 3 foods");
+    } else if (Randomer < 75){
+    Say("You found some berry from the shrub, get 3 foods");
+    } else{
+    Say("You found some high-quality fruit from the ground, get 3 foods");
+    }
     GainFood(3);
 }
 
@@ -145,7 +166,8 @@ $("#b4").click(function(){
 $(".B").click(function(){
     //Normal Events
     if ( (X !== 0 || Y !== 0) && Step !== 10 && !(BeastFind === false && X >= 100) && !(BeastX === X && BeastY === Y) && !((X > 20 || X < -20) && (Y > 20 || Y < -20) && Plane === false) ){
-    Events("Shrub","Herb","Wilding","Shrub","Herb","Wilding","Monkey","Sharpen","Compass");
+    Events("Nothing","Nothing","Nothing","Shrub","Shrub","Herb","Herb","Wilding","Wilding","Monkey""Monkey","Sharpen","Sharpen","Compass",);
+        //Total of 14
         return;
     }
     //Back to the square
