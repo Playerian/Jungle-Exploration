@@ -2,6 +2,7 @@
 A Popcode project
 
 This project is meant to be for people who like to explore new stuffs, so contribute new ideas!
+Of course, playing this game need to have a loads of imagination in order to feel the presence of jungle!
 
 # Aims:
 1. Direction function that do certain thing after you step in something. (which leads to locking outcome by different x, y, or step)
