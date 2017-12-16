@@ -195,14 +195,14 @@ $(".B").click(function(){
         BeastHealth -= 1;
         WD -= 1;
         } else {
-        Say("You got no weapon to fight the beast! The beast saw you and run away to the "+BeastDirection)
+        Say("You got no weapon to fight the beast! The beast saw you and run away to the "+BeastDirection);
         }
         
         if (BeastHealth <= 0){
-        Say("You slain the beast! You get tons of fresh meat, and you found some compass component inside the beast's body!")
-        var BeastX = NaN;
-        var BeastY = NaN;
-        var BeastDirection = NaN;
+        Say("You slain the beast! You get tons of fresh meat, and you found some compass component inside the beast's body!");
+        BeastX = NaN;
+        BeastY = NaN;
+        BeastDirection = NaN;
         Food += 50;
         CC += 3;
         }
