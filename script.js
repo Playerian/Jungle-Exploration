@@ -166,7 +166,7 @@ $("#b4").click(function(){
 $(".B").click(function(){
     //Normal Events
     if ( (X !== 0 || Y !== 0) && Step !== 10 && !(BeastFind === false && X >= 100) && !(BeastX === X && BeastY === Y) && !((X > 20 || X < -20) && (Y > 20 || Y < -20) && Plane === false) ){
-    Events("Nothing","Nothing","Nothing","Shrub","Shrub","Herb","Herb","Wilding","Wilding","Monkey""Monkey","Sharpen","Sharpen","Compass",);
+    Events("Nothing","Nothing","Nothing","Shrub","Shrub","Herb","Herb","Wilding","Wilding","Monkey","Monkey","Sharpen","Sharpen","Compass");
         //Total of 14
         return;
     }
