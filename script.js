@@ -11,6 +11,7 @@ var BeastHealth = 5;
 var BeastX = NaN;
 var BeastY = NaN;
 var BeastDirection = NaN;
+var Plane = false;
 
 //Function declare
     //Shortcuts
@@ -150,6 +151,14 @@ $(".B").click(function(){
     //Fertile Land
     if (Step === 10){
     FertileLand();
+        return;
+    }
+    //Plane Crush site
+    if ( (X > 20 || X < -20) && (Y > 20 || Y < -20) && Plane === false ){
+        Plane = true;
+        Say("You saw a empty land with a crushing plane that has smoke coming out. You decided to go in and search for some valuables. You get some food and 1 compass component.");
+        Food += 10;
+        CC += 1;
         return;
     }
     
