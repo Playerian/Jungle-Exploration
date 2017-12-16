@@ -269,7 +269,7 @@ $(".B").click(function(){
             Murmur("That's why I'm trapped here.");
         }
         if (Dialogue === 4){
-            Murmur("As you can see, trees that grow here are thousands of years old.");
+            Murmur("As you can see, my plane crashes, only me survive.");
         }
         if (Dialogue === 5){
             Murmur("Um... You so curious about me?");
@@ -284,7 +284,7 @@ $(".B").click(function(){
             Murmur("I'll tell you some more then");
         }
         if (Dialogue === 9){
-            Murmur("You know Roman Empire right? The vast kingdom that has fell about 2000 years ago.");
+            Murmur("You know Roman Empire right? The vast kingdom that fell about 2000 years ago.");
         }
         if (Dialogue === 10){
             Murmur("Yes, located right there.");
