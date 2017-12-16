@@ -130,6 +130,9 @@ $("#b2").click(function(){
     //East
 $("#b3").click(function(){
     X ++;
+    if (Randoming(0,10) < 1 && BeastFind === false){
+    Murmur("If you go east you will encounter the beast!");
+    }
 });
 
     //South
@@ -140,7 +143,7 @@ $("#b4").click(function(){
 //Everystep you take after
 $(".B").click(function(){
     //Normal Events
-    if ( (X !== 0 || Y !== 0) && Step !== 10 && !(BeastFind === false && X >= 100) && !(BeastX === X && BeastY === Y) ){
+    if ( (X !== 0 || Y !== 0) && Step !== 10 && !(BeastFind === false && X >= 100) && !(BeastX === X && BeastY === Y) && !((X > 20 || X < -20) && (Y > 20 || Y < -20) && Plane === false) ){
     Events("Shrub","Herb","Wilding","Shrub","Herb","Wilding","Monkey","Sharpen","Compass");
         return;
     }
@@ -224,10 +227,6 @@ $(".B").click(function(){
     $("#CC").html("Compass Component: "+CC);
     $("#WD").html("Weapon Durability: "+WD);
     $("#wiseword").hide();
-    
-    if (Randoming(0,10) < 2 && X > 10 && BeastFind === false){
-        Murmur("If you go east you will encounter the beast!");
-    }
     
     if (CC > 9){
     $("Body").html("You have voyaged out of the jungle!");
