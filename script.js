@@ -207,7 +207,7 @@ $(".B").click(function(){
     if ( (X > 20 || X < -20) && (Y > 20 || Y < -20) && Plane === false ){
         Plane = true;
         Say("You saw a empty land with a crushing plane that has smoke coming out. You decided to go in and search for some valuables. You get some food and 1 compass component.");
-        Food += 10;
+        Food += 20;
         CC += 1;
         return;
     }
