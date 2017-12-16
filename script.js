@@ -7,8 +7,10 @@ var Y = 0;
 var Step = 0;
 var Randomer = 0;
 var BeastFind = false;
+var BeastHealth = 5;
 var BeastX = NaN;
 var BeastY = NaN;
+var BeastDirection = NaN;
 
 //Function declare
     //Shortcuts
@@ -103,7 +105,7 @@ function FertileLand(){
     Food *= 2;
 }
 
-//Gathering of Events
+//Randomly execute(function) Events
 function Events(){
     eval(arguments[Randoming(0,arguments.length-1)]+"()");
 }
@@ -136,16 +138,46 @@ $("#b4").click(function(){
 
 //Everystep you take after
 $(".B").click(function(){
-    if ( (X !== 0 || Y !== 0) && Step !== 10){
+    //Normal Events
+    if ( (X !== 0 || Y !== 0) && Step !== 10 && !(BeastFind === false && X >= 100) && !(BeastX === X && BeastY === Y) ){
     Events("Shrub","Herb","Wilding","Shrub","Herb","Wilding","Monkey","Sharpen","Compass");
         return;
     }
+    //Back to the square
     if (X === 0 && Y === 0){
     Origin();
     }
+    //Fertile Land
     if (Step === 10){
     FertileLand();
         return;
+    }
+    
+    //Beast encounter
+    if (BeastFind === false && X >= 100){
+    BeastFind = true;
+        if (WD > 5){
+        Say("You encounter the beast! You manage to fight the beast with your nice weapon, and the beast escape to the east!");
+        WD -= 2;
+        } else {
+        Say("You encounter the beast! You try to fight the beast, but the beast is too strong, so you fling your weapon to the beast, and the beast escape to the east! You also drop some food.");
+        WD = 0;
+        Food -= 4;
+        }
+        BeastX = X + 5;
+        BeastY = Y;
+    }
+    
+    //Beast Tracking
+    if (BeastX === X && BeastY === Y){
+        Randomer = Randoming(0,3);
+        if (Randomer === 0){
+        }
+        
+        if (WD > 0){
+        
+        } else {
+        }
     }
 });
 
@@ -154,6 +186,11 @@ $(".B").click(function(){
     $("#Food").html("Food: "+Food);
     $("#CC").html("Compass Component: "+CC);
     $("#WD").html("Weapon Endurance: "+WD);
+    $("#wiseword").hide();
+    
+    if (Randoming(0,10) < 2 && Y > 20 && BeastFind === false){
+        Murmur("If you go east you will encounter the beast!");
+    }
     
     if (CC > 9){
     $("Body").html("You have voyaged out of the jungle!");
@@ -161,6 +198,7 @@ $(".B").click(function(){
     
     if (Food < 0){
         Food = 0;
+        $("#Food").html("Food: "+Food);
         $(".B").hide();
         Say("You starve to death!");
     }
