@@ -34,7 +34,7 @@ function Murmur(puns){
 function Image(lol){
     $("#image").show();
     if (lol === "tombA"){
-    $("#image").html("<img src='' >");
+    $("#image").html("<img src='https://rawgit.com/Playerian/Jungle-Exploration/master/MapA.png' >");
     }
 }
 
