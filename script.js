@@ -203,10 +203,10 @@ $(".B").click(function(){
             BeastY -= 5;
         }
         //Dialogue
-        if (WD > 0){
+        if (WD > 1){
         Say("You hits the beast! The beast has between escape to the "+BeastDirection+"!");
         BeastHealth -= 1;
-        WD -= 1;
+        WD -= 2;
         } else {
         Say("You got no weapon to fight the beast! The beast saw you and run away to the "+BeastDirection);
         }
