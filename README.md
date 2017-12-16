@@ -7,8 +7,11 @@ Aims:
 1. Direction function that do certain thing after you step in something. (which leads to locking outcome by different x, y, or step)
 2. Recruit one debugger for balancing the game 
 3. Need a person to add a link to the README that can load the codes.
+4. To make the game harder to lose and harder to win
 
-(balancing goal: to make the game harder to lose and harder to win)
+BrainStorming:
+1.
+2.
 
 P.S.: Don't be afraid to send pull requests!
 
