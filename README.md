@@ -10,7 +10,7 @@ Aims:
 
 (balancing goal: to make the game harder to lose and harder to win)
 
-
+P.S.: Don't be afraid to send pull requests!
 
 /*
 we voyage far
