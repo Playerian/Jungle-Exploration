@@ -154,7 +154,7 @@ $(".B").click(function(){
     }
     
     //Beast encounter
-    if (BeastFind === false && X >= 100){
+    if (BeastFind === false && X >= 50){
     BeastFind = true;
         if (WD > 5){
         Say("You encounter the beast! You manage to fight the beast with your nice weapon, and the beast escape to the east!");
@@ -216,7 +216,7 @@ $(".B").click(function(){
     $("#WD").html("Weapon Durability: "+WD);
     $("#wiseword").hide();
     
-    if (Randoming(0,10) < 2 && X > 20 && BeastFind === false){
+    if (Randoming(0,10) < 2 && X > 10 && BeastFind === false){
         Murmur("If you go east you will encounter the beast!");
     }
     
