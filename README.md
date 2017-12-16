@@ -29,11 +29,13 @@ in the shadows of history
 remain unknown to man
 
 
-the condition's met
+If you go east
 
-the beast's dead
+You encounter the beast
 
-you're so fed
+The beast escape to east
+
+the chase has cease
 */
 
 
