@@ -6,6 +6,7 @@ var X = 0;
 var Y = 0;
 var Step = 0;
 var Randomer = 0;
+var BeastStep = false;
 var BeastFind = false;
 var BeastHealth = 5;
 var BeastX = NaN;
@@ -189,7 +190,8 @@ $("#b4").click(function(){
 //Everystep you take after
 $(".B").click(function(){
     //Normal Events
-    if ( (X !== 0 || Y !== 0) && Step !== 10 && !(BeastFind === false && X >= 100) && !(BeastX === X && BeastY === Y) && !((X > 20 || X < -20) && (Y > 20 || Y < -20) && Plane === false) ){
+    if ( (X !== 0 || Y !== 0) && Step !== 10 && !(BeastFind === false && X >= 100) && !(BeastX === X && BeastY === Y) &&  
+       !((X > 20 || X < -20) && (Y > 20 || Y < -20) && Plane === false) && !(BeastStep === false && X >= 35) ){
     Events("Nothing","Nothing","Nothing","Shrub","Shrub","Herb","Herb","Wilding","Wilding","Monkey","Monkey","Sharpen","Sharpen","Compass");
         //Total of 14
         return;
@@ -210,6 +212,12 @@ $(".B").click(function(){
         Food += 20;
         CC += 1;
         return;
+    }
+    
+    //Beast Step
+    if (BeastStep === false && X >= 35){
+        BeastStep = true;
+        Say("You found some footsteps, looks like those footsteps are pointing to the east!");
     }
     
     //Beast encounter
