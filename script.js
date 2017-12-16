@@ -46,7 +46,7 @@ function Herb(){
     } else if (Randomer > 25 && Randomer <=50) {
     Say("You picked up a nicely looked plant, get 2 food.");
     } else if (Randomer > 50 && Randomer <=75) {
-    Say("A nut is on the ground, so you pick it up and eat");
+    Say("A nut is on the ground, so you pick it up and eat"); //pun you could say this is nut-thing and eating it to last you a whole day is a little nuts.
     } else {
     Say("An apple fall onto your head, so you just simply eat it while ignoring the pain.");
     }
