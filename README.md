@@ -13,8 +13,10 @@ This project is meant to be for people who like to explore new stuffs, so contri
 1. stuff
 2. more stuff
 
-P.S.: Don't be afraid to send pull requests!
+# P.S.: 
+Don't be afraid to send pull requests!
 
+# The Poem:
 /*
 we voyage far
 
