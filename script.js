@@ -12,6 +12,7 @@ var BeastX = NaN;
 var BeastY = NaN;
 var BeastDirection = NaN;
 var Plane = false;
+var Dialogue = 0;
 
 //Function declare
     //Shortcuts
@@ -229,7 +230,7 @@ $(".B").click(function(){
             BeastDirection = "south";
             BeastY -= 5;
         }
-        //Dialogue
+        //Beast Escaping
         if (WD > 1){
         Say("You hits the beast! The beast has between escape to the "+BeastDirection+"!");
         BeastHealth -= 1;
@@ -255,10 +256,92 @@ $(".B").click(function(){
     $("#CC").html("Compass Component: "+CC);
     $("#WD").html("Weapon Durability: "+WD);
     
+    //Dialogue
+    if (Randoming(0,10) === 0){
+        Dialogue ++;
+        if (Dialogue === 1){
+            Murmur("Well, You asked who am I, and why I come to this jungle?");
+        }
+        if (Dialogue === 2){
+            Murmur("Well, this land is ancient, once you walk in, you can never get out.");
+        }
+        if (Dialogue === 3){
+            Murmur("That's why I'm trapped here.");
+        }
+        if (Dialogue === 4){
+            Murmur("As you can see, trees that grow here are thousands of years old.");
+        }
+        if (Dialogue === 5){
+            Murmur("Um... You so curious about me?");
+        }
+        if (Dialogue === 6){
+            Murmur("I don't want to tell you too much, but I'm searching for a ruin.");
+        }
+        if (Dialogue === 7){
+            Murmur("You too? How lucky I am!");
+        }
+        if (Dialogue === 8){
+            Murmur("I'll tell you some more then");
+        }
+        if (Dialogue === 9){
+            Murmur("You know Roman Empire right? The vast kingdom that has fell about 2000 years ago.");
+        }
+        if (Dialogue === 10){
+            Murmur("Yes, located right there.");
+        }
+        if (Dialogue === 11){
+            Murmur("I gathered information about it, from small town to big city, from college professor to village commoner.");
+        }
+        if (Dialogue === 12){
+            Murmur("You asked for the connection to the jungle?");
+        }
+        if (Dialogue === 13){
+            Murmur("The main point is, I have enough evidence to believe that there is a ruin of Roman Empire in this jungle.");
+        }
+        if (Dialogue === 14){
+            Murmur("I want to know where too, but I can't, I've been searching for few year, if not more.");
+        }
+        if (Dialogue === 15){
+            Murmur("Compass? That's your clue? I saw some scatter around the jungle, but I never bother to pick them up.");
+        }
+        if (Dialogue === 16){
+            Murmur("OK, we got this, now what do we do?");
+        }
+        if (Dialogue === 17){
+            Murmur("Wow...");
+        }
+        if (Dialogue === 18){
+            Murmur("Vast, so vast!");
+        }
+        if (Dialogue === 19){
+            Murmur("This must be the ruin!");
+        }
+        if (Dialogue === 20){
+            Murmur("A beast! time to show you my skill!");
+        }
+        if (Dialogue === 21){
+            Murmur("What are you doing? Help me!");
+        }
+        if (Dialogue === 22){
+            Murmur("(Dead silent...)");
+        }
+        if (Dialogue === 23){
+            Murmur("You... Who are you?");
+        }
+        if (Dialogue === 24){
+            Murmur("I should have notice it.");
+        }
+        if (Dialogue === 25){
+            Murmur("Now, kill me, as fast as you can.");
+        }
+    }
+    
+    //Victory?
     if (CC > 9){
     $("Body").html("You have voyaged out of the jungle!");
     }
     
+    //Death For Sure
     if (Food < 0){
         Food = 0;
         $("#Food").html("Food: "+Food);
