@@ -6,6 +6,7 @@ var X = 0;
 var Y = 0;
 var Step = 0;
 var Randomer = 0;
+var BeastFind = false;
 var BeastX = NaN;
 var BeastY = NaN;
 
@@ -137,12 +138,14 @@ $("#b4").click(function(){
 $(".B").click(function(){
     if ( (X !== 0 || Y !== 0) && Step !== 10){
     Events("Shrub","Herb","Wilding","Shrub","Herb","Wilding","Monkey","Sharpen","Compass");
+        return;
     }
     if (X === 0 && Y === 0){
     Origin();
     }
     if (Step === 10){
     FertileLand();
+        return;
     }
 });
 
