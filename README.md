@@ -1,7 +1,7 @@
 # Jungle-Exploration
-# Popcode project
+A Popcode project
 
-# This project is meant to be for people who like to explore new stuffs, so contribute!
+This project is meant to be for people who like to explore new stuffs, so contribute new ideas!
 
 # Aims:
 1. Direction function that do certain thing after you step in something. (which leads to locking outcome by different x, y, or step)
