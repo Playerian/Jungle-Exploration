@@ -216,7 +216,7 @@ $(".B").click(function(){
     $("#WD").html("Weapon Durability: "+WD);
     $("#wiseword").hide();
     
-    if (Randoming(0,10) < 3 && X > 20 && BeastFind === false){
+    if (Randoming(0,10) < 2 && X > 20 && BeastFind === false){
         Murmur("If you go east you will encounter the beast!");
     }
     
