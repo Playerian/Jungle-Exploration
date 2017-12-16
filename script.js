@@ -104,11 +104,29 @@ function Monkey(){
 }
 
 function Sharpen(){
+    Randomer = Randoming(0,10);
     if (WD === 0){
-    Say("You pick up a blade. It's shining under the sunlight. It looks broke, but still usable.");
+        if (Randomer < 3){
+        Say("You pick up a blade. It's shining under the sunlight. It looks broke, but still usable.");
+        }   
+        if (Randomer >= 3 && Randomer <=6){
+        Say("A useful stick lying on the ground, you pick it up and use it as your weapon.");
+        }
+        if (Randomer >= 7){
+        Say("You found a big log, you use your hand to shape out a sword.");
+        }
     }
+    
     if (WD > 0){
-    Say("You sharpen your blade on a sharp stone.");
+        if (Randomer < 3){
+        Say("You sharpen your blade on a sharp stone.");
+        }
+        if (Randomer >= 3 && Randomer <= 6){
+        Say("You found a tree, so you try your sword's sharpness on the tree. The sword gets sharper.");
+        }
+        if (Randomer >= 7){
+        Say("You found some sticks and bundle up them with your weapon.");
+        }
     }
     WD += 2;
 }
