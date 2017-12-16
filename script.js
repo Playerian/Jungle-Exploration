@@ -75,7 +75,12 @@ function Herb(){
 }
 
 function Wilding(){
+    Randomer = Randoming(0,100);
+    if (Randomer <= 50){
     Say("The sun is too hot for you to continue walking. You have to eat one more food.");
+    } else {
+    Say("Your food has been steal by a naughty squirrel.");
+    }
     GainFood(-1);
 }
 
