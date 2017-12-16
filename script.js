@@ -14,6 +14,10 @@ var BeastY = NaN;
 var BeastDirection = NaN;
 var Plane = false;
 var Dialogue = 0;
+var TombA = false;
+var TombB = false;
+var TombC = false;
+
 
 //Function declare
     //Shortcuts
@@ -25,6 +29,13 @@ function Say(word){
 function Murmur(puns){
     $("#wiseword").show();
     $("#wiseword").html(puns);
+}
+
+function Image(lol){
+    $("#image").show();
+    if (lol === "tombA"){
+    $("#image").html("<img src='' >");
+    }
 }
 
 function GainFood(fooding){
@@ -150,6 +161,11 @@ function Origin(){
 function FertileLand(){
     Say("You found a fertile land, you plant all your food, and they are double up.");
     Food *= 2;
+}
+
+function TombA(){
+    Say("You found a round grave, nothing was written on it. It's like someone just burial this person as quick as possible. You found a broken piece of a map on the top of the grave.");
+    Image("tombA");
 }
 
 //Randomly execute(function) Events
