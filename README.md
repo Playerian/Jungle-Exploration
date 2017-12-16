@@ -15,6 +15,10 @@ Website: https://playerian.github.io/Jungle-Exploration/.
 1. stuff
 2. more stuff
 
+# FAQS:
+Q: Why the beast drops compass component from its body?
+A: Because the beast eats squirrels.
+
 # P.S.: 
 Don't be afraid to send pull requests!
 
