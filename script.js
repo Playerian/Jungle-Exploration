@@ -166,27 +166,45 @@ $(".B").click(function(){
         }
         BeastX = X + 5;
         BeastY = Y;
+        Murmur("Told Ya, if go east, you encounter the beast!");
     }
     
     //Beast Tracking
     if (BeastX === X && BeastY === Y){
+        //Randoming Escape Direction
         Randomer = Randoming(0,3);
         if (Randomer === 0){
             BeastDirection = "north";
+            BeastY += 5;
         }
         if (Randomer === 1){
             BeastDirection = "west";
+            BeastX -= 5;
         }
         if (Randomer === 2){
             BeastDirection = "east";
+            BeastX += 5;
         }
         if (Randomer === 3){
             BeastDirection = "south";
+            BeastY -= 5;
+        }
+        //Dialogue
+        if (WD > 0){
+        Say("You hits the beast! The beast has between escape to the "+BeastDirection+"!");
+        BeastHealth -= 1;
+        WD -= 1;
+        } else {
+        Say("You got no weapon to fight the beast! The beast saw you and run away to the "+BeastDirection)
         }
         
-        if (WD > 0){
-        
-        } else {
+        if (BeastHealth <= 0){
+        Say("You slain the beast! You get tons of fresh meat, and you found some compass component inside the beast's body!")
+        var BeastX = NaN;
+        var BeastY = NaN;
+        var BeastDirection = NaN;
+        Food += 50;
+        CC += 3;
         }
     }
 });
@@ -195,7 +213,7 @@ $(".B").click(function(){
     GainFood(-1);
     $("#Food").html("Food: "+Food);
     $("#CC").html("Compass Component: "+CC);
-    $("#WD").html("Weapon Endurance: "+WD);
+    $("#WD").html("Weapon Durability: "+WD);
     $("#wiseword").hide();
     
     if (Randoming(0,10) < 2 && Y > 20 && BeastFind === false){
