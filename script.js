@@ -172,6 +172,16 @@ $(".B").click(function(){
     if (BeastX === X && BeastY === Y){
         Randomer = Randoming(0,3);
         if (Randomer === 0){
+            BeastDirection = "north";
+        }
+        if (Randomer === 1){
+            BeastDirection = "west";
+        }
+        if (Randomer === 2){
+            BeastDirection = "east";
+        }
+        if (Randomer === 3){
+            BeastDirection = "south";
         }
         
         if (WD > 0){
