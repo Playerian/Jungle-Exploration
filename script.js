@@ -111,10 +111,11 @@ function Events(){
     eval(arguments[Randoming(0,arguments.length-1)]+"()");
 }
 
+//Everystep you take before
 $(".B").click(function(){
+    $("#wiseword").hide();
     Step ++;
 });
-//Everystep you take before
 
 //Clicking
     //North
@@ -226,7 +227,6 @@ $(".B").click(function(){
     $("#Food").html("Food: "+Food);
     $("#CC").html("Compass Component: "+CC);
     $("#WD").html("Weapon Durability: "+WD);
-    $("#wiseword").hide();
     
     if (CC > 9){
     $("Body").html("You have voyaged out of the jungle!");
