@@ -18,7 +18,7 @@ var TombA = false;
 var TombB = false;
 var TombC = false;
 var Origing = 0;
-
+var InFog = false;
 
 //Function declare
     //Shortcuts
