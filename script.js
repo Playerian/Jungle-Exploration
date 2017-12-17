@@ -36,6 +36,12 @@ function Image(lol){
     if (lol === "tombA"){
     $("#image").html("<img src='https://rawgit.com/Playerian/Jungle-Exploration/master/MapA.png' >");
     }
+    if (lol === "tombB"){
+    $("#image").html("<img src='https://rawgit.com/Playerian/Jungle-Exploration/master/MapB.png' >");
+    }
+    if (lol === "tombC"){
+    $("#image").html("<img src='https://rawgit.com/Playerian/Jungle-Exploration/master/MapC.png' >");
+    }
 }
 
 function GainFood(fooding){
@@ -176,6 +182,7 @@ function Events(){
 //Everystep you take before
 $(".B").click(function(){
     $("#wiseword").hide();
+    $("#image").hide();
     Step ++;
 });
 
