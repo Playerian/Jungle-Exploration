@@ -239,7 +239,7 @@ function Tombc(){
 
 function TomatoMan(){
     Say("You see a person with red skin and green hair with a unnaturally big smile. He sees your food and stole tons of it, your blade has no use against him. You just watch him run away.");
-    Food = Math.round(Food / 1.8);
+    Food = Math.round(Food / 2);
 }
 
 //Randomly execute(function) Events
@@ -284,7 +284,7 @@ $(".B").click(function(){
     //Normal Events
     if ( (X !== 0 || Y !== 0) && Step !== 10 && !(BeastFind === false && X >= 100) && !(BeastX === X && BeastY === Y) &&  
        !((X > 20 || X < -20) && (Y > 20 || Y < -20) && Plane === false) && !(BeastStep === false && X >= 35) && !(TombA === false && X === -27 && Y <= 10) &&
-       !(TombB === false && X >= 10 && Y === 36) && !(TombC === false && X === -27 && Y === 36)  ){
+       !(TombB === false && X >= 10 && Y === 36) && !(TombC === false && X === -27 && Y === 36) && !(Food > 100) ){
     Events("Nothing","Nothing","Nothing","Shrub","Shrub","Herb","Herb","Wilding","Wilding","Monkey","Monkey","Sharpen","Sharpen","Compass");
         //Total of 14
         return;
@@ -324,6 +324,12 @@ $(".B").click(function(){
     if (TombC === false && X === -27 && Y === 36){
         TombC = true;
         Tombc();
+        return;
+    }
+    
+    //TomatoMan
+    if (Food > 100){
+        TomatoMan();
         return;
     }
     
