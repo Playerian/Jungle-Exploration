@@ -17,6 +17,7 @@ var Dialogue = 0;
 var TombA = false;
 var TombB = false;
 var TombC = false;
+var Origing = 0;
 
 
 //Function declare
@@ -161,7 +162,26 @@ function Compass(){
 }
 
 function Origin(){
+    Origing ++;
     Say("You look around, its the same place that you started!");
+    if (Origing === 3){
+    Murmur("You think it's funny walking to the same place huh?");
+    }
+    if (Origing === 6){
+    Murmur("Maybe you should get going, you don't have much time left.");
+    }
+    if (Origing === 9){
+    Murmur("So, you want me to say something before you go out of this little paradise?");
+    }
+    if (Origing === 12){
+    Murmur("You don't have to know about me, just voyage around the jungle and see what happen.");
+    }
+    if (Origing === 15){
+    Murmur("Hmm...");
+    }
+    if (Origing === 18){
+    Murmur("Enough! You can't do anything by walking the same place over and over again!");
+    }
 }
 
 function FertileLand(){
@@ -338,7 +358,7 @@ $(".B").click(function(){
     $("#WD").html("Weapon Durability: "+WD);
     
     //Dialogue
-    if (Randoming(0,10) < 2){
+    if (Randoming(0,10) < 2 && (X != 0 && Y != 0)){
         Dialogue ++;
         if (Dialogue === 1){
             Murmur("Well, You asked who am I, and why I come to this jungle?");
