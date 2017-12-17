@@ -17,9 +17,13 @@ Website: https://playerian.github.io/Jungle-Exploration/.
 2. more stuff
 
 # FAQS:
-Q: Why the beast drops compass component from its body?
+Q1: Why the beast drops compass component from its body?
 
-A: Because the beast eats squirrels.
+A1: Because the beast eats squirrels.
+
+Q2: If the squirrel eats compass component, and you eat the squirrel, where is the compass component?
+
+A2: You digest it.
 
 # P.S.: 
 Don't be afraid to send pull requests!
