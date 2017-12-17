@@ -301,7 +301,7 @@ $(".B").click(function(){
     //Plane Crush site
     if ( (X > 20 || X < -20) && (Y > 20 || Y < -20) && Plane === false ){
         Plane = true;
-        Say("You saw a empty land with a crashed plane that has smoke coming out. You decided to go in and search for some valuables. You found some food and 1 compass component.");
+        Say("You saw a empty land with a crashed small plane that has dust all over the place. You decided to go in and search for some valuables. You found some food and 1 compass component.");
         Food += 20;
         CC += 1;
         return;
