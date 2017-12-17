@@ -338,7 +338,7 @@ $(".B").click(function(){
     $("#WD").html("Weapon Durability: "+WD);
     
     //Dialogue
-    if (Randoming(0,10) === 0){
+    if (Randoming(0,10) < 2){
         Dialogue ++;
         if (Dialogue === 1){
             Murmur("Well, You asked who am I, and why I come to this jungle?");
