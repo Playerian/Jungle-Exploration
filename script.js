@@ -180,7 +180,8 @@ function TombB(){
 }
 
 function TombC(){
-    Say("You found a magnificent grave, with dead flower all over the place. It's like there used to be an important person buried here, but no one is coming afterward. A coffin is placed on the grave. You found a broken piece of a map on bottom of the coffin.");
+    Say("You found a magnificent grave, with dead flower all over the place. It's like there used to be an important person buried here, but no one is coming afterward. A coffin is placed on the grave. You found a broken piece of a map on bottom of the coffin. You also found a compass component on the ground.");
+    CC ++;
     Image("tombC");
 }
 
@@ -224,7 +225,8 @@ $("#b4").click(function(){
 $(".B").click(function(){
     //Normal Events
     if ( (X !== 0 || Y !== 0) && Step !== 10 && !(BeastFind === false && X >= 100) && !(BeastX === X && BeastY === Y) &&  
-       !((X > 20 || X < -20) && (Y > 20 || Y < -20) && Plane === false) && !(BeastStep === false && X >= 35) ){
+       !((X > 20 || X < -20) && (Y > 20 || Y < -20) && Plane === false) && !(BeastStep === false && X >= 35) && !(TombA === false && X === -27 && Y <= 10) &&
+       !(TombB === false && X >= 10 && Y === 36) && !(TombC === false && X === -27 && Y === 36)  ){
     Events("Nothing","Nothing","Nothing","Shrub","Shrub","Herb","Herb","Wilding","Wilding","Monkey","Monkey","Sharpen","Sharpen","Compass");
         //Total of 14
         return;
@@ -244,6 +246,26 @@ $(".B").click(function(){
         Say("You saw a empty land with a crushing plane that has smoke coming out. You decided to go in and search for some valuables. You get some food and 1 compass component.");
         Food += 20;
         CC += 1;
+        return;
+    }
+    //TombA
+    if (TombA === false && X === -27 && Y <= 10){
+        TombA = true;
+        TombA();
+        return;
+    }
+        
+    //TombB
+    if (TombB === false && X >= 10 && Y === 36){
+        TombB = true;
+        TombB();
+        return;
+    }
+    
+    //TombC
+    if (TombC === false && X === -27 && Y === 36){
+        TombC = true;
+        TombC();
         return;
     }
     
