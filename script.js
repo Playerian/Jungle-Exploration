@@ -164,7 +164,8 @@ function Compass(){
 function Origin(){
     Origing ++;
     $("#wiseword").css("font-size" , "10px");
-    Say("You look around, its the same place that you started!");
+    Say("You look around, its the same place that you started! So you decided to get some supply from nearby.");
+    Food += 1;
     if (Origing === 3){
     Murmur("You think it's funny walking to the same place huh?");
     }
