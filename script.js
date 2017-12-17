@@ -237,6 +237,11 @@ function Tombc(){
     Image("tombC");
 }
 
+function TomatoMan(){
+    Say("You see a person with red skin and green hair with a unnaturally big smile. He sees your food and stole tons of it, your blade has no use against him. You just watch him run away.");
+    Food = Math.round(Food / 1.8);
+}
+
 //Randomly execute(function) Events
 function Events(){
     eval(arguments[Randoming(0,arguments.length-1)]+"()");
@@ -337,7 +342,7 @@ $(".B").click(function(){
         } else {
         Say("You encounter the beast! You try to fight the beast, but the beast is too strong, so you fling your weapon at the beast, and the beast escape to the east! You also drop some food.");
         WD = 0;
-        Food -= 4;
+        Food -= 10;
         }
         BeastX = X + 5;
         BeastY = Y;
@@ -370,7 +375,8 @@ $(".B").click(function(){
         BeastHealth -= 1;
         WD -= 2;
         } else {
-        Say("You got no weapon to fight the beast! The beast saw you and run away to the "+BeastDirection);
+        Say("You got no weapon to fight the beast! The beast saw you weaponless and stole some food! Then the beast run away to the "+BeastDirection);
+        Food -= 4;
         }
         
         if (BeastHealth <= 0){
