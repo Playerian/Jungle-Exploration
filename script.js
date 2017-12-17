@@ -57,13 +57,13 @@ function Nothing(){
     Randomer = Randoming(0,100);
     Food ++;
     if (Randomer <= 25){
-        Say("The night has makes you feel happier, you don't need to eat food today.");
+        Say("The night makes you feel happier, you don't need to eat food today.");
     } else if (Randomer <= 50 && Randomer >= 26) {
         Say("You eat some peanuts from the ground, sounds good, get 1 food.");
     } else if (Randomer <= 75 && Randomer >= 51) {
-        Say("You try to skip meal, and its a success.");
+        Say("You try to skip a meal, and its a success.");
     } else if (Randomer <= 100 && Randomer >= 76) {
-        Say("You eat some dirt, and it tastes bad.");
+        Say("You eat some dirt, and it tastes horrible.");
     }
 }
 
@@ -72,7 +72,7 @@ function Shrub(){
     if (Randomer <=50){
     Say("You found a shrub from a tree, get 3 foods");
     } else if (Randomer < 75){
-    Say("You found some berry from the shrub, get 3 foods");
+    Say("You found some berries from the shrub, get 3 foods");
     } else{
     Say("You found some high-quality fruit from the ground, get 3 foods");
     }
@@ -84,11 +84,11 @@ function Herb(){
     if (Randomer <= 25){
     Say("You picked a flower from the ground and eat it. Mmm, tasty. (get 2 food)");
     } else if (Randomer > 25 && Randomer <=50) {
-    Say("You picked up a nicely looked plant, get 2 food.");
+    Say("You picked up a nicely looking plant, get 2 food.");
     } else if (Randomer > 50 && Randomer <=75) {
     Say("A nut is on the ground, so you pick it up and eat"); //pun you could say this is nut-thing and eating it to last you a whole day is a little nuts.
     } else {
-    Say("An apple fall onto your head, so you just simply eat it while ignoring the pain.");
+    Say("An apple falls onto your head, so you just simply eat it while ignoring the pain.");
     }
     GainFood(2);
 }
@@ -98,14 +98,14 @@ function Wilding(){
     if (Randomer <= 50){
     Say("The sun is too hot for you to continue walking. You have to eat one more food.");
     } else {
-    Say("Your food has been steal by a naughty squirrel.");
+    Say("Your food has been stolen by a naughty squirrel.");
     }
     GainFood(-1);
 }
 
 function Monkey(){
     if ( WD === 0){ // Got Stole
-    Say("A monkey lunge at you, you fall onto the ground, and the monkey steal one of your food.");
+    Say("A monkey lunges at you, you fall onto the ground, and the monkey steals one of your food.");
     Food --;
     }
 
@@ -115,7 +115,7 @@ function Monkey(){
     }
     
     if ( WD>=5 ){
-    Say("A monkey lunge at you, you swing your weapon and kill it. Then you cook it fresh and easy, but your weapon lose some endurance.");
+    Say("A monkey lunges at you, you swing your weapon and kill it. Then you cook it fresh and easy, but your weapon loses some endurance.");
     WD -= 2;
     Food += 3;
     }
@@ -128,7 +128,7 @@ function Sharpen(){
         Say("You pick up a blade. It's shining under the sunlight. It looks broke, but still usable.");
         }   
         if (Randomer >= 3 && Randomer <=6){
-        Say("A useful stick lying on the ground, you pick it up and use it as your weapon.");
+        Say("A useful stick is lying on the ground, you pick it up and use it as your weapon.");
         }
         if (Randomer >= 7){
         Say("You found a big log, you use your hand to shape out a sword.");
@@ -143,7 +143,7 @@ function Sharpen(){
         Say("You found a tree, so you try your sword's sharpness on the tree. The sword gets sharper.");
         }
         if (Randomer >= 7){
-        Say("You found some sticks and bundle up them with your weapon.");
+        Say("You found some sticks and bundle them up with your weapon.");
         }
     }
     WD += 2;
@@ -155,17 +155,17 @@ function Compass(){
     Say("You picked up one compass component");
     CC ++;
     } else {
-    Say("You saw one compass component, but soon being eaten by a naughty squirrel, but it dies afterward, so you eat the squirrel.");
+    Say("You saw one compass component, but was soon being eaten by a naughty squirrel, but it dies afterward, so you eat the squirrel.");
     Food ++;
     }
 }
 
 function Origin(){
-    Say("You look around, its the same place that you started!");
+    Say("You look around, its the same place where you started!");
 }
 
 function FertileLand(){
-    Say("You found a fertile land, you plant all your food, and they are double up.");
+    Say("You found fertile land, you plant all your food, and they are doubled up.");
     Food *= 2;
 }
 
@@ -180,7 +180,7 @@ function Tombb(){
 }
 
 function Tombc(){
-    Say("You found a magnificent grave, with dead flower all over the place. It's like there used to be an important person buried here, but no one is coming afterward. A coffin is placed on the grave. You found a broken piece of a map on bottom of the coffin. You also found a compass component on the ground.");
+    Say("You found a magnificent grave, with dead flower all over the place. It looks like there used to be an important person buried here, but no one is coming afterward. A coffin is placed on the grave. You found a broken piece of a map on bottom of the coffin. You also found a compass component on the ground.");
     CC ++;
     Image("tombC");
 }
@@ -279,16 +279,16 @@ $(".B").click(function(){
     if (BeastFind === false && X >= 50){
     BeastFind = true;
         if (WD > 5){
-        Say("You encounter the beast! You manage to fight the beast with your nice weapon, and the beast escape to the east!");
+        Say("You encounter the beast! You manage to fight the beast with your nice weapon, and the beast escapes to the east!");
         WD -= 2;
         } else {
-        Say("You encounter the beast! You try to fight the beast, but the beast is too strong, so you fling your weapon to the beast, and the beast escape to the east! You also drop some food.");
+        Say("You encounter the beast! You try to fight the beast, but the beast is too strong, so you fling your weapon at the beast, and it escapes to the east! You also drop some food.");
         WD = 0;
         Food -= 4;
         }
         BeastX = X + 5;
         BeastY = Y;
-        Murmur("Told Ya, if go east, you encounter the beast!");
+        Murmur("Like I told ya, if you go east, you can encounter the beast!");
     }
     
     //Beast Tracking
@@ -313,7 +313,7 @@ $(".B").click(function(){
         }
         //Beast Escaping
         if (WD > 1){
-        Say("You hits the beast! The beast has between escape to the "+BeastDirection+"!");
+        Say("You hit the beast! The beast has between escape to the "+BeastDirection+"!");
         BeastHealth -= 1;
         WD -= 2;
         } else {
@@ -321,7 +321,7 @@ $(".B").click(function(){
         }
         
         if (BeastHealth <= 0){
-        Say("You slain the beast! You get tons of fresh meat, and you found some compass component inside the beast's body!");
+        Say("You have slain the beast! You get tons of fresh meat, and you found some compass components inside the beast's body!");
         BeastX = NaN;
         BeastY = NaN;
         BeastDirection = NaN;
@@ -353,19 +353,19 @@ $(".B").click(function(){
             Murmur("As you can see, my plane crashes, only me survive.");
         }
         if (Dialogue === 5){
-            Murmur("Um... You so curious about me?");
+            Murmur("Um... You are so curious about me?");
         }
         if (Dialogue === 6){
             Murmur("I don't want to tell you too much, but I'm searching for a ruin.");
         }
         if (Dialogue === 7){
-            Murmur("You too? How lucky I am!");
+            Murmur("You too? How lucky am I?!");
         }
         if (Dialogue === 8){
             Murmur("I'll tell you some more then");
         }
         if (Dialogue === 9){
-            Murmur("You know Roman Empire right? The vast kingdom that fell about 2000 years ago.");
+            Murmur("You know the Roman Empire right? The vast kingdom that fell about 2000 years ago.");
         }
         if (Dialogue === 10){
             Murmur("Yes, located right there.");
@@ -377,10 +377,10 @@ $(".B").click(function(){
             Murmur("You asked for the connection to the jungle?");
         }
         if (Dialogue === 13){
-            Murmur("The main point is, I have enough evidence to believe that there is a ruin of Roman Empire in this jungle.");
+            Murmur("The main point is, I have enough evidence to believe that there is a ruin from the Roman Empire in this jungle.");
         }
         if (Dialogue === 14){
-            Murmur("I want to know where too, but I can't, I've been searching for few year, if not more.");
+            Murmur("I want to know where too, but I can't, I've been searching for a few year, if not more.");
         }
         if (Dialogue === 15){
             Murmur("Compass? That's your clue? I saw some scatter around the jungle, but I never bother to pick them up.");
@@ -398,7 +398,7 @@ $(".B").click(function(){
             Murmur("This must be the ruin!");
         }
         if (Dialogue === 20){
-            Murmur("A beast! time to show you my skill!");
+            Murmur("A beast! Time to show you my skill!");
         }
         if (Dialogue === 21){
             Murmur("What are you doing? Help me!");
@@ -410,7 +410,7 @@ $(".B").click(function(){
             Murmur("You... Who are you?");
         }
         if (Dialogue === 24){
-            Murmur("I should have notice it.");
+            Murmur("I should have noticed it.");
         }
         if (Dialogue === 25){
             Murmur("Now... kill me... as fast as you can...");
