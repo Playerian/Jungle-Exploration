@@ -169,17 +169,17 @@ function FertileLand(){
     Food *= 2;
 }
 
-function TombA(){
+function Tomba(){
     Say("You found a round grave, nothing was written on it. It's like someone just buried this person as quick as possible. You found a broken piece of a map on the top of the grave.");
     Image("tombA");
 }
 
-function TombB(){
+function Tombb(){
     Say("You found a sqaure grave with a cross on top. Something was written on it: Farewell, my friend. You found a broken piece of a map inside the grave's cross.");
     Image("tombB");
 }
 
-function TombC(){
+function Tombc(){
     Say("You found a magnificent grave, with dead flower all over the place. It's like there used to be an important person buried here, but no one is coming afterward. A coffin is placed on the grave. You found a broken piece of a map on bottom of the coffin. You also found a compass component on the ground.");
     CC ++;
     Image("tombC");
@@ -251,21 +251,21 @@ $(".B").click(function(){
     //TombA
     if (TombA === false && X === -27 && Y <= 10){
         TombA = true;
-        TombA();
+        Tomba();
         return;
     }
         
     //TombB
     if (TombB === false && X >= 10 && Y === 36){
         TombB = true;
-        TombB();
+        Tombb();
         return;
     }
     
     //TombC
     if (TombC === false && X === -27 && Y === 36){
         TombC = true;
-        TombC();
+        Tombc();
         return;
     }
     
