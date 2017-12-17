@@ -163,6 +163,7 @@ function Compass(){
 
 function Origin(){
     Origing ++;
+    $("#wiseword").css("font-size" , "10px");
     Say("You look around, its the same place that you started!");
     if (Origing === 3){
     Murmur("You think it's funny walking to the same place huh?");
@@ -360,6 +361,7 @@ $(".B").click(function(){
     //Dialogue
     if (Randoming(0,10) < 2 && (X != 0 && Y != 0)){
         Dialogue ++;
+        $("#wiseword").css("font-size" , "15px");
         if (Dialogue === 1){
             Murmur("Well, You asked who am I, and why I come to this jungle?");
         }
