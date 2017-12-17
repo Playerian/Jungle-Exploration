@@ -178,10 +178,10 @@ function Origin(){
     Murmur("You don't have to know about me, just voyage around the jungle and see what happen.");
     }
     if (Origing === 15){
-    Murmur("Hmm...");
+    Murmur("Hmm... did you know something about me already?");
     }
     if (Origing === 18){
-    Murmur("Enough! You can't do anything by walking the same place over and over again!");
+    Murmur("Well...");
     }
     if (Origing === 21){
     Murmur("Maybe, just maybe, you know that I will say something?");
