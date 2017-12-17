@@ -57,24 +57,24 @@ function Nothing(){
     Randomer = Randoming(0,100);
     Food ++;
     if (Randomer <= 25){
-        Say("The night has makes you feel happier, you don't need to eat food today.");
+        Say("The calm night had made you feel happier, you don't need to eat food today.");
     } else if (Randomer <= 50 && Randomer >= 26) {
-        Say("You eat some peanuts from the ground, sounds good, get 1 food.");
+        Say("You ate some peanuts from the ground, tasted good, got 1 food.");
     } else if (Randomer <= 75 && Randomer >= 51) {
-        Say("You try to skip meal, and its a success.");
+        Say("You decided to skip a meal, and it was a success.");
     } else if (Randomer <= 100 && Randomer >= 76) {
-        Say("You eat some dirt, and it tastes bad.");
+        Say("You ate some dirt, and it tasted horrible.");
     }
 }
 
 function Shrub(){
     Randomer = Randoming(0,100);
     if (Randomer <=50){
-    Say("You found a shrub from a tree, get 3 foods");
+    Say("You found a shrub, got 3 foods");
     } else if (Randomer < 75){
-    Say("You found some berry from the shrub, get 3 foods");
+    Say("You found some berry from the shrub, got 3 foods.");
     } else{
-    Say("You found some high-quality fruit from the ground, get 3 foods");
+    Say("You found some high-quality fruit from the ground, got 3 foods.");
     }
     GainFood(3);
 }
@@ -82,13 +82,13 @@ function Shrub(){
 function Herb(){
     Randomer = Randoming(0,100);
     if (Randomer <= 25){
-    Say("You picked a flower from the ground and eat it. Mmm, tasty. (get 2 food)");
+    Say("You picked a flower from the ground and ate it. Mmm, tasty. (get 2 food)");
     } else if (Randomer > 25 && Randomer <=50) {
     Say("You picked up a nicely looked plant, get 2 food.");
     } else if (Randomer > 50 && Randomer <=75) {
-    Say("A nut is on the ground, so you pick it up and eat"); //pun you could say this is nut-thing and eating it to last you a whole day is a little nuts.
+    Say("A nut is on the ground, so you picked it up and ate it."); //pun you could say this is nut-thing and eating it to last you a whole day is a little nuts.
     } else {
-    Say("An apple fall onto your head, so you just simply eat it while ignoring the pain.");
+    Say("An apple fell on your head, so you just simply eat it while ignoring the pain.");
     }
     GainFood(2);
 }
@@ -98,24 +98,24 @@ function Wilding(){
     if (Randomer <= 50){
     Say("The sun is too hot for you to continue walking. You have to eat one more food.");
     } else {
-    Say("Your food has been steal by a naughty squirrel.");
+    Say("Your food had been stole by a naughty squirrel.");
     }
     GainFood(-1);
 }
 
 function Monkey(){
     if ( WD === 0){ // Got Stole
-    Say("A monkey lunge at you, you fall onto the ground, and the monkey steal one of your food.");
+    Say("A monkey lunged at you, you fell onto the ground, and the monkey stole one of your food.");
     Food --;
     }
 
     if ( WD>=1 && WD<=4 ){ // Block off
-    Say("A monkey lunge at you, you block him off with your weapon");
+    Say("A monkey lunged at you, you block him off with your weapon");
     WD --;
     }
     
     if ( WD>=5 ){
-    Say("A monkey lunge at you, you swing your weapon and kill it. Then you cook it fresh and easy, but your weapon lose some endurance.");
+    Say("A monkey lunge at you, you swung your weapon and killed it. Then you proceed to cook it fresh and easy. However your weapon lose some endurance.");
     WD -= 2;
     Food += 3;
     }
@@ -131,7 +131,7 @@ function Sharpen(){
         Say("A useful stick lying on the ground, you pick it up and use it as your weapon.");
         }
         if (Randomer >= 7){
-        Say("You found a big log, you use your hand to shape out a sword.");
+        Say("You found a big log, you use your hands to shape out a sword.");
         }
     }
     
@@ -243,7 +243,7 @@ $(".B").click(function(){
     //Plane Crush site
     if ( (X > 20 || X < -20) && (Y > 20 || Y < -20) && Plane === false ){
         Plane = true;
-        Say("You saw a empty land with a crushing plane that has smoke coming out. You decided to go in and search for some valuables. You get some food and 1 compass component.");
+        Say("You saw a empty land with a crashed plane that has smoke coming out. You decided to go in and search for some valuables. You found some food and 1 compass component.");
         Food += 20;
         CC += 1;
         return;
@@ -272,17 +272,17 @@ $(".B").click(function(){
     //Beast Step
     if (BeastStep === false && X >= 35){
         BeastStep = true;
-        Say("You found some footsteps, looks like those footsteps are pointing to the east!");
+        Say("You found some footprints, looks like those footprints are pointing to the east!");
     }
     
     //Beast encounter
     if (BeastFind === false && X >= 50){
     BeastFind = true;
         if (WD > 5){
-        Say("You encounter the beast! You manage to fight the beast with your nice weapon, and the beast escape to the east!");
+        Say("You encounter the beast! You swung your shapened weapon and striked it on the head! The beast let out a lound roar and escaped to the east!");
         WD -= 2;
         } else {
-        Say("You encounter the beast! You try to fight the beast, but the beast is too strong, so you fling your weapon to the beast, and the beast escape to the east! You also drop some food.");
+        Say("You encounter the beast! You try to fight the beast, but the beast is too strong, so you fling your weapon at the beast, and the beast escape to the east! You also drop some food.");
         WD = 0;
         Food -= 4;
         }
@@ -313,7 +313,7 @@ $(".B").click(function(){
         }
         //Beast Escaping
         if (WD > 1){
-        Say("You hits the beast! The beast has between escape to the "+BeastDirection+"!");
+        Say("You hits the beast! The beast had escape to the "+BeastDirection+"!");
         BeastHealth -= 1;
         WD -= 2;
         } else {
@@ -321,7 +321,7 @@ $(".B").click(function(){
         }
         
         if (BeastHealth <= 0){
-        Say("You slain the beast! You get tons of fresh meat, and you found some compass component inside the beast's body!");
+        Say("You slain the beast! You got tons of fresh meat, and you found some compass component inside the beast's body!");
         BeastX = NaN;
         BeastY = NaN;
         BeastDirection = NaN;
@@ -350,7 +350,7 @@ $(".B").click(function(){
             Murmur("That's why I'm trapped here.");
         }
         if (Dialogue === 4){
-            Murmur("As you can see, my plane crashes, only me survive.");
+            Murmur("As you can see, my plane crashed, only me survive.");
         }
         if (Dialogue === 5){
             Murmur("Um... You so curious about me?");
