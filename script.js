@@ -211,7 +211,7 @@ function Origin(){
     Murmur("Really nothing more I can tell.");
     }
     if (Origing === 100){
-    Murmur("VERY VERY LAST thing that I'm going to say, where the two tomb cross at direction of first two, the third tomb is in the way.");
+    Murmur("VERY VERY LAST thing that I'm going to say, where the two tomb cross at the direction of the first two, the third tomb is in the way.");
     }
 }
 
