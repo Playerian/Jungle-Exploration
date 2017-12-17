@@ -359,7 +359,7 @@ $(".B").click(function(){
     $("#WD").html("Weapon Durability: "+WD);
     
     //Dialogue
-    if (Randoming(0,10) < 2 && (X != 0 && Y != 0)){
+    if (Randoming(0,10) < 2 && (X !== 0 && Y !== 0)){
         Dialogue ++;
         $("#wiseword").css("font-size" , "15px");
         if (Dialogue === 1){
