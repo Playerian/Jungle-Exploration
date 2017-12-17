@@ -170,8 +170,18 @@ function FertileLand(){
 }
 
 function TombA(){
-    Say("You found a round grave, nothing was written on it. It's like someone just burial this person as quick as possible. You found a broken piece of a map on the top of the grave.");
+    Say("You found a round grave, nothing was written on it. It's like someone just buried this person as quick as possible. You found a broken piece of a map on the top of the grave.");
     Image("tombA");
+}
+
+function TombB(){
+    Say("You found a sqaure grave with a cross on top. Something was written on it: Farewell, my friend. You found a broken piece of a map inside the grave's cross.");
+    Image("tombB");
+}
+
+function TombC(){
+    Say("You found a magnificent grave, with dead flower all over the place. It's like there used to be an important person buried here, but no one is coming afterward. A coffin is placed on the grave. You found a broken piece of a map on bottom of the coffin.");
+    Image("tombC");
 }
 
 //Randomly execute(function) Events
