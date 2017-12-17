@@ -183,6 +183,36 @@ function Origin(){
     if (Origing === 18){
     Murmur("Enough! You can't do anything by walking the same place over and over again!");
     }
+    if (Origing === 21){
+    Murmur("Maybe, just maybe, you know that I will say something?");
+    }
+    if (Origing === 24){
+    Murmur("Fine, I'll say that you are going to find the compass components.");
+    }
+    if (Origing === 27){
+    Murmur("You stil doing that?");
+    }
+    if (Origing === 30){
+    Murmur("Just go north, its where the ruin lays, but you'll never find it unless you get the compass.");
+    }
+    if (Origing === 33){
+    Murmur("But, you can get into the coliseum.");
+    }
+    if (Origing === 36){
+    Murmur("I think, my grave is somewhere in the jungle. Haha, I wonder that guy will or will not give me a grave.");
+    }
+    if (Origing >= 39 && Origing < 60){
+    Murmur("Nothing more I can tell.");
+    }
+    if (Origing === 60){
+    Murmur("Watch out for the king, really the last thing I can tell.");
+    }
+    if (Origing > 60 && Origing < 100){
+    Murmur("Really nothing more I can tell.");
+    }
+    if (Origing === 100){
+    Murmur("VERY VERY LAST thing that I'm going to say, where the two tomb cross at direction of first two, the third tomb is in the way.");
+    }
 }
 
 function FertileLand(){
@@ -233,6 +263,7 @@ $("#b2").click(function(){
 $("#b3").click(function(){
     X ++;
     if (Randoming(0,10) < 1 && BeastFind === false){
+    $("#wiseword").css("font-size" , "10px");
     Murmur("If you go east you will encounter the beast!");
     }
 });
