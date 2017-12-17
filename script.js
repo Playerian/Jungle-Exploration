@@ -164,7 +164,7 @@ function Compass(){
 function Origin(){
     Origing ++;
     $("#wiseword").css("font-size" , "10px");
-    $("#wiseword").css("border" , "10px solid black");
+    $("#wiseword").css("border" , "5px solid black");
     Say("You look around, its the same place that you started! So you decided to get some supply from nearby.");
     Food += 1;
     if (Origing === 3){
@@ -271,7 +271,7 @@ $("#b3").click(function(){
     X ++;
     if (Randoming(0,10) < 1 && BeastFind === false){
     $("#wiseword").css("font-size" , "10px");
-    $("#wiseword").css("border" , "10px dotted black");
+    $("#wiseword").css("border" , "5px solid black");
     Murmur("If you go east you will encounter the beast!");
     }
 });
@@ -354,7 +354,7 @@ $(".B").click(function(){
         }
         BeastX = X + 5;
         BeastY = Y;
-        $("#wiseword").css("border" , "10px dotted black");
+        $("#wiseword").css("border" , "5px solid black");
         Murmur("Told Ya, if go east, you encounter the beast!");
     }
     
@@ -409,7 +409,7 @@ $(".B").click(function(){
     if (Randoming(0,10) < 2 && (X !== 0 && Y !== 0)){
         Dialogue ++;
         $("#wiseword").css("font-size" , "15px");
-        $("#wiseword").css("border" , "10px dotted black");
+        $("#wiseword").css("border" , "5px dotted black");
         if (Dialogue === 1){
             Murmur("Well, You asked who am I, and why I come to this jungle?");
         }
