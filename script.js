@@ -459,7 +459,7 @@ $(".B").click(function(){
     if (X === 23 && Y === 4 && Reinhardt === false){
         Reinhardt = true;
         Say("you found a mysterious blue covered book near the remain of a dead horse. upon opening the book, two lightnings strikes appear before you. before you realized what you had done. Suddenly, you hear someone shouted: magic is everything! You got blown fly out. Now you know, this thing should not be touched, because its not made on Earth. ");
-        Food -= 20;    
+        Food -= 10;    
     }
     
     //Beast Step
