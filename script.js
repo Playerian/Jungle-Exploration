@@ -19,6 +19,8 @@ var TombB = false;
 var TombC = false;
 var Origing = 0;
 var InFog = false;
+var TomatoFood = 0;
+var TomatoSatis = false;
 
 //Function declare
     //Shortcuts
@@ -239,8 +241,14 @@ function Tombc(){
 }
 
 function TomatoMan(){
+    if (TomatoFood < 500){
     Say("You see a person with red skin and green hair with a unnaturally big smile. He sees your food and stole tons of it, your blade has no use against him. You just watch him run away.");
+    TomatoFood += Math.round(Food / 2);
     Food = Math.round(Food / 2);
+    } else {
+    Say("You see a person with red skin and green hair with a unnaturally big smile. He says: I'm full! Thank you for the food! I'll tell you a secret: in the place with thick trees block the fog, a new road opens in front of you. ");
+    TomatoSatis = true;    
+    }
 }
 
 //Randomly execute(function) Events
@@ -286,7 +294,8 @@ $(".B").click(function(){
     //Normal Events
     if ( (X !== 0 || Y !== 0) && Step !== 10 && !(BeastFind === false && X >= 100) && !(BeastX === X && BeastY === Y) &&  
        !((X > 20 || X < -20) && (Y > 20 || Y < -20) && Plane === false) && !(BeastStep === false && X >= 35) && !(TombA === false && X === -27 && Y <= 10) &&
-       !(TombB === false && X >= 10 && Y === 36) && !(TombC === false && X === -27 && Y === 36) && !(Food > 100) ){
+       !(TombB === false && X >= 10 && Y === 36) && !(TombC === false && X === -27 && Y === 36) && !(Food > 100 && TomatoSatis === false)
+        {
     Events("Nothing","Nothing","Nothing","Shrub","Shrub","Herb","Herb","Wilding","Wilding","Monkey","Monkey","Sharpen","Sharpen","Compass");
         //Total of 14
         return;
@@ -330,7 +339,7 @@ $(".B").click(function(){
     }
     
     //TomatoMan
-    if (Food > 100){
+    if (Food > 100 && TomatoSatis === false){
         TomatoMan();
         return;
     }
