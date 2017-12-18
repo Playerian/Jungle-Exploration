@@ -22,6 +22,7 @@ var InFog = false;
 var TomatoFood = 0;
 var TomatoSatis = false;
 var Reinhardt = false;
+var Snowman = false;
 
 //Function declare
     //Shortcuts
@@ -217,6 +218,10 @@ function Weaponing(){
     }
 }
 
+function SnowmanR(){
+    Say("You step onto something soft, so you look down and see some soft dirt. You dig it up and restore it as its original shape. Looks like the snowman is smiling!");
+}
+
     //Uncommon Events
 function Origin(){
     Origing ++;
@@ -358,7 +363,13 @@ $(".B").click(function(){
     }
     //Fog Events
     if (InFog === true && Y <= -75){
-        Events("Foggy","Bump","SmallTree","Slip","Bear","Pee","Banana","Weaponing");
+        Randomer = Randoming(0,100);
+        if (Randomer < 8 && Snowman === false){
+            SnowmanR();
+            Snowman = true;
+        } else {
+            Events("Foggy","Bump","SmallTree","Slip","Bear","Pee","Banana","Weaponing");
+        }
         return;
     }
     
