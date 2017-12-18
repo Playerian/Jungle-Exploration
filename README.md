@@ -8,13 +8,17 @@ Website: https://playerian.github.io/Jungle-Exploration/.
 (NVM)
 
 # Aims:
-1. Direction function that do certain thing after you step in something. (which leads to locking outcome by different x, y, or step)
-2. Recruit one debugger for balancing the game 
-3. To make the game harder to lose and harder to win
+1. Recruit one debugger for balancing the game 
+2. To make the game harder to lose and harder to win
 
-# BrainStorming:
-1. stuff
-2. more stuff
+# Agenda:
+1. The lost king.(Officially taken by Anthony)
+2. The black village.(Officially taken by Waylen)
+3. End game Roman Ruin.
+4. Fog of South. (I'll do it)
+5. Deep Jungle in the west.
+6. Coliseum.
+7. 
 
 # FAQS:
 Q1: Why the beast drops compass component from its body?
