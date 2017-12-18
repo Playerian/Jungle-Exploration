@@ -158,11 +158,63 @@ function Compass(){
     Say("You picked up one compass component");
     CC ++;
     } else {
+    if (Randomer <= 60){
     Say("You saw one compass component, but soon being eaten by a naughty squirrel, but it dies afterward, so you eat the squirrel.");
     Food ++;
     }
+    if (Randomer > 60){
+    Say("You though you saw a compass component, but found out it's only a scrap of wood.");
+    }
+    }
 }
     //Fog Events
+function Foggy(){
+    Say("It's too foggy, you can't even see the road ahead.");
+}
+
+function Bump(){
+    Say("You bump onto a tree and drop some food, when you try to pick it up, you find out they're gone already.");
+    Food -= 1;
+}
+
+function SmallTree(){
+    Say("You see a small tree out of the large trees, you try to shake it, and it drops some food.");
+    Food += 2;
+}
+
+function Slip(){
+    Say("You accidentally step onto a slippery stick, you fall onto the ground.");
+}
+
+function Bear(){
+    if (WD >= 9) {
+        Say("You encounter a big bear! You fight it with all of your strength, and you kill it and eat its meat, but your weapon also get more broken.");
+        WD -= 3;
+        Food += 10;
+    } else {
+        Say("You encounter a big bear! It attacks you and you can't defend it! You lost some food!");
+        Food -= 5;
+    }
+}
+
+function Pee(){
+    Say("You decided to take a pee, because nothing can sees you in the fog.");
+}
+
+function Banana(){
+    Say("You see a big yellow thing coming out of the fog. It's a banana, so you eat it.");
+    Food += 1;
+}
+
+function Weaponing(){
+    if (WD > 0){
+        Say("You get some tall grass and bound them into your weapon.");
+        WD += 1;
+    } else {
+        Say("You pick up one great broadsword from the ground. It doesn't looks like a sword that is made on Earth. Something was written on it: Use my blade as you see fit.");
+        WD = 5;
+    }
+}
 
     //Uncommon Events
 function Origin(){
@@ -305,6 +357,8 @@ $(".B").click(function(){
     }
     //Fog Events
     if (InFog === true && Y <= -75){
+        Events("Foggy","Bump","SmallTree","Slip","Bear","Pee","Banana","Weaponing");
+        return;
     }
     
     //Back to the square
@@ -434,7 +488,7 @@ $(".B").click(function(){
     $("#WD").html("Weapon Durability: "+WD);
     
     //Dialogue
-    if (Randoming(0,10) < 2 && (X !== 0 && Y !== 0)){
+    if (Randoming(0,10) < 2 && (X !== 0 && Y !== 0) && Dialogue < 25  ){
         Dialogue ++;
         $("#wiseword").css("font-size" , "15px");
         $("#wiseword").css("border" , "5px dotted black");
