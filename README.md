@@ -20,6 +20,9 @@ Website: https://playerian.github.io/Jungle-Exploration/.
 6. Coliseum.
 7. 
 
+# Jungle Map:
+https://www.desmos.com/calculator/uizp7n3axi
+
 # FAQS:
 Q1: Why the beast drops compass component from its body?
 
