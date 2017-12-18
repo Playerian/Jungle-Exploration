@@ -1,5 +1,5 @@
 # Jungle-Exploration
-A Popcode project
+A Popcode project that is not limiting on popcode
 
 This project is meant to be for people who like to explore new stuffs, so contribute new ideas!
 Of course, playing this game need to have a loads of imagination in order to feel the presence of jungle!
