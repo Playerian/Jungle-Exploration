@@ -5,7 +5,7 @@ This project is meant to be for people who like to explore new stuffs, so contri
 Of course, playing this game need to have a loads of imagination in order to feel the presence of jungle!
 
 Website: https://playerian.github.io/Jungle-Exploration/.
-(NVM)
+(Super Buggy LOL)
 
 # Aims:
 1. Recruit one debugger for balancing the game 
