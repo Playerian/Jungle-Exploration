@@ -222,8 +222,10 @@ function Weaponing(){
 function SnowmanR(){
     Say("You step onto something soft, so you look down and see some soft dirt. You dig it up and see a broken snowman, do you want to restore its shape?");
     $(".B").hide();
-    $("#Buttons").append("<button id='byes' class='B2'>Rescue</button>");
-    $("#Buttons").append("<button id='bno' class='B2'>Don't Rescue</button>");
+    $("#b5").show();
+    $("#b6").show();
+    $("#b5").html("Rescue");
+    $("#b6").html("Don't Rescue");
 }
 
     //Uncommon Events
@@ -355,22 +357,23 @@ $("#b4").click(function(){
 
 //Other Buttons
     //Snowman Events
-    $("#byes").click(function(){
+    $('#b4').click(function(){
+        Food += 1;
         if (Snowman === true && SnowmanRescue === 0){
             SnowmanRescue = true;
             $(".B").show();
             Say("You reshape the snowman, it looks like it's smiling at you!");
-            $("#byes").hide();
-            $("#bno").hide();
+           $("#b4").hide();
+           $("#b5").hide();
         }
     });
-    $("#bno").click(function(){
+    $("#b5").click(function(){
         if (Snowman === true && SnowmanRescue === 0){
             SnowmanRescue = false;
             $(".B").show();
             Say("You ignore the snowman, looks like the snowman doesn't like you anymore.");
-            $("#byes").hide();
-            $("#bno").hide();
+            $("#b4").hide();
+            $("#b5").hide();
         }
     });
 
