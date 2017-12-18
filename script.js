@@ -21,6 +21,7 @@ var Origing = 0;
 var InFog = false;
 var TomatoFood = 0;
 var TomatoSatis = false;
+var Reinhardt = false;
 
 //Function declare
     //Shortcuts
@@ -349,7 +350,7 @@ $(".B").click(function(){
     if ( (X !== 0 || Y !== 0) && Step !== 10 && !(BeastFind === false && X >= 100) && !(BeastX === X && BeastY === Y) &&  
        !((X > 20 || X < -20) && (Y > 20 || Y < -20) && Plane === false) && !(BeastStep === false && X >= 35) && !(TombA === false && X === -27 && Y <= 10) &&
        !(TombB === false && X >= 10 && Y === 36) && !(TombC === false && X === -27 && Y === 36) && !(Food > 100 && TomatoSatis === false) && 
-       !(InFog === false && Y <= -75) && !(InFog === true)  
+       !(InFog === false && Y <= -75) && !(InFog === true) && !(X === 23 && Y === 4 && Reinhardt === false) 
        ){
     Events("Nothing","Nothing","Nothing","Shrub","Shrub","Herb","Herb","Wilding","Wilding","Monkey","Monkey","Sharpen","Sharpen","Compass");
         //Total of 14
@@ -415,6 +416,13 @@ $(".B").click(function(){
     if (InFog === true && Y > -75){
         Say("You are out from the foggy area, you look behind, you hope you never go in there again.");
         InFog = false;
+    }
+    
+    //Reinhardt
+    if (X === 23 && Y === 4 && Reinhardt === false){
+        Reinhardt = true;
+        Say("you found a mysterious blue covered book near the remines dead horse. upon opening the book the book, two lightnings strikes appear before you. before you relized what you had done you suddenly hear someone shouted magic is everything! ");
+        Food -= 20;    
     }
     
     //Beast Step
