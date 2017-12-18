@@ -10,6 +10,7 @@ Website: https://playerian.github.io/Jungle-Exploration/.
 # Aims:
 1. Recruit one debugger for balancing the game 
 2. To make the game harder to lose and harder to win
+3. In game achievement system
 
 # Agenda:
 1. The lost king.(Officially taken by Anthony)
