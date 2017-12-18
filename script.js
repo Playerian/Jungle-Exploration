@@ -23,6 +23,7 @@ var TomatoFood = 0;
 var TomatoSatis = false;
 var Reinhardt = false;
 var Snowman = false;
+var SnowmanRescue = NaN;
 
 //Function declare
     //Shortcuts
@@ -219,7 +220,7 @@ function Weaponing(){
 }
 
 function SnowmanR(){
-    Say("You step onto something soft, so you look down and see some soft dirt. You dig it up and restore it as its original shape. Looks like the snowman is smiling!");
+    Say("You step onto something soft, so you look down and see some soft dirt. You dig it up and see a broken snowman, do you want to restore its shape?");
 }
 
     //Uncommon Events
