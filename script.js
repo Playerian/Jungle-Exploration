@@ -351,7 +351,7 @@ $("#b3").click(function(){
     //South
 $("#b4").click(function(){
     Y --;
-});
+}); 
 
 //Other Buttons
     //Snowman Events
