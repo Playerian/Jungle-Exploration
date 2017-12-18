@@ -23,7 +23,7 @@ var TomatoFood = 0;
 var TomatoSatis = false;
 var Reinhardt = false;
 var Snowman = false;
-var SnowmanRescue = NaN;
+var SnowmanRescue = 0;
 
 //Function declare
     //Shortcuts
@@ -221,6 +221,9 @@ function Weaponing(){
 
 function SnowmanR(){
     Say("You step onto something soft, so you look down and see some soft dirt. You dig it up and see a broken snowman, do you want to restore its shape?");
+    $(".B").hide();
+    $("#Buttons").append("<button id='byes' class='B2'>Rescue</button>");
+    $("#Buttons").append("<button id='bno' class='B2'>Don't Rescue</button>");
 }
 
     //Uncommon Events
@@ -350,6 +353,27 @@ $("#b4").click(function(){
     Y --;
 });
 
+//Other Buttons
+    //Snowman Events
+    $("#byes").click(function(){
+        if (Snowman === true && SnowmanRescue === 0){
+            SnowmanRescue = true;
+            $(".B").show();
+            Say("You reshape the snowman, it looks like it's smiling at you!");
+            $("#byes").hide();
+            $("#bno").hide();
+        }
+    });
+    $("#bno").click(function(){
+        if (Snowman === true && SnowmanRescue === 0){
+            SnowmanRescue = false;
+            $(".B").show();
+            Say("You ignore the snowman, looks like the snowman doesn't like you anymore.");
+            $("#byes").hide();
+            $("#bno").hide();
+        }
+    });
+
 //Everystep you take after
 $(".B").click(function(){
     //Normal Events
@@ -364,6 +388,7 @@ $(".B").click(function(){
     }
     //Fog Events
     if (InFog === true && Y <= -75){
+        //Snowman Or Not?
         Randomer = Randoming(0,100);
         if (Randomer < 8 && Snowman === false){
             SnowmanR();
@@ -602,4 +627,3 @@ $(".B").click(function(){
         Say("You starve to death!");
     }
 });
-
