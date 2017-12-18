@@ -22,7 +22,7 @@ Website: https://playerian.github.io/Jungle-Exploration/.
 7. Dev's home
 
 # Jungle Map:
-https://www.desmos.com/calculator/e5qfyuvfyw
+https://www.desmos.com/calculator/zu6aqlkekt
 
 # FAQS:
 Q1: Why the beast drops compass component from its body?
