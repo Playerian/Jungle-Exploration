@@ -18,7 +18,7 @@ Website: https://playerian.github.io/Jungle-Exploration/.
 4. Fog of South. (I'll do it)
 5. Deep Jungle in the west.
 6. Coliseum.
-7. 
+7. Dev's home
 
 # Jungle Map:
 https://www.desmos.com/calculator/uizp7n3axi
