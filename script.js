@@ -305,7 +305,7 @@ function Tombc(){
 }
 
 function TomatoMan(){
-    if (TomatoFood < 200){
+    if (TomatoFood < 500){
     Say("You see a person with red skin and green hair with a unnaturally big smile. He sees your food and stole tons of it, your blade has no use against him. You just watch him run away.");
     TomatoFood += Math.round(Food / 2);
     Food = Math.round(Food / 2);
@@ -391,8 +391,8 @@ $(".B").click(function(){
         //Snowman Or Not?
         Randomer = Randoming(0,100);
         if (Randomer < 8 && Snowman === false){
-            SnowmanR();
             Snowman = true;
+            SnowmanR();
         } else {
             Events("Foggy","Bump","SmallTree","Slip","Bear","Pee","Banana","Weaponing");
         }
