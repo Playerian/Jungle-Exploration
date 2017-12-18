@@ -357,23 +357,23 @@ $("#b4").click(function(){
 
 //Other Buttons
     //Snowman Events
-    $('#b4').click(function(){
+    $('#b5').click(function(){
         Food += 1;
         if (Snowman === true && SnowmanRescue === 0){
             SnowmanRescue = true;
             $(".B").show();
             Say("You reshape the snowman, it looks like it's smiling at you!");
-           $("#b4").hide();
            $("#b5").hide();
+           $("#b6").hide();
         }
     });
-    $("#b5").click(function(){
+    $("#b6").click(function(){
         if (Snowman === true && SnowmanRescue === 0){
             SnowmanRescue = false;
             $(".B").show();
             Say("You ignore the snowman, looks like the snowman doesn't like you anymore.");
-            $("#b4").hide();
             $("#b5").hide();
+            $("#b6").hide();
         }
     });
 
