@@ -509,3 +509,4 @@ $(".B").click(function(){
         Say("You starve to death!");
     }
 });
+
