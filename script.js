@@ -28,6 +28,7 @@ var InRabbit = false;
 var RabbitSaved = 0;
 var RabbitCooked = 0;
 var RabbitMet = 0;
+var DroppedSupply = false
 
 //Function declare
     //Shortcuts
