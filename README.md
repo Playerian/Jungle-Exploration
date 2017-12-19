@@ -34,7 +34,7 @@ Q2: If the squirrel eats compass component, and you eat the squirrel, where is t
 A2: You digest it.
 
 # Letter From Dr.Italic
-  _Hi, I'm Dr.Italic. All my life have been devoted into the mystery that is yet solve by science. Well, things happened. I've seeen a lot,
+  _Hi, I'm Dr.Italic. All my life have been devoted into the mystery that is yet solve by science. Well, things happened. I've seeen a lot,_
 
 _curses in ancient tribe, totems that being praise by villages, but nothing seems real. Now I know I was wrong, maybe, just maybe, there is
 
