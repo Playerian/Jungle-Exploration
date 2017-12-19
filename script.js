@@ -573,7 +573,7 @@ $(".B").click(function(){
     }
 });
 
-$(".B").click(function(){
+$(".B2").click(function(){
     GainFood(-1);
     $("#Food").html("Food: "+Food);
     $("#CC").html("Compass Component: "+CC);
