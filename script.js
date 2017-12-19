@@ -28,7 +28,7 @@ var InRabbit = false;
 var RabbitSaved = 0;
 var RabbitCooked = 0;
 var RabbitMet = 0;
-var DroppedSupply = false
+var DroppedSupply = false;
 
 //Function declare
     //Shortcuts
@@ -386,7 +386,7 @@ $("#b4").click(function(){
         }
         //Rabbit Function
         if (InRabbit === true){
-            Say("You feed some food to the rabbit, looks like it's healing up!");
+            Say("You feed some food to the rabbit, looks like its healing up!");
             Food -= 1;
             RabbitSaved += 1;
             $(".B3").hide();
@@ -429,7 +429,7 @@ $("#b4").click(function(){
 $(".B").click(function(){
     //Normal Events
     if ( (X !== 0 || Y !== 0) && Step !== 10 && !(BeastFind === false && X >= 100) && !(BeastX === X && BeastY === Y) &&  
-       !((X > 20 || X < -20) && (Y > 20 || Y < -20) && Plane === false) && !(BeastStep === false && X >= 35) && !(TombA === false && X === -27 && Y <= 10) &&
+       !( Math.pow(X-5, 2)+Math.pow(Y-15,2) <= 20 && Plane === false ) && !(BeastStep === false && X >= 35) && !(TombA === false && X === -27 && Y <= 10) &&
        !(TombB === false && X >= 10 && Y === 36) && !(TombC === false && X === -27 && Y === 36) && !(Food > 100 && TomatoSatis === false) && 
        !(InFog === false && Y <= -75) && !(InFog === true) && !(X === 23 && Y === 4 && Reinhardt === false) 
        ){
@@ -460,7 +460,7 @@ $(".B").click(function(){
         return;
     }
     //Plane Crush site
-    if ( (X > 20 || X < -20) && (Y > 20 || Y < -20) && Plane === false ){
+    if ( Math.pow(X-5, 2)+Math.pow(Y-15,2) <= 20 && Plane === false ){
         Plane = true;
         Say("You saw a empty land with a crashed small plane that has dust all over the place. You decided to go in and search for some valuables. You found some food and 1 compass component.");
         Food += 20;
