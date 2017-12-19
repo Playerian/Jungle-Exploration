@@ -24,6 +24,10 @@ var TomatoSatis = false;
 var Reinhardt = false;
 var Snowman = false;
 var SnowmanRescue = 0;
+var InRabbit = false;
+var RabbitSaved = 0;
+var RabbitCooked = 0;
+var RabbitMet = 0;
 
 //Function declare
     //Shortcuts
@@ -224,8 +228,21 @@ function SnowmanR(){
     $(".B").hide();
     $("#b5").show();
     $("#b6").show();
+    $("#b5").html("Restore");
+    $("#b6").html("Don't Restore");
+}
+
+function Rabbit(){
+    Say("You see a rabbit lying on the ground, injured. Do you want to save it?");
+    $(".B").hide();
+    $("#b5").show();
+    $("#b6").show();
+    $("#b7").show();
     $("#b5").html("Rescue");
-    $("#b6").html("Don't Rescue");
+    $("#b6").html("Cook");
+    $("$b7").html("Ignore");
+    InRabbit = true;
+    RabbitMet += 1;
 }
 
     //Uncommon Events
@@ -356,24 +373,51 @@ $("#b4").click(function(){
 }); 
 
 //Other Buttons
-    //Snowman Events
+    //Button 5
     $('#b5').click(function(){
-        Food += 1;
+        //Snowman Function
         if (Snowman === true && SnowmanRescue === 0){
             SnowmanRescue = true;
             $(".B").show();
             Say("You reshape the snowman, it looks like it's smiling at you!");
            $("#b5").hide();
            $("#b6").hide();
+        //Rabbit Function
+        if (InRabbit === true){
+            Say("You feed some food to the rabbit, looks like its healing up!");
+            Food -= 1;
+            RabbitSaved += 1;
+            $(".B3").hide();
+            $(".B").show();
+        }
         }
     });
+    //Button 6
     $("#b6").click(function(){
+        //Snowman Function
         if (Snowman === true && SnowmanRescue === 0){
             SnowmanRescue = false;
             $(".B").show();
             Say("You ignore the snowman, looks like the snowman doesn't like you anymore.");
             $("#b5").hide();
             $("#b6").hide();
+        }
+        //Rabbit Function
+        if (InRabbit === true){
+            Say("You cook the rabbit and eat it! Delicious!");
+            Food += 3;
+            RabbitCooked += 1;
+            $(".B3").hide();
+            $(".B").show();
+        }
+    });
+    //Button 7
+    $("#b6").click(function(){
+        //Rabbit Function
+        if (InRabbit === true){
+            Say("You ignore the rabbit and continue to explore the foggy jungle.");
+            $(".B3").hide();
+            $(".B").show();
         }
     });
 
@@ -397,7 +441,7 @@ $(".B").click(function(){
             Snowman = true;
             SnowmanR();
         } else {
-            Events("Foggy","Bump","SmallTree","Slip","Bear","Pee","Banana","Weaponing");
+            Events("Foggy","Bump","SmallTree","Slip","Bear","Pee","Banana","Weaponing","Rabbit");
         }
         return;
     }
