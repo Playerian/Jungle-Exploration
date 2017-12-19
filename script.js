@@ -431,7 +431,8 @@ $(".B").click(function(){
     if ( (X !== 0 || Y !== 0) && Step !== 10 && !(BeastFind === false && X >= 100) && !(BeastX === X && BeastY === Y) &&  
        !( Math.pow(X-5, 2)+Math.pow(Y-15,2) <= 20 && Plane === false ) && !(BeastStep === false && X >= 35) && !(TombA === false && X === -27 && Y <= 10) &&
        !(TombB === false && X >= 10 && Y === 36) && !(TombC === false && X === -27 && Y === 36) && !(Food > 100 && TomatoSatis === false) && 
-       !(InFog === false && Y <= -75) && !(InFog === true) && !(X === 23 && Y === 4 && Reinhardt === false) 
+       !(InFog === false && Y <= -75) && !(InFog === true) && !(X === 23 && Y === 4 && Reinhardt === false)  &&
+       !(DroppedSupply === false && Math.pow(3*X+10, 2)+Math.pow(Y-3,2) <= 12)
        ){
     Events("Nothing","Nothing","Nothing","Shrub","Shrub","Herb","Herb","Wilding","Wilding","Monkey","Monkey","Sharpen","Sharpen","Compass");
         //Total of 14
@@ -511,6 +512,13 @@ $(".B").click(function(){
         Reinhardt = true;
         Say("you found a mysterious blue covered book near the remain of a dead horse. upon opening the book, two lightnings strikes appear before you. before you realized what you had done. Suddenly, you hear someone shouted: magic is everything! You got blown fly out. Now you know, this thing should not be touched, because its not made on Earth. ");
         Food -= 10;    
+    }
+    
+    //DroppedSupply
+    if (DroppedSupply === false && Math.pow(3*X+10, 2)+Math.pow(Y-3,2) <= 12){
+        Say("You tripped. Then you see a yellow crate lying on the ground with some dust cover on it. You open the crate up, there is some supplies inside, so you take it.");
+        Food += 10;
+        DroppedSupply = true;
     }
     
     //Beast Step
