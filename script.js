@@ -240,7 +240,7 @@ function Rabbit(){
     $("#b7").show();
     $("#b5").html("Rescue");
     $("#b6").html("Cook");
-    $("$b7").html("Ignore");
+    $("#b7").html("Ignore");
     InRabbit = true;
     RabbitMet += 1;
 }
@@ -412,7 +412,7 @@ $("#b4").click(function(){
         }
     });
     //Button 7
-    $("#b6").click(function(){
+    $("#b7").click(function(){
         //Rabbit Function
         if (InRabbit === true){
             Say("You ignore the rabbit and continue to explore the foggy jungle.");
@@ -671,6 +671,6 @@ $(".B").click(function(){
         Food = 0;
         $("#Food").html("Food: "+Food);
         $(".B").hide();
-        Say("You starve to death!");
+        $("Body").append("You starve to death!");
     }
 });
