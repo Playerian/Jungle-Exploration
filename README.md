@@ -52,6 +52,8 @@ know what is that looks like. Well, they are still, considerably, humans. Someho
 
   _One quick story, I saw someone in the Black Village that looks like my long time friend, Bold. What looks like means is that his hair style is pretty similar. What interest me is that I found Bold's pendant in his house. Now I really think that he is Bold, but I was not sure. I try to ask him directly, he doesn't answer anything. After that, I give up trying, just knowing that he is fine is enough for me.
 
+# About the Roman Aura
+  _The Roman Aura keeps people alive, you know that right? But I after my research, not all people will be kept alive by Roman Aura, only some, but they all got a same characteristic: the will to live. People without the will to live will be treated as a lost soul, not dead, not alive, only merely a human shape. They also will slowly lose theor memory, little bu little, as they can not gain more. And yes, they're the black villagers. My friend, Bold, also is
 # The Poem:
 /*
 we voyage far
