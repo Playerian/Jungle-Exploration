@@ -44,6 +44,14 @@ _Dr.Italic_
 
 _Best Regard_
 
+# About the Black Village
+  _You know about the Black Village right? There are a lots of mystery about this village, but one thing can be sure. If you get to this
+Black Village, you will know what I meant. The buildings are white, but in contrast, all villagers are black, pure black. It's not like
+their skin color is black or anything, but their whole body, is black, I attached an illustration on the back of the envelop to let you
+know what is that looks like. Well, they are still, considerably, humans. Somehow, they can't leave the Black Village, its like a special force that holds them there. _
+
+  _One quick story, I saw someone in the Black Village that looks like my long time friend, Bold. What looks like means is that his hair style is pretty similar. What interest me is that I found Bold's pendant in his house. Now I really think that he is Bold, but I was not sure. I try to ask him directly, he doesn't answer anything. After that, I give up trying, just knowing that he is fine is enough for me.
+
 # The Poem:
 /*
 we voyage far
