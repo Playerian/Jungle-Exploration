@@ -385,7 +385,7 @@ $("#b4").click(function(){
         }
         //Rabbit Function
         if (InRabbit === true){
-            Say("You feed some food to the rabbit, looks like its healing up!");
+            Say("You feed some food to the rabbit, looks like it's healing up!");
             Food -= 1;
             RabbitSaved += 1;
             $(".B3").hide();
