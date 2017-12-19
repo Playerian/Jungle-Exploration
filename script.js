@@ -284,7 +284,7 @@ function Origin(){
     Murmur("Just go north, its where the ruin lays, but you'll never find it unless you get the compass.");
     }
     if (Origing === 33){
-    Murmur("But, you can get into the coliseum, left to the ruin.");
+    Murmur("But, you can get into the coliseum, left to the ruin, north-east to the dangerous wild.");
     }
     if (Origing === 36){
     Murmur("I think, my grave is somewhere in the jungle. Haha, I wonder that guy will or will not give me a grave.");
