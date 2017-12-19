@@ -382,6 +382,7 @@ $("#b4").click(function(){
             Say("You reshape the snowman, it looks like it's smiling at you!");
            $("#b5").hide();
            $("#b6").hide();
+        }
         //Rabbit Function
         if (InRabbit === true){
             Say("You feed some food to the rabbit, looks like its healing up!");
@@ -389,7 +390,7 @@ $("#b4").click(function(){
             RabbitSaved += 1;
             $(".B3").hide();
             $(".B").show();
-        }
+            InRabbit = false;
         }
     });
     //Button 6
@@ -409,6 +410,7 @@ $("#b4").click(function(){
             RabbitCooked += 1;
             $(".B3").hide();
             $(".B").show();
+            InRabbit = false;
         }
     });
     //Button 7
@@ -418,6 +420,7 @@ $("#b4").click(function(){
             Say("You ignore the rabbit and continue to explore the foggy jungle.");
             $(".B3").hide();
             $(".B").show();
+            InRabbit = false;
         }
     });
 
