@@ -269,22 +269,22 @@ function Origin(){
     Murmur("Hmm... did you know something about me already?");
     }
     if (Origing === 18){
-    Murmur("Well...");
+    Murmur("Well... I came here by plane, if that satisfy you.");
     }
     if (Origing === 21){
     Murmur("Maybe, just maybe, you know that I will say something?");
     }
     if (Origing === 24){
-    Murmur("Fine, I'll say that you are going to find the compass components.");
+    Murmur("Fine, I'll say that you are going to find the compass components and get to that mystery ruin.");
     }
     if (Origing === 27){
-    Murmur("You stil doing that?");
+    Murmur("You stil doing that? I thought that is enough information already.");
     }
     if (Origing === 30){
     Murmur("Just go north, its where the ruin lays, but you'll never find it unless you get the compass.");
     }
     if (Origing === 33){
-    Murmur("But, you can get into the coliseum.");
+    Murmur("But, you can get into the coliseum, left to the ruin.");
     }
     if (Origing === 36){
     Murmur("I think, my grave is somewhere in the jungle. Haha, I wonder that guy will or will not give me a grave.");
