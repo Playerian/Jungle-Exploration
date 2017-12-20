@@ -400,8 +400,8 @@ $("#b4").click(function(){
         ///Beast Cave Function -- Rescue
         if (BeastDeter === true){
             Say("You feed them a lots of food, they happily eat it and escape the beast's cave.");
-            BeastDeter === false;
-            Food /* 3;
+            BeastDeter = false;
+            Food /= 3;
             $(".B3").hide();
             $(".B").show();
         }
