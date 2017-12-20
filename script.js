@@ -404,6 +404,7 @@ $("#b4").click(function(){
             Food /= 3;
             $(".B3").hide();
             $(".B").show();
+            Caveman = "Rescue";
         }
     });
     //Button 6
@@ -425,6 +426,14 @@ $("#b4").click(function(){
             $(".B").show();
             InRabbit = false;
         }
+        ///Beast Cave Function -- Ignore
+        if (BeastDeter === true){
+            Say("You ignore them and get out from the cave, looks like the people no longer has the strength to get out.");
+            BeastDeter = false;
+            $(".B3").hide();
+            $(".B").show();
+            Caveman = "Ignore";
+        }
     });
     //Button 7
     $("#b7").click(function(){
@@ -434,6 +443,15 @@ $("#b4").click(function(){
             $(".B3").hide();
             $(".B").show();
             InRabbit = false;
+        }
+        ///Beast Cave Function -- Slaughter
+        if (BeastDeter === true){
+            Say("You kill them all without mercy. Then you cook them fresh and alive!");
+            BeastDeter = false;
+            Fppd += 80;
+            $(".B3").hide();
+            $(".B").show();
+            Caveman = "Killed";
         }
     });
 
