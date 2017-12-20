@@ -465,6 +465,7 @@ $("#b4").click(function(){
             $(".B3").hide();
             $(".B").show();
             Caveman = "Killed";
+            Murmur("You are so into the way of cannibalism, they are human too.");
         }
     });
 
