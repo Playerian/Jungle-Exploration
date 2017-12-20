@@ -448,7 +448,7 @@ $("#b4").click(function(){
         if (BeastDeter === true){
             Say("You kill them all without mercy. Then you cook them fresh and alive!");
             BeastDeter = false;
-            Fppd += 80;
+            Food += 80;
             $(".B3").hide();
             $(".B").show();
             Caveman = "Killed";
@@ -462,7 +462,7 @@ $(".B").click(function(){
        !( Math.pow(X-5, 2)+Math.pow(Y-15,2) <= 20 && Plane === false ) && !(BeastStep === false && X >= 35) && !(TombA === false && X === -27 && Y <= 10) &&
        !(TombB === false && X >= 10 && Y === 36) && !(TombC === false && X === -27 && Y === 36) && !(Food > 100 && TomatoSatis === false) && 
        !(InFog === false && Y <= -75) && !(InFog === true) && !(X === 23 && Y === 4 && Reinhardt === false)  &&
-       !(DroppedSupply === false && Math.pow(3*X+10, 2)+Math.pow(Y-3,2) <= 12)
+       !(DroppedSupply === false && Math.pow(3*X+10, 2)+Math.pow(Y-3,2) <= 12) && !(BeastCave === false && X >= 100)
        ){
     Events("Nothing","Nothing","Nothing","Shrub","Shrub","Herb","Herb","Wilding","Wilding","Monkey","Monkey","Sharpen","Sharpen","Compass");
         //Total of 14
