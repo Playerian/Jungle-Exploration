@@ -36,6 +36,7 @@ var Caveman = "Nothing";
 var CaveOutcome1 = false;
 var CaveOutcome2 = false;
 var CavemanStep = 0;
+var InDeep = false;
 
 //Function declare
     //Shortcuts
@@ -45,6 +46,8 @@ function Say(word){
 }
 
 function Murmur(puns){
+    $("#wiseword").css("font-size" , "10px");
+    $("#wiseword").css("border" , "5px solid black");
     $("#wiseword").show();
     $("#wiseword").html(puns);
 }
@@ -307,6 +310,9 @@ function Origin(){
     }
     if (Origing === 100){
     Murmur("VERY VERY LAST thing that I'm going to say, where the two tomb cross at the direction of the first two, the third tomb is in the way.");
+    }
+    if (Origing >= 1000){
+    Murmur("Your confidence and determination has give me the knowledge that you should go to bed.");
     }
 }
 
@@ -659,6 +665,9 @@ $(".B").click(function(){
     if (BeastCave === true && CaveOutcome2 === false && X === 100 && CavemanStep >= 20 && BeastKilled === false){
         CaveOutcome2 = true;
         Say("You see the beast's cave again, but inside, all totally black people are dead.");
+        if (Caveman !== "Ignore"){
+            Murmur("You, you never did that right?");
+        }
     }
 });
 
@@ -671,8 +680,6 @@ $(".B2").click(function(){
     //Dialogue
     if (Randoming(0,10) < 2 && (X !== 0 && Y !== 0) && Dialogue < 25  ){
         Dialogue ++;
-        $("#wiseword").css("font-size" , "15px");
-        $("#wiseword").css("border" , "5px dotted black");
         if (Dialogue === 1){
             Murmur("Well, You asked who am I, and why I come to this jungle?");
         }
@@ -748,6 +755,8 @@ $(".B2").click(function(){
         if (Dialogue === 25){
             Murmur("Now... kill me... as fast as you can...");
         }
+        $("#wiseword").css("font-size" , "15px");
+        $("#wiseword").css("border" , "5px dotted black");
     }
     
     //Victory?
