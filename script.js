@@ -469,7 +469,8 @@ $(".B").click(function(){
        !(TombB === false && X >= 10 && Y === 36) && !(TombC === false && X === -27 && Y === 36) && !(Food > 100 && TomatoSatis === false) && 
        !(InFog === false && Y <= -75) && !(InFog === true) && !(X === 23 && Y === 4 && Reinhardt === false)  &&
        !(DroppedSupply === false && Math.pow(3*X+10, 2)+Math.pow(Y-3,2) <= 12) && !(BeastCave === false && X >= 100) &&
-       !(BeastCave === true && CaveOutcome1 === false && Y <= 50 && Caveman==="Rescue") && !(BeastCave === true && CaveOutcome2 === false && Y === 100 && CavemanStep >= 20 && BeastKilled === false)
+       !(BeastCave === true && CaveOutcome1 === false && X <= 50 && Caveman==="Rescue") && 
+       !(BeastCave === true && CaveOutcome2 === false && X === 100 && CavemanStep >= 20 && BeastKilled === false)
         
        ){
     Events("Nothing","Nothing","Nothing","Shrub","Shrub","Herb","Herb","Wilding","Wilding","Monkey","Monkey","Sharpen","Sharpen","Compass");
@@ -639,7 +640,7 @@ $(".B").click(function(){
     }
     
     //Beast Cave Outcome1
-    if (BeastCave === true && CaveOutcome1 === false && Y <= 50 && Caveman==="Rescue"){
+    if (BeastCave === true && CaveOutcome1 === false && X <= 50 && Caveman==="Rescue"){
         CaveOutcome1 = true;
         if (BeastKilled === true){
             Say("You saw some totally black people walking toward south, looks like the group that you has been released! They have the same destination, that's what you observed. One of them talk with you: There is a place that you can find the lost king in the west, that's what I heard from someone.");
@@ -654,7 +655,7 @@ $(".B").click(function(){
     }
     
     //Beast Cave Outcome2
-    if (BeastCave === true && CaveOutcome2 === false && Y === 100 && CavemanStep >= 20 && BeastKilled === false){
+    if (BeastCave === true && CaveOutcome2 === false && X === 100 && CavemanStep >= 20 && BeastKilled === false){
         CaveOutcome2 = true;
         Say("You see the beast's cave again, but inside, all totally black people are dead.");
     }
