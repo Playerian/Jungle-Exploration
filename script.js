@@ -12,6 +12,7 @@ var BeastHealth = 5;
 var BeastX = NaN;
 var BeastY = NaN;
 var BeastDirection = NaN;
+var BeastKilled = false;
 var Plane = false;
 var Dialogue = 0;
 var TombA = false;
@@ -29,6 +30,9 @@ var RabbitSaved = 0;
 var RabbitCooked = 0;
 var RabbitMet = 0;
 var DroppedSupply = false;
+var BeastCave = false;
+var BeastDeter = false;
+var Caveman = "Nothing";
 
 //Function declare
     //Shortcuts
@@ -376,7 +380,7 @@ $("#b4").click(function(){
 //Other Buttons
     //Button 5
     $('#b5').click(function(){
-        //Snowman Function
+        //Snowman Function -- Restore
         if (Snowman === true && SnowmanRescue === 0){
             SnowmanRescue = true;
             $(".B").show();
@@ -384,7 +388,7 @@ $("#b4").click(function(){
            $("#b5").hide();
            $("#b6").hide();
         }
-        //Rabbit Function
+        //Rabbit Function -- Rescue
         if (InRabbit === true){
             Say("You feed some food to the rabbit, looks like its healing up!");
             Food -= 1;
@@ -392,6 +396,14 @@ $("#b4").click(function(){
             $(".B3").hide();
             $(".B").show();
             InRabbit = false;
+        }
+        ///Beast Cave Function -- Rescue
+        if (BeastDeter === true){
+            Say("You feed them a lots of food, they happily eat it and escape the beast's cave.");
+            BeastDeter === false;
+            Food /* 3;
+            $(".B3").hide();
+            $(".B").show();
         }
     });
     //Button 6
@@ -574,14 +586,30 @@ $(".B").click(function(){
         Food -= 4;
         }
         
+        //Beast Killing
         if (BeastHealth <= 0){
         Say("You slain the beast! You got tons of fresh meat, and you found some compass component inside the beast's body!");
         BeastX = NaN;
         BeastY = NaN;
         BeastDirection = NaN;
+        BeastKilled = true;
         Food += 50;
         CC += 3;
         }
+    }
+    
+    //Beast Cave
+    if (BeastCave === false && X >= 100){
+        Say("You see a cave and you get in it, inside, you found some totally black people. Indicated by the footprints, you know that this is the cave of the beast. What do you want to do?");
+        BeastCave = true;
+        BeastDeter = true;
+        $(".B").hide();
+        $("#b5").show();
+        $("#b6").show();
+        $("#b7").show();
+        $("#b5").html("Give them food and rescue them");
+        $("#b6").html("Ignore them and get out");
+        $("#b7").html("Kill them and cook their flesh.");
     }
 });
 
