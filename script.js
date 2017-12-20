@@ -332,7 +332,7 @@ function Tombc(){
 }
 
 function TomatoMan(){
-    if (TomatoFood < 500){
+    if (TomatoFood < 200){
     Say("You see a person with red skin and green hair with a unnaturally big smile. He sees your food and stole tons of it, your blade has no use against him. You just watch him run away.");
     TomatoFood += Math.round(Food / 2);
     Food = Math.round(Food / 2);
@@ -407,7 +407,8 @@ $("#b4").click(function(){
         if (BeastDeter === true){
             Say("You feed them a lots of food, they happily eat it and escape the beast's cave.");
             BeastDeter = false;
-            Food /= 3;
+            Food /= 2;
+            Food = Math.round(Food);
             $(".B3").hide();
             $(".B").show();
             Caveman = "Rescue";
