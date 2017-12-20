@@ -33,7 +33,9 @@ var DroppedSupply = false;
 var BeastCave = false;
 var BeastDeter = false;
 var Caveman = "Nothing";
-var CaveOutcome = false;
+var CaveOutcome1 = false;
+var CaveOutcome2 = false;
+var CavemanStep = 0;
 
 //Function declare
     //Shortcuts
@@ -350,6 +352,9 @@ $(".B").click(function(){
     $("#wiseword").hide();
     $("#image").hide();
     Step ++;
+    if (Caveman === "Ignore"){
+    CavemanStep ++;
+    }
 });
 
 //Clicking
@@ -464,7 +469,8 @@ $(".B").click(function(){
        !(TombB === false && X >= 10 && Y === 36) && !(TombC === false && X === -27 && Y === 36) && !(Food > 100 && TomatoSatis === false) && 
        !(InFog === false && Y <= -75) && !(InFog === true) && !(X === 23 && Y === 4 && Reinhardt === false)  &&
        !(DroppedSupply === false && Math.pow(3*X+10, 2)+Math.pow(Y-3,2) <= 12) && !(BeastCave === false && X >= 100) &&
-       !(BeastCave === true && CaveOutcome === false && Y <= 50)
+       !(BeastCave === true && CaveOutcome1 === false && Y <= 50 && Caveman="Rescue") && !(BeastCave === true && CaveOutcome2 === false && Y === 100 && CavemanStep >= 20 && BeastKilled === false)
+        
        ){
     Events("Nothing","Nothing","Nothing","Shrub","Shrub","Herb","Herb","Wilding","Wilding","Monkey","Monkey","Sharpen","Sharpen","Compass");
         //Total of 14
@@ -632,11 +638,25 @@ $(".B").click(function(){
         $("#b7").html("Kill them and cook their flesh.");
     }
     
-    //Beast Cave Outcome
-    if (BeastCave === true && CaveOutcome === false && Y <= 50){
-        CaveOutcome = true;
-        if (Caveman === ""){
+    //Beast Cave Outcome1
+    if (BeastCave === true && CaveOutcome1 === false && Y <= 50 && Caveman="Rescue"){
+        CaveOutcome1 = true;
+        if (BeastKilled === true){
+            Say("You saw some totally black people walking toward south, looks like the group that you has been released! They have the same destination, that's what you observed. One of them talk with you: There is a place that you can find the lost king in the west, that's what I heard from someone.");
+            } else {
+            Say("You see the beast slaughtering the totally black people! You are mad, so you get up and kill the beast. Although the beast dies, tons of totally black people are dead.");
+            Food += BeastHealth * 15;
+            BeastX = NaN;
+            BeastY = NaN;
+            BeastDirection = NaN;
+            BeastKilled = true;
             }
+    }
+    
+    //Beast Cave Outcome2
+    if (BeastCave === true && CaveOutcome2 === false && Y === 100 && CavemanStep >= 20 && BeastKilled === false){
+        CaveOutcome2 = true;
+        Say("You see the beast's cave again, but inside, all totally black people are dead.");
     }
 });
 
