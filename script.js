@@ -319,15 +319,15 @@ function Vine(){
 
 function EatLeaf(){
     Randomer = Randoming(0,10);
-    if (Randoming <= 5){
+    if (Randomer <= 5){
     Say("You eat some leaves because they're blocking your eyesight.");
     Food ++;
     }
-    if (Randoming <= 3){
+    if (Randomer <= 3){
     Say("You eat some leaves, they are tasty. You found out that this tree's leaves are actually pretty edible");
     Food ++;
     }
-    if (Randoming === 0){
+    if (Randomer === 0){
     Say("You eat some leaves, then you found out that this is the best thing you can eat in the deep jungle, so you eat some more.");
     Food ++;
     Murmur("I regret that I didn't try this when I was voyaging here.");
@@ -337,6 +337,11 @@ function EatLeaf(){
 function SharpStone(){
     Say("You sharpen your blade on a sharp stone, it gets very, very sharp!");
     WD += 3;
+}
+
+function Strawberries(){
+    Say("You saw some strawberries and pick them and eat them. They are so tasty.");
+    Food += 2;
 }
 
     //Uncommon Events
@@ -657,7 +662,7 @@ function EventList(){
     }
     //Deep Jungle Events
     if (InDeep === true && X <= -100){
-            Events("ThickWood","BigLog","Snake","BlackOut","Swimming","Gathering","Vine","EatLeaf","SharpStone");
+            Events("ThickWood","BigLog","Snake","BlackOut","Swimming","Gathering","Vine","EatLeaf","EatLeaf","SharpStone","Strawberries");
         return;
     }
     //Normal Events
