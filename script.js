@@ -753,14 +753,15 @@ $(".B").click(function(){
             Murmur("You, you never did that right?");
         }
     }
+    
+    //Black Village
+    if( X === 50 && Y === -30 ){
+    Say ("You have encountered the Black Village, a place where the shadows of the past take form.....    You trade with them and can get weapons in exchange for food."); 
+    //button to exchange if want to.... your choice if you want it
+    }
 });
 
-//Black Village
-if( X === 10 && Y === 30 ){
-  Say ("You have encountered the Black Village, a place where the shadows of the past take form.....    You trade with them and can get weapons in exchange for food."); 
-    $(".trade").show
-//button to exchange if want to.... your choice if you want it
-}
+
 
 $(".B2").click(function(){
     GainFood(-1);
