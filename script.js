@@ -68,6 +68,32 @@ function Image(lol){
     if (lol === "tombC"){
     $("#image").html("<img src='https://rawgit.com/Playerian/Jungle-Exploration/master/MapC.png' >");
     }
+    if (lol === "V1"){
+    $("#image").html("<img src='https://rawgit.com/Playerian/Jungle-Exploration/master/BlackVillager1.png' >");
+    }
+    if(lol === "V2" ){
+        $("#image").html("<img src= 'https://rawgit.com/Playerian/Jungle-Exploration/master/BlackVillager2.png' >");
+    }
+     if(lol === "V3" ){
+        $("#image").html("<img src= 'https://rawgit.com/Playerian/Jungle-Exploration/master/BlackVillager3.png' >");
+    }
+    
+     if(lol === "V4" ){
+        $("#image").html("<img src= 'https://rawgit.com/Playerian/Jungle-Exploration/master/BlackVillager4.png' >");
+    }
+    
+    if(lol === "V5" ){
+        $("#image").html("<img src= 'https://rawgit.com/Playerian/Jungle-Exploration/master/BlackVillager5.png' >");
+    }
+    
+    if(lol === "V6" ){
+        $("#image").html("<img src= 'https://rawgit.com/Playerian/Jungle-Exploration/master/BlackVillager6.png' >");
+    }
+    
+    if(lol === "Vfake" ){
+        $("#image").html("<img src= 'https://rawgit.com/Playerian/Jungle-Exploration/master/BlackVillagerFake.png' >");
+    }
+    
 }
 
 function GainFood(fooding){
