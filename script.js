@@ -531,8 +531,8 @@ $(".B").click(function(){
        !(InFog === false && Y <= -75) && !(InFog === true) && !(X === 23 && Y === 4 && Reinhardt === false)  &&
        !(DroppedSupply === false && Math.pow(3*X+10, 2)+Math.pow(Y-3,2) <= 12) && !(BeastCave === false && X >= 100) &&
        !(BeastCave === true && CaveOutcome1 === false && X <= 50 && Caveman==="Rescue") && 
-       !(BeastCave === true && CaveOutcome2 === false && X === 100 && CavemanStep >= 20 && BeastKilled === false)
-        
+       !(BeastCave === true && CaveOutcome2 === false && X === 100 && CavemanStep >= 20 && BeastKilled === false) &&
+       !(InDeep === false && X <= -100) && !(InDeep === true)
        ){
     Events("Nothing","Nothing","Nothing","Shrub","Shrub","Herb","Herb","Wilding","Wilding","Monkey","Monkey","Sharpen","Sharpen","Compass");
         //Total of 14
@@ -548,6 +548,12 @@ $(".B").click(function(){
         } else {
             Events("Foggy","Bump","SmallTree","Slip","Bear","Pee","Banana","Weaponing","Rabbit");
         }
+        return;
+    }
+    
+    //Deep Jungle Events
+    if (InDeep === true && X <= -100){
+            Events("Foggy","Bump","SmallTree","Slip","Bear","Pee","Banana","Weaponing","Rabbit");
         return;
     }
     
@@ -605,6 +611,18 @@ $(".B").click(function(){
     if (InFog === true && Y > -75){
         Say("You are out from the foggy area, you look behind, you hope you never go in there again.");
         InFog = false;
+    }
+    
+    //Go into the Deep!
+    if (InDeep === false && X <= -100){
+        Say("You come into an area that has thicker tree than before, you think this is the deep jungle.");
+        InDeep = true;
+    }
+    
+    //I'm Out again!
+    if (InDeep === true && X > -100){
+        Say("You are out from the deep jungle.");
+        InDeep = false;
     }
     
     //Reinhardt
