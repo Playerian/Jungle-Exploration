@@ -264,8 +264,13 @@ function Rabbit(){
 
     //Deep Jungle Events
 function ThickWood(){
+    if (WD > 0){
     Say("The trees are too thick, you can't go through it, so you use your weapon to clean one way up");
     WD --;
+    } else {
+    Say("You stomped onto a tree, lost some food, you thought some squirrel steal them.");
+    Food --;
+    }
 }
 
 function BigLog(){
@@ -280,7 +285,7 @@ function BigLog(){
 function Snake(){
     if (WD >= 3){
     Say("A snake attempt to attack you, you block it off with a weapon and finish it off.");
-    Food += 1;
+    Food += 2;
     SnakeKilled ++;
     } else {
     Say("A snake attacks you, you are injured, so you rested and eat some food during your rest");
@@ -293,8 +298,8 @@ function BlackOut(){
 }
 
 function Swimming(){
-    Say("You see a river in the deep jungle, you decided to relax and swim.");
-    Food ++;
+    Say("You see a river in the deep jungle, you decided to relax and swim. You also caught some fish.");
+    Food += 3;
 }
 
 function Gathering(){
@@ -303,13 +308,30 @@ function Gathering(){
 }
 
 function Vine(){
+    if (WD > 0){
     Say("The vines from the tree is too thick, you decided to cut some down with your weapon.");
     WD --;
+    } else {
+    Say("You stuck in the vines and can't get out, you have to tear them down with your bare hand. You feel exhausted, so you eat one more food");
+    Food --;
+    }
 }   
 
 function EatLeaf(){
-    Say("You eat some leave because they're blocking your eyesight.");
+    Randomer = Randoming(0,10);
+    if (Randoming <= 5){
+    Say("You eat some leaves because they're blocking your eyesight.");
     Food ++;
+    }
+    if (Randoming <= 3){
+    Say("You eat some leaves, they are tasty. You found out that this tree's leaves are actually pretty edible");
+    Food ++;
+    }
+    if (Randoming === 0){
+    Say("You eat some leaves, then you found out that this is the best thing you can eat in the deep jungle, so you eat some more.");
+    Food ++;
+    Murmur("I regret that I didn't try this when I was voyaging here.");
+    }
 }
 
 function SharpStone(){
