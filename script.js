@@ -39,6 +39,7 @@ var CavemanStep = 0;
 var InDeep = false;
 var SnakeKilled = 0;
 var MonkeyKilled = 0;
+var WalkVillage = false;
 
 $("#b8").hide();
 $("#b9").hide();
@@ -683,6 +684,7 @@ function EventList(){
             $("#b11").show();
             $("#b11").html("exit the village");
             $("#b1" + "#b2" + "#b3" + "#b4").hide();
+            WalkVillage = true;
         return;
     }
 
@@ -873,6 +875,13 @@ $("#b4").click(function(){
     Say("LOL. Said the villager");
     }
 }); 
+    //Button 10
+    $("#b10").click(function(){
+        if (WalkVillage === true;){
+            Randomer = Randoming(0,10);
+            Say("");
+        }
+    }
 
 //Everystep you take after
 $(".B").click(function(){
