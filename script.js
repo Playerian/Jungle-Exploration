@@ -40,6 +40,9 @@ var InDeep = false;
 var SnakeKilled = 0;
 var MonkeyKilled = 0;
 
+$("#b8").hide
+$("#b9").hide
+
 //Function declare area
     //Shortcuts
 function Say(word){
@@ -647,9 +650,27 @@ function EventList(){
     //Black Village
     if( X === 50 && Y === -30 ){
     Say ("You have encountered the Black Village, a place where the shadows of the past take form.....    You trade with them and can get weapons in exchange for food."); 
-    //button to exchange if want to.... your choice if you want it
+            $("#b8").show
+            $("#b9").show  
+            $("#b1" + "#b2" + "#b3" + "#b4").hide();
         return;
     }
+    
+    $("#b8").click(function(){
+    Food - 3
+    WD + 5
+    $("#b8").hide()
+    $("#b9").hide()
+    $("#b1" + "#b2" + "#b3" + "#b4").show();
+}); 
+
+$("#b9").click(function(){
+    $("#b8").hide()
+    $("#b9").hide()
+    $("#b1" + "#b2" + "#b3" + "#b4").show();
+}); 
+
+    
     //Fog Events
     if (InFog === true && Y <= -75){
         //Snowman Or Not?
