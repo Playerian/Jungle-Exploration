@@ -414,169 +414,16 @@ function Events(){
     eval(arguments[Randoming(0,arguments.length-1)]+"()");
 }
 
-//Everystep you take before
-$(".B").click(function(){
-    $("#wiseword").hide();
-    $("#image").hide();
-    Step ++;
-    if (Caveman === "Ignore"){
-    CavemanStep ++;
-    }
-});
-
-//Clicking
-    //North
-$("#b1").click(function(){
-    Y ++;
-});
-
-    //West
-$("#b2").click(function(){
-    X --;
-});
-
-    //East
-$("#b3").click(function(){
-    X ++;
-    if (Randoming(0,10) < 1 && BeastFind === false){
-    $("#wiseword").css("font-size" , "10px");
-    $("#wiseword").css("border" , "5px solid black");
-    Murmur("If you go east you will encounter the beast!");
-    }
-});
-
-    //South
-$("#b4").click(function(){
-    Y --;
-}); 
-
-//Other Buttons
-    //Button 5
-    $('#b5').click(function(){
-        //Snowman Function -- Restore
-        if (Snowman === true && SnowmanRescue === 0){
-            SnowmanRescue = true;
-            $(".B").show();
-            Say("You reshape the snowman, it looks like it's smiling at you!");
-           $("#b5").hide();
-           $("#b6").hide();
-            Murmur("Thank you!");
-        }
-        //Rabbit Function -- Rescue
-        if (InRabbit === true){
-            Say("You feed some food to the rabbit, looks like its healing up!");
-            Food -= 1;
-            RabbitSaved += 1;
-            $(".B3").hide();
-            $(".B").show();
-            InRabbit = false;
-        }
-        ///Beast Cave Function -- Rescue
-        if (BeastDeter === true){
-            Say("You feed them a lots of food, they happily eat it and escape the beast's cave.");
-            BeastDeter = false;
-            Food /= 2.5;
-            Food = Math.round(Food);
-            $(".B3").hide();
-            $(".B").show();
-            Caveman = "Rescue";
-            Murmur("That's a high cost you have pay, don't ever think you deserve something back, that's not good.");
-        }
-    });
-    //Button 6
-    $("#b6").click(function(){
-        //Snowman Function
-        if (Snowman === true && SnowmanRescue === 0){
-            SnowmanRescue = false;
-            $(".B").show();
-            Say("You ignore the snowman, looks like the snowman doesn't like you anymore.");
-            $("#b5").hide();
-            $("#b6").hide();
-            Murmur("...");
-        }
-        //Rabbit Function
-        if (InRabbit === true){
-            Say("You cook the rabbit and eat it! Delicious!");
-            Food += 3;
-            RabbitCooked += 1;
-            $(".B3").hide();
-            $(".B").show();
-            InRabbit = false;
-        }
-        ///Beast Cave Function -- Ignore
-        if (BeastDeter === true){
-            Say("You ignore them and get out from the cave, looks like the people no longer has the strength to get out.");
-            BeastDeter = false;
-            $(".B3").hide();
-            $(".B").show();
-            Caveman = "Ignore";
-            Murmur("Maybe you should treat them as real people.");
-        }
-    });
-    //Button 7
-    $("#b7").click(function(){
-        //Rabbit Function
-        if (InRabbit === true){
-            Say("You ignore the rabbit and continue to explore the foggy jungle.");
-            $(".B3").hide();
-            $(".B").show();
-            InRabbit = false;
-        }
-        ///Beast Cave Function -- Slaughter
-        if (BeastDeter === true){
-            Say("You kill them all without mercy. Then you cook them fresh and alive!");
-            BeastDeter = false;
-            Food += 80;
-            $(".B3").hide();
-            $(".B").show();
-            Caveman = "Killed";
-            Murmur("You are so into the way of cannibalism, they are human too.");
-        }
-    });
-
-//Everystep you take after
-$(".B").click(function(){
-    //Normal Events
-    if ( (X !== 0 || Y !== 0) && Step !== 10 && !(BeastFind === false && X >= 100) && !(BeastX === X && BeastY === Y) &&  
-       !( Math.pow(X-5, 2)+Math.pow(Y-15,2) <= 20 && Plane === false ) && !(BeastStep === false && X >= 35) && !(TombA === false && X === -27 && Y <= 10) &&
-       !(TombB === false && X >= 10 && Y === 36) && !(TombC === false && X === -27 && Y === 36) && !(Food > 100 && TomatoSatis === false) && 
-       !(InFog === false && Y <= -75) && !(InFog === true) && !(X === 23 && Y === 4 && Reinhardt === false)  &&
-       !(DroppedSupply === false && Math.pow(3*X+10, 2)+Math.pow(Y-3,2) <= 12) && !(BeastCave === false && X >= 100) &&
-       !(BeastCave === true && CaveOutcome1 === false && X <= 50 && Caveman==="Rescue") && 
-       !(BeastCave === true && CaveOutcome2 === false && X === 100 && CavemanStep >= 20 && BeastKilled === false) &&
-       !(InDeep === false && X <= -100) && !(InDeep === true)
-       ){
-    Events("Nothing","Nothing","Nothing","Shrub","Shrub","Herb","Herb","Wilding","Wilding","Monkey","Monkey","Sharpen","Sharpen","Compass");
-        //Total of 14
-        return;
-    }
-    //Fog Events
-    if (InFog === true && Y <= -75){
-        //Snowman Or Not?
-        Randomer = Randoming(0,100);
-        if (Randomer < 8 && Snowman === false){
-            Snowman = true;
-            SnowmanR();
-        } else {
-            Events("Foggy","Bump","SmallTree","Slip","Bear","Pee","Banana","Weaponing","Rabbit");
-        }
-        return;
-    }
-    
-    //Deep Jungle Events
-    if (InDeep === true && X <= -100){
-            Events("ThickWood","BigLog","Snake","BlackOut","Swimming","Gathering","Vine","EatLeaf","SharpStone");
-        return;
-    }
-    
-    //Back to the square
-    if (X === 0 && Y === 0){
-    Origin();
-    }
+//Events List (If you want to add event, add to the bottom of this function, on top of Fog Events)
+function EventList(){
     //Fertile Land
     if (Step === 10){
     FertileLand();
         return;
+    }
+    //Back to the square
+    if (X === 0 && Y === 0){
+    Origin();
     }
     //Plane Crush site
     if ( Math.pow(X-5, 2)+Math.pow(Y-15,2) <= 20 && Plane === false ){
@@ -759,6 +606,152 @@ $(".B").click(function(){
     Say ("You have encountered the Black Village, a place where the shadows of the past take form.....    You trade with them and can get weapons in exchange for food."); 
     //button to exchange if want to.... your choice if you want it
     }
+    //Fog Events
+    if (InFog === true && Y <= -75){
+        //Snowman Or Not?
+        Randomer = Randoming(0,100);
+        if (Randomer < 8 && Snowman === false){
+            Snowman = true;
+            SnowmanR();
+        } else {
+            Events("Foggy","Bump","SmallTree","Slip","Bear","Pee","Banana","Weaponing","Rabbit");
+        }
+        return;
+    }
+    //Deep Jungle Events
+    if (InDeep === true && X <= -100){
+            Events("ThickWood","BigLog","Snake","BlackOut","Swimming","Gathering","Vine","EatLeaf","SharpStone");
+        return;
+    }
+    //Normal Events
+    Events("Nothing","Nothing","Nothing","Shrub","Shrub","Herb","Herb","Wilding","Wilding","Monkey","Monkey","Sharpen","Sharpen","Compass");
+        //Total of 14
+        return;
+}
+
+//Everystep you take before
+$(".B").click(function(){
+    $("#wiseword").hide();
+    $("#image").hide();
+    Step ++;
+    if (Caveman === "Ignore"){
+    CavemanStep ++;
+    }
+});
+
+//Clicking
+    //North
+$("#b1").click(function(){
+    Y ++;
+});
+
+    //West
+$("#b2").click(function(){
+    X --;
+});
+
+    //East
+$("#b3").click(function(){
+    X ++;
+    if (Randoming(0,10) < 1 && BeastFind === false){
+    $("#wiseword").css("font-size" , "10px");
+    $("#wiseword").css("border" , "5px solid black");
+    Murmur("If you go east you will encounter the beast!");
+    }
+});
+
+    //South
+$("#b4").click(function(){
+    Y --;
+}); 
+
+//Other Buttons
+    //Button 5
+    $('#b5').click(function(){
+        //Snowman Function -- Restore
+        if (Snowman === true && SnowmanRescue === 0){
+            SnowmanRescue = true;
+            $(".B").show();
+            Say("You reshape the snowman, it looks like it's smiling at you!");
+           $("#b5").hide();
+           $("#b6").hide();
+            Murmur("Thank you!");
+        }
+        //Rabbit Function -- Rescue
+        if (InRabbit === true){
+            Say("You feed some food to the rabbit, looks like its healing up!");
+            Food -= 1;
+            RabbitSaved += 1;
+            $(".B3").hide();
+            $(".B").show();
+            InRabbit = false;
+        }
+        ///Beast Cave Function -- Rescue
+        if (BeastDeter === true){
+            Say("You feed them a lots of food, they happily eat it and escape the beast's cave.");
+            BeastDeter = false;
+            Food /= 2.5;
+            Food = Math.round(Food);
+            $(".B3").hide();
+            $(".B").show();
+            Caveman = "Rescue";
+            Murmur("That's a high cost you have pay, don't ever think you deserve something back, that's not good.");
+        }
+    });
+    //Button 6
+    $("#b6").click(function(){
+        //Snowman Function
+        if (Snowman === true && SnowmanRescue === 0){
+            SnowmanRescue = false;
+            $(".B").show();
+            Say("You ignore the snowman, looks like the snowman doesn't like you anymore.");
+            $("#b5").hide();
+            $("#b6").hide();
+            Murmur("...");
+        }
+        //Rabbit Function
+        if (InRabbit === true){
+            Say("You cook the rabbit and eat it! Delicious!");
+            Food += 3;
+            RabbitCooked += 1;
+            $(".B3").hide();
+            $(".B").show();
+            InRabbit = false;
+        }
+        ///Beast Cave Function -- Ignore
+        if (BeastDeter === true){
+            Say("You ignore them and get out from the cave, looks like the people no longer has the strength to get out.");
+            BeastDeter = false;
+            $(".B3").hide();
+            $(".B").show();
+            Caveman = "Ignore";
+            Murmur("Maybe you should treat them as real people.");
+        }
+    });
+    //Button 7
+    $("#b7").click(function(){
+        //Rabbit Function
+        if (InRabbit === true){
+            Say("You ignore the rabbit and continue to explore the foggy jungle.");
+            $(".B3").hide();
+            $(".B").show();
+            InRabbit = false;
+        }
+        ///Beast Cave Function -- Slaughter
+        if (BeastDeter === true){
+            Say("You kill them all without mercy. Then you cook them fresh and alive!");
+            BeastDeter = false;
+            Food += 80;
+            $(".B3").hide();
+            $(".B").show();
+            Caveman = "Killed";
+            Murmur("You are so into the way of cannibalism, they are human too.");
+        }
+    });
+
+//Everystep you take after
+$(".B").click(function(){
+    EventList();
 });
 
 
