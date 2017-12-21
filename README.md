@@ -24,6 +24,9 @@ Website: https://playerian.github.io/Jungle-Exploration/.
 # Jungle Map(Easily Updated):
 https://www.desmos.com/calculator/g6ghzlkjus
 
+# Javascripts:
+Adding events: For you to add events, go to line 417 or so, and there is a function call event list, then follow the instruction there.
+
 # FAQS:
 Q1: Why the beast drops compass component from its body?
 
