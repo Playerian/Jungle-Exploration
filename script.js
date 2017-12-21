@@ -304,9 +304,14 @@ function Vine(){
     WD --;
 }   
 
-function EatLeave(){
+function EatLeaf(){
     Say("You eat some leave because they're blocking your eyesight.");
     Food ++;
+}
+
+function SharpStone(){
+    Say("You sharpen your blade on a sharp stone, it gets very, very sharp!");
+    WD += 3;
 }
 
     //Uncommon Events
@@ -553,7 +558,7 @@ $(".B").click(function(){
     
     //Deep Jungle Events
     if (InDeep === true && X <= -100){
-            Events("Foggy","Bump","SmallTree","Slip","Bear","Pee","Banana","Weaponing","Rabbit");
+            Events("ThickWood","BigLog","Snake","BlackOut","Swimming","Gathering","Vine","EatLeaf");
         return;
     }
     
