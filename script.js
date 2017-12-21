@@ -424,6 +424,7 @@ function EventList(){
     //Back to the square
     if (X === 0 && Y === 0){
     Origin();
+        return;
     }
     //Plane Crush site
     if ( Math.pow(X-5, 2)+Math.pow(Y-15,2) <= 20 && Plane === false ){
@@ -464,24 +465,28 @@ function EventList(){
     if (InFog === false && Y <= -75){
         Say("You come into a foggy area, you can't even see the road ahead or the leaves above you.");
         InFog = true;
+        return;
     }
     
     //I'm Out!
     if (InFog === true && Y > -75){
         Say("You are out from the foggy area, you look behind, you hope you never go in there again.");
         InFog = false;
+        return;
     }
     
     //Go into the Deep!
     if (InDeep === false && X <= -100){
         Say("You come into an area that has thicker tree than before, you think this is the deep jungle.");
         InDeep = true;
+        return;
     }
     
     //I'm Out again!
     if (InDeep === true && X > -100){
         Say("You are out from the deep jungle.");
         InDeep = false;
+        return;
     }
     
     //Reinhardt
@@ -489,6 +494,7 @@ function EventList(){
         Reinhardt = true;
         Say("you found a mysterious blue covered book near the remain of a dead horse. upon opening the book, two lightnings strikes appear before you. before you realized what you had done. Suddenly, you hear someone shouted: magic is everything! You got blown fly out. Now you know, this thing should not be touched, because its not made on Earth. ");
         Food -= 10;    
+        return;
     }
     
     //DroppedSupply
@@ -496,12 +502,14 @@ function EventList(){
         Say("You tripped. Then you see a yellow crate lying on the ground with some dust cover on it. You open the crate up, there is some supplies inside, so you take it.");
         Food += 10;
         DroppedSupply = true;
+        return;
     }
     
     //Beast Step
     if (BeastStep === false && X >= 35){
         BeastStep = true;
         Say("You found some footprints, looks like those footprints are pointing to the east!");
+        return;
     }
     
     //Beast encounter
@@ -519,6 +527,7 @@ function EventList(){
         BeastY = Y;
         $("#wiseword").css("border" , "5px solid black");
         Murmur("Told Ya, if go east, you encounter the beast!");
+        return;
     }
     
     //Beast Tracking
@@ -561,6 +570,7 @@ function EventList(){
         Food += 50;
         CC += 3;
         }
+        return;
     }
     
     //Beast Cave
@@ -575,6 +585,7 @@ function EventList(){
         $("#b5").html("Give them food and rescue them");
         $("#b6").html("Ignore them and get out");
         $("#b7").html("Kill them and cook their flesh.");
+        return;
     }
     
     //Beast Cave Outcome1
@@ -590,6 +601,7 @@ function EventList(){
             BeastDirection = NaN;
             BeastKilled = true;
             }
+        return;
     }
     
     //Beast Cave Outcome2
@@ -599,12 +611,14 @@ function EventList(){
         if (Caveman !== "Ignore"){
             Murmur("You, you never did that right?");
         }
+        return;
     }
     
     //Black Village
     if( X === 50 && Y === -30 ){
     Say ("You have encountered the Black Village, a place where the shadows of the past take form.....    You trade with them and can get weapons in exchange for food."); 
     //button to exchange if want to.... your choice if you want it
+        return;
     }
     //Fog Events
     if (InFog === true && Y <= -75){
