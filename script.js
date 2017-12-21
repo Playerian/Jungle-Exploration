@@ -322,6 +322,8 @@ function EatLeaf(){
     if (Randomer <= 5){
     Say("You eat some leaves because they're blocking your eyesight.");
     Food ++;
+    } else {
+    Say("You eat some leaves that are blocking your eyesight, they are disgusting and you throw.");
     }
     if (Randomer <= 3){
     Say("You eat some leaves, they are tasty. You found out that this tree's leaves are actually pretty edible");
