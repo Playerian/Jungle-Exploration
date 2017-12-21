@@ -37,6 +37,8 @@ var CaveOutcome1 = false;
 var CaveOutcome2 = false;
 var CavemanStep = 0;
 var InDeep = false;
+var SnakeKilled = 0;
+var MonkeyKilled = 0;
 
 //Function declare
     //Shortcuts
@@ -138,7 +140,8 @@ function Monkey(){
     if ( WD>=5 ){
     Say("A monkey lunge at you, you swung your weapon and killed it. Then you proceed to cook it fresh and easy. However your weapon lose some endurance.");
     WD -= 2;
-    Food += 3;
+    Food += 4;
+    MonkeyKilled += 1;
     }
 }
 
@@ -254,6 +257,56 @@ function Rabbit(){
     $("#b7").html("Ignore");
     InRabbit = true;
     RabbitMet += 1;
+}
+
+    //Deep Jungle Events
+function ThickWood(){
+    Say("The trees are too thick, you can't go through it, so you use your weapon to clean one way up");
+    WD --;
+}
+
+function BigLog(){
+    if (WD === 0){
+    Say("You found a big log! You think it is a very good material for a weapon!");
+    } else {
+    Say("You sharpen your weapon on the big log. It is so good!");
+    }
+     WD += 3;
+}
+
+function Snake(){
+    if (WD >= 3){
+    Say("A snake attempt to attack you, you block it off with a weapon and finish it off.");
+    Food += 1;
+    SnakeKilled ++;
+    } else {
+    Say("A snake attacks you, you are injured, so you rested and eat some food during your rest");
+    Food -= 2;
+    }
+}
+
+function BlackOut(){
+    Say("The woods are too thick, you can't see the road ahead");
+}
+
+function Swimming(){
+    Say("You see a river in the deep jungle, you decided to relax and swim.");
+    Food ++;
+}
+
+function Gathering(){
+    Say("You gather some fruits and vegetables from the deep jungle.");
+    Food += 4;
+}
+
+function Vine(){
+    Say("The vines from the tree is too thick, you decided to cut some down with your weapon.");
+    WD --;
+}   
+
+function EatLeave(){
+    Say("You eat some leave because they're blocking your eyesight.");
+    Food ++;
 }
 
     //Uncommon Events
