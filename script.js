@@ -848,6 +848,30 @@ $("#b4").click(function(){
     if (Randomer === 2){
     Say("The villager walk back.");
     }
+    if (Randomer === 3){
+    Say("The villager think you are a bad person.");
+    }
+    if (Randomer === 4){
+    Say("Why are you asking when you don't when trade? a villager asked.");
+    }
+    if (Randomer === 5){
+    Say("The villager think you're funny.");
+    }
+    if (Randomer === 6){
+    Say("The villager looks at you, looks offended");
+    }
+    if (Randomer === 7){
+    Say("The villager looks at you, think you're funny.");
+    }
+    if (Randomer === 8){
+    Say("The villager think you are dumb.");
+    }
+    if (Randomer === 9){
+    Say("The villager doesn't like you.");
+    }
+    if (Randomer === 10){
+    Say("LOL. Said the villager");
+    }
 }); 
 
 //Everystep you take after
