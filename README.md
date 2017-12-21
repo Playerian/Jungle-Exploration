@@ -27,6 +27,13 @@ https://www.desmos.com/calculator/g6ghzlkjus
 # Javascripts:
 Adding events: For you to add events, go to line 417 or so, and there is a function call event list, then follow the instruction there.
 
+Buttons: there are 3 classes of buttons in html. 
+B is class that only contains north, west, east, and south, they need to be hide if you want to introduce new buttons. 
+B2 is all the buttons, it is associated with css.
+B3 is all the hidden buttons that can be use when you need to introduce new buttons.
+
+There are some hidden buttons in html, like b5, b6, and b7. If you want to add a new button, first, you need to hide all the B class buttons as they are the 4 directions therefore need to be hided. Then you can introduce new buttons by showing different buttons by their id. For a new introduced button to work, first, you need to add a variable to differentiate the event that is happening with other events. Then go to around line 680, there are functions associate with clicking of the hidden buttons. Remember to show all the Bs and hide all the B3s once the event is complete.
+
 # FAQS:
 Q1: Why the beast drops compass component from its body?
 
