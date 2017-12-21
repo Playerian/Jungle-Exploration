@@ -414,7 +414,7 @@ function Events(){
     eval(arguments[Randoming(0,arguments.length-1)]+"()");
 }
 
-//Events List (If you want to add event, add to the bottom of this function, on top of Fog Events)
+//Events List (If you want to add event, add to the bottom of this function, on top of Fog Events. Remember to add return to the bottom of the event, or else it will not work)
 function EventList(){
     //Fertile Land
     if (Step === 10){
