@@ -220,11 +220,13 @@ function Bear(){
 
 function Pee(){
     Say("You decided to take a pee, because nothing can sees you in the fog.");
+    Murmur("You are so nasty, I'm watching you.");
 }
 
 function Banana(){
     Say("You see a big yellow thing coming out of the fog. It's a banana, so you eat it.");
     Food += 1;
+    Murmur("What kind of thing is that.");
 }
 
 function Weaponing(){
@@ -244,6 +246,7 @@ function SnowmanR(){
     $("#b6").show();
     $("#b5").html("Restore");
     $("#b6").html("Don't Restore");
+    Murmur("Can you ...?");
 }
 
 function Rabbit(){
@@ -457,6 +460,7 @@ $("#b4").click(function(){
             Say("You reshape the snowman, it looks like it's smiling at you!");
            $("#b5").hide();
            $("#b6").hide();
+            Murmur("Thank you!");
         }
         //Rabbit Function -- Rescue
         if (InRabbit === true){
@@ -471,11 +475,12 @@ $("#b4").click(function(){
         if (BeastDeter === true){
             Say("You feed them a lots of food, they happily eat it and escape the beast's cave.");
             BeastDeter = false;
-            Food /= 2;
+            Food /= 2.5;
             Food = Math.round(Food);
             $(".B3").hide();
             $(".B").show();
             Caveman = "Rescue";
+            Murmur("That's a high cost you have pay, don't ever think you deserve something back, that's not good.");
         }
     });
     //Button 6
@@ -487,6 +492,7 @@ $("#b4").click(function(){
             Say("You ignore the snowman, looks like the snowman doesn't like you anymore.");
             $("#b5").hide();
             $("#b6").hide();
+            Murmur("...");
         }
         //Rabbit Function
         if (InRabbit === true){
@@ -504,6 +510,7 @@ $("#b4").click(function(){
             $(".B3").hide();
             $(".B").show();
             Caveman = "Ignore";
+            Murmur("Maybe you should treat them as real people.");
         }
     });
     //Button 7
@@ -558,7 +565,7 @@ $(".B").click(function(){
     
     //Deep Jungle Events
     if (InDeep === true && X <= -100){
-            Events("ThickWood","BigLog","Snake","BlackOut","Swimming","Gathering","Vine","EatLeaf");
+            Events("ThickWood","BigLog","Snake","BlackOut","Swimming","Gathering","Vine","EatLeaf","SharpStone");
         return;
     }
     
