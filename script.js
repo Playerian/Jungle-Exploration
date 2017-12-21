@@ -109,7 +109,7 @@ function Nothing(){
     Randomer = Randoming(0,100);
     Food ++;
     if (Randomer <= 25){
-        Say("The calm night had made you feel happier, you don't need to eat food today.");
+        Say("The calm of night makes you feel happier, you don't need to eat food today.");
     } else if (Randomer <= 50 && Randomer >= 26) {
         Say("You ate some peanuts from the ground, tasted good, got 1 food.");
     } else if (Randomer <= 75 && Randomer >= 51) {
@@ -124,7 +124,7 @@ function Shrub(){
     if (Randomer <=50){
     Say("You found a shrub, got 3 foods");
     } else if (Randomer < 75){
-    Say("You found some berry from the shrub, got 3 foods.");
+    Say("You found some berries from the shrub, got 3 foods.");
     } else{
     Say("You found some high-quality fruit from the ground, got 3 foods.");
     }
@@ -136,7 +136,7 @@ function Herb(){
     if (Randomer <= 25){
     Say("You picked a flower from the ground and ate it. Mmm, tasty. (get 2 food)");
     } else if (Randomer > 25 && Randomer <=50) {
-    Say("You picked up a nicely looked plant, get 2 food.");
+    Say("You picked up a nice looking plant, get 2 food.");
     } else if (Randomer > 50 && Randomer <=75) {
     Say("A nut is on the ground, so you picked it up and ate it."); //pun you could say this is nut-thing and eating it to last you a whole day is a little nuts.
     } else {
@@ -162,7 +162,7 @@ function Monkey(){
     }
 
     if ( WD>=1 && WD<=4 ){ // Block off
-    Say("A monkey lunged at you, you block him off with your weapon");
+    Say("A monkey lunged at you, you block him off with your weapon.");
     WD --;
     }
     
