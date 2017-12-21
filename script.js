@@ -652,25 +652,14 @@ function EventList(){
     Say ("You have encountered the Black Village, a place where the shadows of the past take form.....    You trade with them and can get weapons in exchange for food."); 
             $("#b8").show();
             $("#b9").show();
+            $("#b10").show();
+            $("#b10").html("Walk around the village");
+            $("#b11").show();
+            $("#b11").html("exit the village");
             $("#b1" + "#b2" + "#b3" + "#b4").hide();
         return;
     }
-    
-    $("#b8").click(function(){
-    Food -= 3;
-    WD += 5;
-    $("#b8").hide();
-    $("#b9").hide();
-    $("#b1" + "#b2" + "#b3" + "#b4").show();
-}); 
 
-$("#b9").click(function(){
-    $("#b8").hide();
-    $("#b9").hide();
-    $("#b1" + "#b2" + "#b3" + "#b4").show();
-}); 
-
-    
     //Fog Events
     if (InFog === true && Y <= -75){
         //Snowman Or Not?
@@ -813,6 +802,27 @@ $("#b4").click(function(){
             Murmur("You are so into the way of cannibalism, they are human too.");
         }
     });
+
+    //Button 8
+    $("#b8").click(function(){
+    Food -= 3;
+    WD += 5;
+    Say("The villager likes you.");
+}); 
+
+    //Button 9
+    $("#b9").click(function(){
+    Randomer = Randoming(0,10);
+    if (Randomer === 0){
+    Say("The villager doesn't like you.");
+    }
+    if (Randomer === 1){
+    Say("The villager give you a white eye.");
+    }
+    if (Randomer === 2){
+    Say("The villager walk back.");
+    }
+}); 
 
 //Everystep you take after
 $(".B").click(function(){
