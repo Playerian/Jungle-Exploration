@@ -822,6 +822,9 @@ $("#b4").click(function(){
                 if (EventsMet <= 5){
                 $("#word").append("<p>Well, looks like you have met a lot, but the jungle is more than that, explore more.</p>");
                 }
+                if (TombC === true && (TombA = false || TombB = false)){
+                $("#word").append("<p>You should notice that you got a good luck</p>");
+                }
                 if (Reinhardt === true){
                 $("#word").append("<p>You encounter something you shouldn't have.</p>");
                 }
@@ -833,16 +836,30 @@ $("#b4").click(function(){
                 } else if (Origing >= 30){
                         $("#word").append("<p>You should learn to get help more, don't give up!</p>");
                            }
+                if (RabbitSaved === RabbitMet){
+                    $("#word").append("<p>You are too kind to yourself, sometimes you don't need to.</p>");
+                } else if (RabbitSaved + RabbitCooked < RabbitMet / 2){
+                           $("#word").append("<p>Are you too lazy to do anything? Or just too scare for any outcome?</p>");
+                } else if (RabbitCooked > RabbitMet / 2 + RabbitSaved){
+                           $("#word").append("<p>Do some good stuffs, maybe?</p>");
+                }
+                if (SnowmanRescue === true){
+                    $("#word").append("<p>You are too kind</p>");
+                } else if (SnowmanRescue === false) {
+                    $("#word").append("<p>Someone will be sad by your action, too.</p>");
+                           }
+                
                 if (Caveman === "Rescue"){
                 $("#word").append("<p>You are a nice person, atleast you try.</p>");
                 }
                 if (Caveman === "Ignore"){
-                $("#word").append("<p>You are really a person who takes benefit for yourself.</p>");
+                $("#word").append("<p>You are a person who takes benefit for yourself.</p>");
                 }
                 if (Caveman === "Killed"){
                 $("#word").append("<p>Maybe you should keep your inner beast in check.</p>");
+                $("#word").append("<p>You ask why?</p>");
+                $("#word").append("<p style='color:red;'>ASK YOURSELF</p>");
                 }
-                
             
             }
             
@@ -853,6 +870,7 @@ $("#b4").click(function(){
             ChiefTalking ++;
         }
     });
+
     //Button 6
     $("#b6").click(function(){
         //Snowman Function
