@@ -940,6 +940,9 @@ $("#b4").click(function(){
     $("#b8").click(function(){
         //Village trade
         if (WalkVillage === true){
+        Say("The villager thanks you for your kindness to trade, but you don't have enough food.");
+        }
+        if (WalkVillage === true && Food > 3){
         Food -= 3;
         WD += 5;
         VFriendly += 1;
@@ -1164,8 +1167,8 @@ $(".B2").click(function(){
     if (Food < 0){
         Food = 0;
         $("#Food").html("Food: "+Food);
-        $(".B").hide();
-        $("Body").append("You starved to death!");
+        $(".B2").hide();
+        $("#word").append("<p>You starved to death!</p>");
     }
 });
 
