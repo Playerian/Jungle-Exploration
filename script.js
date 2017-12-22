@@ -868,7 +868,7 @@ $("#b4").click(function(){
     Say("The villager think you are a bad person.");
     }
     if (Randomer === 4){
-    Say("Why are you asking when you don't when trade? a villager asked.");
+    Say("Why are you asking to trade when you don't want to trade? a villager asked.");
     }
     if (Randomer === 5){
     Say("The villager think you're funny.");
