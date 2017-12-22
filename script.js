@@ -865,7 +865,18 @@ $("#b4").click(function(){
                 }
             
             }
-            
+            if (ChiefTalking === 5){
+                if (Caveman === "Killed"){
+                Say("Now, if you please, can you get out from here?");
+                } else {
+                Say("That's all I have to say, good luck on your future trips!");
+                }
+                $("#b5").hide();
+                $("#b8").show();
+                $("#b9").show();
+                $("#b10").show();
+                $("#b11").show();
+            }
             $("#word").css("font-weight", "bold");
             if (ChiefTalking === 0){
             $("#word").css("font-weight", "normal");
@@ -1032,6 +1043,7 @@ $("#b4").click(function(){
 //Button 11
 $("#b11").click(function(){
     if (WalkVillage === true){
+        WalkVillage = false;
         $(".B3").hide();
         $(".B").show();
         Say("You leave the black village.");
