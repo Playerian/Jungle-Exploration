@@ -596,7 +596,7 @@ function EventList(){
         } else {
         Say("You encounter the beast! You try to fight the beast, but the beast is too strong, so you fling your weapon at the beast, and the beast escape to the east! You also drop some food.");
         WD = 0;
-        Food -= 10;
+        Food -= 5;
         }
         BeastX = X + 5;
         BeastY = Y;
