@@ -41,6 +41,8 @@ var SnakeKilled = 0;
 var MonkeyKilled = 0;
 var WalkVillage = false;
 var VFriendly = 0;
+var ChiefHouse = false;
+var ChiefTalking = 0;
 
 $("#b8").hide();
 $("#b9").hide();
@@ -48,6 +50,7 @@ $("#b9").hide();
 //Function declare area
     //Shortcuts
 function Say(word){
+    $("#word").css("font-weight", "normal");
     $("#word").show();
     $("#word").html(word);
 }
@@ -786,6 +789,26 @@ $("#b4").click(function(){
             Caveman = "Rescue";
             Murmur("That's a high cost you have pay, don't ever think you deserve something back, that's not good.");
         }
+        //Black Village Chief
+        if (WalkVillage === true){
+            if (ChiefTalking === 0){
+            Say("You go into the house, and you see a totally black person.");
+            $("#b5").html("Talk with him");
+            }
+            if (ChiefTalking === 1){
+            Say("Hello, my name is Bold.");
+            Murmur("Is that really him?");
+            $("#b5").html("Talk with Bold");
+            }
+            if (ChiefTalking === 2){
+            Say("Usually, a chief has no name, because we all forgot what we are, but the pendant that I always carry has BOLD on it, so I think my name is Bold.");
+            }
+            $("#word").css("font-weight", "bold");
+            if (ChiefTalking === 0){
+            $("#word").css("font-weight", "normal");
+            }
+            ChiefTalking ++;
+        }
     });
     //Button 6
     $("#b6").click(function(){
@@ -845,7 +868,22 @@ $("#b4").click(function(){
         Food -= 3;
         WD += 5;
         VFriendly += 1;
+        if (VFriendly === 1){
         Say("The villager likes you.");
+        }
+        if (VFriendly === 2){
+        Say("The villager likes you very much.");
+        }
+        if (VFriendly >= 3){
+        Say("The villagers think you are a friend of the black village.");
+        }
+        if (VFriendly === 4 && ChiefHouse === false){
+        Say("The villagers take you to a big, totally white house, state that this is the chief's house.");
+        ChiefHouse = true;
+        $(".B3").hide();
+        $("#b5").show();
+        $("#b5").html("Go into the chief's house");
+        }
         }
 }); 
 
