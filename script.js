@@ -101,6 +101,10 @@ function Image(lol){
         $("#image").html("<img src= 'https://rawgit.com/Playerian/Jungle-Exploration/master/BlackVillagerFake.png' >");
     }
     
+    if(lol === "DevHut" ){
+        $("#image").html("<img src= 'https://rawgit.com/Playerian/Jungle-Exploration/master/DeveloperHut.png' >");
+    }
+    
 }
 
 function GainFood(fooding){
@@ -492,6 +496,7 @@ function EventList(){
         $("#b5").show();
         $("#b5").html("Leave the Developer's Hut");
         $(".B").hide();
+        Image("DevHut");
         return;
     }
     //Fertile Land
