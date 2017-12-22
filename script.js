@@ -1021,7 +1021,7 @@ $("#b4").click(function(){
     //Button 10
     $("#b10").click(function(){
         if (WalkVillage === true){
-            Randomer = Randoming(0,13);
+            Randomer = Randoming(0,15);
             if (Randomer <= 1){
             Say("You see a black villager sitting on a stone, thinking about something.");
             Image("V2");
@@ -1050,6 +1050,10 @@ $("#b4").click(function(){
                 } else {
                 Say("You see a villager. He also sees you. He tells you that his friend has been captured by the beast to the east, to the beast's cave.");
                 }
+            }
+            if (Randomer >= 14 && Randomer <= 15){
+            Say("You see 2 villagers talking with each other, a villager says he has been to the deep jungle on the west. The other villager is impressed.");
+            Image("V6");
             }
         }
     });
