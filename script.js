@@ -43,6 +43,7 @@ var WalkVillage = false;
 var VFriendly = 0;
 var ChiefHouse = false;
 var ChiefTalking = 0;
+var EventsMet = 0;
 
 $("#b8").hide();
 $("#b9").hide();
@@ -427,7 +428,7 @@ function Origin(){
     Murmur("Nothing more I can tell.");
     }
     if (Origing === 60){
-    Murmur("Watch out for the king, really the last thing I can tell.");
+    Murmur("Watch out for the king in the ruin, really the last thing I can tell.");
     }
     if (Origing > 60 && Origing < 100){
     Murmur("Really nothing more I can tell.");
@@ -483,6 +484,7 @@ function EventList(){
     //Fertile Land
     if (Step === 10){
     FertileLand();
+        EventsMet += 1;
         return;
     }
     //Back to the square
@@ -493,6 +495,7 @@ function EventList(){
     //Plane Crush site
     if ( Math.pow(X-5, 2)+Math.pow(Y-15,2) <= 20 && Plane === false ){
         Plane = true;
+        EventsMet += 1;
         Say("You saw a empty land with a crashed small plane that has dust all over the place. You decided to go in and search for some valuables. You found some food and 1 compass component.");
         Food += 20;
         CC += 1;
@@ -501,6 +504,7 @@ function EventList(){
     //TombA
     if (TombA === false && X === -27 && Y <= 10){
         TombA = true;
+        EventsMet += 1;
         Tomba();
         return;
     }
@@ -508,6 +512,7 @@ function EventList(){
     //TombB
     if (TombB === false && X >= 10 && Y === 36){
         TombB = true;
+        EventsMet += 1;
         Tombb();
         return;
     }
@@ -515,6 +520,7 @@ function EventList(){
     //TombC
     if (TombC === false && X === -27 && Y === 36){
         TombC = true;
+        EventsMet += 1;
         Tombc();
         return;
     }
@@ -565,6 +571,7 @@ function EventList(){
     if (DroppedSupply === false && Math.pow(3*X+10, 2)+Math.pow(Y-3,2) <= 12){
         Say("You tripped. Then you see a yellow crate lying on the ground with some dust cover on it. You open the crate up, there is some supplies inside, so you take it.");
         Food += 10;
+        EventsMet += 1;
         DroppedSupply = true;
         return;
     }
@@ -578,7 +585,8 @@ function EventList(){
     
     //Beast encounter
     if (BeastFind === false && X >= 50){
-    BeastFind = true;
+        BeastFind = true;
+        EventsMet += 1;
         if (WD > 5){
         Say("You encounter the beast! You swung your shapened weapon and striked it on the head! The beast let out a lound roar and escaped to the east!");
         WD -= 2;
@@ -642,6 +650,7 @@ function EventList(){
         Say("You see a cave and you get in it, inside, you found some totally black people. Indicated by the footprints, you know that this is the cave of the beast. What do you want to do?");
         BeastCave = true;
         BeastDeter = true;
+        EventsMet += 1;
         $(".B").hide();
         $("#b5").show();
         $("#b6").show();
@@ -691,6 +700,7 @@ function EventList(){
             $(".B").hide();
             Image("V1");
             WalkVillage = true;
+            EventsMet += 1;
         return;
     }
 
@@ -699,6 +709,7 @@ function EventList(){
         //Snowman Or Not?
         Randomer = Randoming(0,100);
         if (Randomer < 8 && Snowman === false){
+            EventsMet += 1;
             Snowman = true;
             SnowmanR();
         } else {
@@ -765,8 +776,8 @@ $("#b4").click(function(){
             SnowmanRescue = true;
             $(".B").show();
             Say("You reshape the snowman, it looks like it's smiling at you!");
-           $("#b5").hide();
-           $("#b6").hide();
+            $("#b5").hide();
+            $("#b6").hide();
             Murmur("Thank you!");
         }
         //Rabbit Function -- Rescue
@@ -797,12 +808,44 @@ $("#b4").click(function(){
             }
             if (ChiefTalking === 1){
             Say("Hello, my name is Bold.");
-            Murmur("Is that really him?");
+            Murmur("Is that really him? Too long no see.");
             $("#b5").html("Talk with Bold");
             }
             if (ChiefTalking === 2){
-            Say("Usually, a chief has no name, because we all forgot what we are, but the pendant that I always carry has BOLD on it, so I think my name is Bold.");
+            Say("Usually, a chief has no name, because we all forgot what we are used to be, but the pendant that I always carry has BOLD on it, so I think my name is Bold.");
             }
+            if (ChiefTalking === 3){
+            Say("Well, I would like to give you a prediction for your future, since you had help the village.");
+            }
+            if (ChiefTalking === 4){
+                Say("");
+                if (EventsMet <= 5){
+                $("#word").append("<p>Well, looks like you have met a lot, but the jungle is more than that, explore more.</p>");
+                }
+                if (Reinhardt === true){
+                $("#word").append("<p>You encounter something you shouldn't have.</p>");
+                }
+                if (DroppedSupply === true && Plane === true){
+                $("#word").append("<p>You get the help from someone, who is always by your side.</p>");
+                    if (Origing >= 15){
+                        $("#word").append("<p>You also make that person mad by doing ridiculous stuff. Is it because you know his way of thinking?</p>");
+                        }
+                } else if (Origing >= 30){
+                        $("#word").append("<p>You should learn to get help more, don't give up!</p>");
+                           }
+                if (Caveman === "Rescue"){
+                $("#word").append("<p>You are a nice person, atleast you try.</p>");
+                }
+                if (Caveman === "Ignore"){
+                $("#word").append("<p>You are really a person who takes benefit for yourself.</p>");
+                }
+                if (Caveman === "Killed"){
+                $("#word").append("<p>Maybe you should keep your inner beast in check.</p>");
+                }
+                
+            
+            }
+            
             $("#word").css("font-weight", "bold");
             if (ChiefTalking === 0){
             $("#word").css("font-weight", "normal");
