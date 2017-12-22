@@ -14,12 +14,9 @@ Website: https://playerian.github.io/Jungle-Exploration/.
 
 # Agenda:
 1. The lost king.(Officially taken by Anthony)
-2. The black village.(Officially taken by Waylen)
-3. End game Roman Ruin.
-4. Fog of South. (I'll do it)
-5. Deep Jungle in the west.
-6. Coliseum.
-7. Dev's home
+2. End game Roman Ruin.
+3. Coliseum.
+4. Dev's home
 
 # Jungle Map(Easily Updated):
 https://www.desmos.com/calculator/g6ghzlkjus
