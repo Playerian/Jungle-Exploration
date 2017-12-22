@@ -880,6 +880,8 @@ $("#b4").click(function(){
             $("#word").css("font-weight", "bold");
             if (ChiefTalking === 0){
             $("#word").css("font-weight", "normal");
+            } else {
+            $("#word").prepend("<p>Bold:</p>");
             }
             ChiefTalking ++;
         }
