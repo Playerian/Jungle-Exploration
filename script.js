@@ -40,6 +40,7 @@ var InDeep = false;
 var SnakeKilled = 0;
 var MonkeyKilled = 0;
 var WalkVillage = false;
+var VFriendly = 0;
 
 $("#b8").hide();
 $("#b9").hide();
@@ -659,7 +660,6 @@ function EventList(){
             BeastX = NaN;
             BeastY = NaN;
             BeastDirection = NaN;
-            BeastKilled = true;
             }
         return;
     }
@@ -669,14 +669,14 @@ function EventList(){
         CaveOutcome2 = true;
         Say("You see the beast's cave again, but inside, all totally black people are dead.");
         if (Caveman !== "Ignore"){
-            Murmur("You, you never did that right?");
+            Murmur("You, you never did that right? You must be hacking.");
         }
         return;
     }
     
     //Black Village
     if( X === 50 && Y === -30 ){
-    Say ("You have encountered the Black Village, a place where the shadows of the past take form.....    You trade with them and can get weapons in exchange for food."); 
+    Say ("You have encountered the Black Village, a place where the shadows of the past life take form.....  A villager say hi to you when you walk into the village.");
             $("#b8").show();
             $("#b9").show();
             $("#b10").show();
@@ -684,6 +684,7 @@ function EventList(){
             $("#b11").show();
             $("#b11").html("exit the village");
             $("#b1" + "#b2" + "#b3" + "#b4").hide();
+            Image("V1");
             WalkVillage = true;
         return;
     }
@@ -835,11 +836,13 @@ $("#b4").click(function(){
     $("#b8").click(function(){
     Food -= 3;
     WD += 5;
+    VFriendly += 1;
     Say("The villager likes you.");
 }); 
 
     //Button 9
     $("#b9").click(function(){
+    VFriendly -= 1;
     Randomer = Randoming(0,10);
     if (Randomer === 0){
     Say("The villager doesn't like you.");
@@ -878,8 +881,45 @@ $("#b4").click(function(){
     //Button 10
     $("#b10").click(function(){
         if (WalkVillage === true;){
-            Randomer = Randoming(0,10);
-            Say("");
+            Randomer = Randoming(0,13);
+            if (Randomer <= 1){
+            Say("You see a black villager sitting on a stone, thinking about something.");
+            Image("V2");
+            }
+            if (Randomer >= 2 && Randomer <= 3){
+            Say("You talk with a black villager. He says something about that black villager can't leave the black village unless approved by the chief.");
+            }
+            if (Randomer >= 4 && Randomer <= 5){
+            Say("You walk around the black village, and you see some totally white building.");
+            }
+            if (Randomer >= 6 && Randomer <= 7){
+            Say("You try to talk with one villager, he doesn't understand what you are talking about.");
+            Image("V3");
+            }
+            if (Randomer >= 8 && Randomer <= 9){
+            Say("You accidentally bump into one villager, he looks mad.");
+            Image("V5");
+            }
+            if (Randomer >= 10 && Randomer <= 11){
+            Say("You see 2 villagers talking with each other, they are talking about something that there is a fog area on the south.");
+            Image("V6");
+            }
+            if (Randomer >= 12 && Randomer <= 13){
+                if (Caveman === "Rescue" && BeastKilled === true){
+                Say("You see a villager. He thanks you for rescue the villagers in the beast's cave.");
+                } else {
+                Say("You see a villager. He also sees you. He tells you that his friend has been captured by the beast to the east, to the beast's cave.");
+                }
+            }
+        }
+    }
+                    
+    //Button 11
+    $("#b11").click(function(){
+        if (WalkVillage === true;){
+            $(".B3").hide();
+            $(".B").show();
+            Say("You leave the black village.");
         }
     }
 
