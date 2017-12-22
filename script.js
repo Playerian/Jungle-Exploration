@@ -596,7 +596,7 @@ function EventList(){
         } else {
         Say("You encounter the beast! You try to fight the beast, but the beast is too strong, so you fling your weapon at the beast, and the beast escape to the east! You also drop some food.");
         WD = 0;
-        Food -= 5;
+        Food -= 10;
         }
         BeastX = X + 5;
         BeastY = Y;
@@ -822,8 +822,8 @@ $("#b4").click(function(){
             }
             if (ChiefTalking === 4){
                 Say("");
-                if (EventsMet <= 5){
-                $("#word").append("<p>Well, looks like you have met a lot, but the jungle is more than that, explore more.</p>");
+                if (EventsMet <= 4){
+                $("#word").append("<p>The jungle is way bigger than you think, explore more.</p>");
                 }
                 if (TombC === true && (TombA === false || TombB === false)){
                 $("#word").append("<p>You should notice that you got a good luck</p>");
@@ -839,7 +839,7 @@ $("#b4").click(function(){
                 } else if (Origing >= 30){
                         $("#word").append("<p>You should learn to get help more, don't give up!</p>");
                            }
-                if (RabbitSaved === RabbitMet){
+                if (RabbitSaved === RabbitMet && RabbitMet > 0){
                     $("#word").append("<p>You are too kind to yourself, sometimes you don't need to.</p>");
                 } else if (RabbitSaved + RabbitCooked < RabbitMet / 2){
                            $("#word").append("<p>Are you too lazy to do anything? Or just too scare for any outcome?</p>");
@@ -943,6 +943,9 @@ $("#b4").click(function(){
         Food -= 3;
         WD += 5;
         VFriendly += 1;
+        if (VFriendly <= 0){
+        Say("The villagers have changed the way they think about you.");
+        }
         if (VFriendly === 1){
         Say("The villager likes you.");
         }
@@ -958,6 +961,14 @@ $("#b4").click(function(){
         $(".B3").hide();
         $("#b5").show();
         $("#b5").html("Go into the chief's house");
+        }
+        if (VFriendly >= 5){
+        Say("The villagers are appreciating you and give you 1 food.");
+        Food ++;
+        }
+        if (VFriendly === 100){
+        Say("The villagers have hail you as their god. They give you one compass component.");
+        CC ++;
         }
         }
 }); 
@@ -1157,3 +1168,4 @@ $(".B2").click(function(){
         $("Body").append("You starved to death!");
     }
 });
+
