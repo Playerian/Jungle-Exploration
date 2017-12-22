@@ -678,12 +678,14 @@ function EventList(){
     if( X === 50 && Y === -30 ){
     Say ("You have encountered the Black Village, a place where the shadows of the past life take form.....  A villager say hi to you when you walk into the village.");
             $("#b8").show();
+            $("#b8").html("Trade with the Black Village people");
             $("#b9").show();
+            $("#b9").html("Do not trade with them");
             $("#b10").show();
             $("#b10").html("Walk around the village");
             $("#b11").show();
             $("#b11").html("exit the village");
-            $("#b1" + "#b2" + "#b3" + "#b4").hide();
+            $(".B").hide();
             Image("V1");
             WalkVillage = true;
         return;
@@ -712,14 +714,18 @@ function EventList(){
         return;
 }
 
-//Everystep you take before
+//Everystep you take before event initiate
 $(".B").click(function(){
-    $("#wiseword").hide();
-    $("#image").hide();
     Step ++;
     if (Caveman === "Ignore"){
     CavemanStep ++;
     }
+});
+
+//Every time you click a button
+$(".B2").click(function(){
+    $("#wiseword").hide();
+    $("#image").hide();
 });
 
 //Clicking
@@ -834,14 +840,19 @@ $("#b4").click(function(){
 
     //Button 8
     $("#b8").click(function(){
-    Food -= 3;
-    WD += 5;
-    VFriendly += 1;
-    Say("The villager likes you.");
+        //Village trade
+        if (WalkVillage === true){
+        Food -= 3;
+        WD += 5;
+        VFriendly += 1;
+        Say("The villager likes you.");
+        }
 }); 
 
     //Button 9
     $("#b9").click(function(){
+        //Village doesn't trade
+        if (WalkVillage === true){
     VFriendly -= 1;
     Randomer = Randoming(0,10);
     if (Randomer === 0){
@@ -877,10 +888,12 @@ $("#b4").click(function(){
     if (Randomer === 10){
     Say("LOL. Said the villager");
     }
+        }
 }); 
+
     //Button 10
     $("#b10").click(function(){
-        if (WalkVillage === true;){
+        if (WalkVillage === true){
             Randomer = Randoming(0,13);
             if (Randomer <= 1){
             Say("You see a black villager sitting on a stone, thinking about something.");
@@ -912,30 +925,21 @@ $("#b4").click(function(){
                 }
             }
         }
-    }
+    });
                     
-    //Button 11
-    $("#b11").click(function(){
-        if (WalkVillage === true;){
-            $(".B3").hide();
-            $(".B").show();
-            Say("You leave the black village.");
-        }
+//Button 11
+$("#b11").click(function(){
+    if (WalkVillage === true){
+        $(".B3").hide();
+        $(".B").show();
+        Say("You leave the black village.");
     }
-
-//Everystep you take after
-$(".B").click(function(){
-    EventList();
 });
 
-
-
-$(".B2").click(function(){
+//Initiate the events. Activate everytime you click any direction button
+$(".B").click(function(){
+    EventList();
     GainFood(-1);
-    $("#Food").html("Food: "+Food);
-    $("#CC").html("Compass Component: "+CC);
-    $("#WD").html("Weapon Durability: "+WD);
-    
     //Dialogue
     if (Randoming(0,10) < 2 && (X !== 0 && Y !== 0) && Dialogue < 25  ){
         Dialogue ++;
@@ -1017,6 +1021,14 @@ $(".B2").click(function(){
         $("#wiseword").css("font-size" , "15px");
         $("#wiseword").css("border" , "5px dotted black");
     }
+});
+
+
+
+$(".B2").click(function(){
+    $("#Food").html("Food: "+Food);
+    $("#CC").html("Compass Component: "+CC);
+    $("#WD").html("Weapon Durability: "+WD);
     
     //Victory?
     if (CC > 9){
