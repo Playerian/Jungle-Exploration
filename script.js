@@ -822,7 +822,7 @@ $("#b4").click(function(){
                 if (EventsMet <= 5){
                 $("#word").append("<p>Well, looks like you have met a lot, but the jungle is more than that, explore more.</p>");
                 }
-                if (TombC === true && (TombA = false || TombB = false)){
+                if (TombC === true && (TombA === false || TombB === false)){
                 $("#word").append("<p>You should notice that you got a good luck</p>");
                 }
                 if (Reinhardt === true){
