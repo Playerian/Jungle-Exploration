@@ -424,7 +424,10 @@ function Origin(){
     if (Origing === 36){
     Murmur("I think, my grave is somewhere in the jungle. Haha, I wonder if that guy will give me a grave.");
     }
-    if (Origing >= 39 && Origing < 60){
+    if (Origing === 39){
+    Murmur("You can also get to the black village from southeast, just go south after you encounter the beast. Hope you don't get killed.");
+    }
+    if (Origing >= 42 && Origing < 60){
     Murmur("Nothing more I can tell.");
     }
     if (Origing === 60){
