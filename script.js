@@ -44,6 +44,7 @@ var VFriendly = 0;
 var ChiefHouse = false;
 var ChiefTalking = 0;
 var EventsMet = 0;
+var DevHut = false;
 
 $("#b8").hide();
 $("#b9").hide();
@@ -484,6 +485,15 @@ function Events(){
 //Events List (If you want to add event, add to the bottom of this function, on top of Fog Events. Remember to add return to the bottom
 //of the event, or else it will not work. Use if with constrains in order to develop your event.)
 function EventList(){
+    //Developer's Hut
+    if (X <= -100 && Y <= -75){
+        Say("You see a small wooden house in the thick trees that is covered by the fog. A sign above the wooden house is a sign: Developer's Hut");
+        DevHut = true;
+        $("#b5").show();
+        $("#b5").html("Leave the Developer's Hut");
+        $(".B").hide();
+        return;
+    }
     //Fertile Land
     if (Step === 10){
     FertileLand();
@@ -884,6 +894,15 @@ $("#b4").click(function(){
             $("#word").prepend("<p>Bold:</p>");
             }
             ChiefTalking ++;
+        }
+        //Developer's Hut -- Leave
+        if (DevHut === true){
+            Say("You leave the Developer's Hut");
+            $(".B3").hide();
+            $(".B").show();
+            DevHut = false;
+            X = -100;
+            Y = -75;
         }
     });
 
