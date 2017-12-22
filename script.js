@@ -202,7 +202,7 @@ function Sharpen(){
         Say("You found a tree, so you try your sword's sharpness on the tree. The sword gets sharper.");
         }
         if (Randomer >= 7){
-        Say("You found some sticks and bundle up them with your weapon.");
+        Say("You found some sticks and bundle them up with your weapon.");
         }
     }
     WD += 2;
@@ -211,7 +211,7 @@ function Sharpen(){
 function Compass(){
     Randomer = Randoming(0,100);
     if (Randomer <= 20){
-    Say("You picked up one compass component");
+    Say("You picked up one compass component.");
     CC ++;
     } else {
     if (Randomer <= 60){
@@ -244,17 +244,17 @@ function Slip(){
 
 function Bear(){
     if (WD >= 9) {
-        Say("You encounter a big bear! You fight it with all of your strength, and you kill it and eat its meat, but your weapon also get more broken.");
+        Say("You encounter a big bear! You fight it with all of your strength, and you kill it and eat its meat, but your weapon took some damage.");
         WD -= 3;
         Food += 10;
     } else {
-        Say("You encounter a big bear! It attacks you and you can't defend it! You lost some food!");
+        Say("You encounter a big bear! It attacks you and you can't defend againdt it! You lost some food!");
         Food -= 5;
     }
 }
 
 function Pee(){
-    Say("You decided to take a pee, because nothing can sees you in the fog.");
+    Say("You decided to take a pee, because nothing can see you in the fog.");
     Murmur("You are so nasty, I'm watching you.");
 }
 
@@ -266,10 +266,10 @@ function Banana(){
 
 function Weaponing(){
     if (WD > 0){
-        Say("You get some tall grass and bound them into your weapon.");
+        Say("You get some tall grass and bound them together your weapon.");
         WD += 1;
     } else {
-        Say("You pick up one great broadsword from the ground. It doesn't looks like a sword that is made on Earth. Something was written on it: Use my blade as you see fit.");
+        Say("You pick up one great broadsword from the ground. It doesn't looks like a sword that was made on Earth. Something was written on it: Use my blade as you see fit.");
         WD = 5;
     }
 }
@@ -300,10 +300,10 @@ function Rabbit(){
     //Deep Jungle Events
 function ThickWood(){
     if (WD > 0){
-    Say("The trees are too thick, you can't go through it, so you use your weapon to clean one way up");
+    Say("The trees are too thick, you can't go through it, so you use your weapon to clean the way up");
     WD --;
     } else {
-    Say("You stomped onto a tree, lost some food, you thought some squirrel steal them.");
+    Say("You stomped onto a tree and lost some food, you thought some squirrel stole them.");
     Food --;
     }
 }
@@ -344,10 +344,10 @@ function Gathering(){
 
 function Vine(){
     if (WD > 0){
-    Say("The vines from the tree is too thick, you decided to cut some down with your weapon.");
+    Say("The vines from the tree are too thick, you decided to cut some down with your weapon.");
     WD --;
     } else {
-    Say("You stuck in the vines and can't get out, you have to tear them down with your bare hand. You feel exhausted, so you eat one more food");
+    Say("You get stuck in the vines and can't get out, you had to tear them down with your bare hand. You feel exhausted, so you eat one more food");
     Food --;
     }
 }   
@@ -358,7 +358,7 @@ function EatLeaf(){
     Say("You eat some leaves because they're blocking your eyesight.");
     Food ++;
     } else {
-    Say("You eat some leaves that are blocking your eyesight, they are disgusting and you throw.");
+    Say("You eat some leaves that are blocking your eyesight, they are disgusting and you throw up.");
     }
     if (Randomer <= 3){
     Say("You eat some leaves, they are tasty. You found out that this tree's leaves are actually pretty edible");
@@ -377,7 +377,7 @@ function SharpStone(){
 }
 
 function Strawberries(){
-    Say("You saw some strawberries and pick them and eat them. They are so tasty.");
+    Say("You saw some strawberries so you picked them and ate them. They are so tasty.");
     Food += 2;
 }
 
@@ -386,7 +386,7 @@ function Origin(){
     Origing ++;
     $("#wiseword").css("font-size" , "10px");
     $("#wiseword").css("border" , "5px solid black");
-    Say("You look around, its the same place that you started! So you decided to get some supply from nearby.");
+    Say("You look around, its the same place that you started! So you decided to get some supplies from nearby.");
     Food += 1;
     if (Origing === 3){
     Murmur("You think it's funny walking to the same place huh?");
@@ -404,7 +404,7 @@ function Origin(){
     Murmur("Hmm... did you know something about me already?");
     }
     if (Origing === 18){
-    Murmur("Well... I came here by plane, if that satisfy you.");
+    Murmur("Well... I came here by plane, if that satisfies you.");
     }
     if (Origing === 21){
     Murmur("Maybe, just maybe, you know that I will say something?");
@@ -413,7 +413,7 @@ function Origin(){
     Murmur("Fine, I'll say that you are going to find the compass components and get to that mystery ruin.");
     }
     if (Origing === 27){
-    Murmur("You stil doing that? I thought that is enough information already.");
+    Murmur("You stil doing that? I thought that was enough information already.");
     }
     if (Origing === 30){
     Murmur("Just go north, its where the ruin lays, but you'll never find it unless you get the compass.");
@@ -422,7 +422,7 @@ function Origin(){
     Murmur("But, you can get into the coliseum, left to the ruin, north-east to the dangerous wild.");
     }
     if (Origing === 36){
-    Murmur("I think, my grave is somewhere in the jungle. Haha, I wonder that guy will or will not give me a grave.");
+    Murmur("I think, my grave is somewhere in the jungle. Haha, I wonder if that guy will give me a grave.");
     }
     if (Origing >= 39 && Origing < 60){
     Murmur("Nothing more I can tell.");
@@ -464,7 +464,7 @@ function Tombc(){
 
 function TomatoMan(){
     if (TomatoFood < 200){
-    Say("You see a person with red skin and green hair with a unnaturally big smile. He sees your food and stole tons of it, your blade has no use against him. You just watch him run away.");
+    Say("You see a person with red skin and green hair with a unnaturally big smile. He sees your food and stole tons of it, your blade has no use against him. You just watched him run away.");
     TomatoFood += Math.round(Food / 2);
     Food = Math.round(Food / 2);
     } else {
@@ -540,21 +540,21 @@ function EventList(){
     
     //I'm Out!
     if (InFog === true && Y > -75){
-        Say("You are out from the foggy area, you look behind, you hope you never go in there again.");
+        Say("You are out from the foggy area, you look behind, you hope that you could never go in there again.");
         InFog = false;
         return;
     }
     
     //Go into the Deep!
     if (InDeep === false && X <= -100){
-        Say("You come into an area that has thicker tree than before, you think this is the deep jungle.");
+        Say("You come into an area that has thicker trees than before, you think this is the deep jungle.");
         InDeep = true;
         return;
     }
     
     //I'm Out again!
     if (InDeep === true && X > -100){
-        Say("You are out from the deep jungle.");
+        Say("You are out of the deep jungle.");
         InDeep = false;
         return;
     }
@@ -562,7 +562,7 @@ function EventList(){
     //Reinhardt
     if (X === 23 && Y === 4 && Reinhardt === false){
         Reinhardt = true;
-        Say("you found a mysterious blue covered book near the remain of a dead horse. upon opening the book, two lightnings strikes appear before you. before you realized what you had done. Suddenly, you hear someone shouted: magic is everything! You got blown fly out. Now you know, this thing should not be touched, because its not made on Earth. ");
+        Say("You found a mysterious blue-covered book near the remains of a dead horse. upon opening the book, two lightnings strikes appeared before you. Before you realized what you had done. Suddenly, you hear someone shouted: magic is everything! You got blown fly out. Now you know, this thing should not be touched, because its not made on Earth. ");
         Food -= 10;    
         return;
     }
@@ -628,13 +628,13 @@ function EventList(){
         BeastHealth -= 1;
         WD -= 2;
         } else {
-        Say("You got no weapon to fight the beast! The beast saw you weaponless and stole some food! Then the beast run away to the "+BeastDirection);
+        Say("You have no weapon to fight the beast! The beast saw you weaponless and stole some food! Then the beast ran away to the "+BeastDirection);
         Food -= 4;
         }
         
         //Beast Killing
         if (BeastHealth <= 0){
-        Say("You slain the beast! You got tons of fresh meat, and you found some compass component inside the beast's body!");
+        Say("You have slain the beast! You got tons of fresh meat, and you found some compass component inside the beast's body!");
         BeastX = NaN;
         BeastY = NaN;
         BeastDirection = NaN;
@@ -679,7 +679,7 @@ function EventList(){
     //Beast Cave Outcome2
     if (BeastCave === true && CaveOutcome2 === false && X === 100 && CavemanStep >= 20 && BeastKilled === false){
         CaveOutcome2 = true;
-        Say("You see the beast's cave again, but inside, all totally black people are dead.");
+        Say("You see the beast's cave again, but inside, all of the totally black people are dead.");
         if (Caveman !== "Ignore"){
             Murmur("You, you never did that right? You must be hacking.");
         }
@@ -812,7 +812,7 @@ $("#b4").click(function(){
             $("#b5").html("Talk with Bold");
             }
             if (ChiefTalking === 2){
-            Say("Usually, a chief has no name, because we all forgot what we are used to be, but the pendant that I always carry has BOLD on it, so I think my name is Bold.");
+            Say("Usually, a chief has no name, because we all forgot what we used to be, but the pendant that I always carry has BOLD on it, so I think my name is Bold.");
             }
             if (ChiefTalking === 3){
             Say("Well, I would like to give you a prediction for your future, since you had help the village.");
@@ -1139,6 +1139,6 @@ $(".B2").click(function(){
         Food = 0;
         $("#Food").html("Food: "+Food);
         $(".B").hide();
-        $("Body").append("You starve to death!");
+        $("Body").append("You starved to death!");
     }
 });
