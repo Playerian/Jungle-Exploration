@@ -1057,6 +1057,7 @@ $("#b4").click(function(){
             $("#b6").html("Gun");
             }
             if (PlayerianTalk === 9){
+                Image("P5");
                 Say("Wow, you cheater! Fine, I'll let you go.");
                 $(".B3").hide();
                 DevHutMenu();
