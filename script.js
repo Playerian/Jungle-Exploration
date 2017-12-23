@@ -996,8 +996,8 @@ $("#b4").click(function(){
         Food ++;
         }
         if (VFriendly === 100){
-        Say("The villagers have hail you as their god. They give you one compass component.");
-        CC ++;
+        Say("The villagers have hail you as their god. They give you a lots of compass components.");
+        CC += 4;
         }
         }
 }); 
