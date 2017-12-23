@@ -45,6 +45,7 @@ var ChiefHouse = false;
 var ChiefTalking = 0;
 var EventsMet = 0;
 var DevHut = false;
+var PlayerianTalk = 0;
 
 $("#b8").hide();
 $("#b9").hide();
@@ -514,6 +515,8 @@ function EventList(){
         DevHut = true;
         $("#b5").show();
         $("#b5").html("Leave the Developer's Hut");
+        $("#b6").show();
+        $("#b6").html("Talk with a Tomato guy");
         $(".B").hide();
         Image("DevHut");
         return;
@@ -959,6 +962,44 @@ $("#b4").click(function(){
             Caveman = "Ignore";
             Murmur("Maybe you should treat them as real people.");
         }
+        //Developer's Hut -- Playerian
+        if (DevHut === true){
+            if (PlayerianTalk === 0){
+                Say("A tomato guy has speak to you.");
+                if (TomatoSatis === true){
+                $("#word").append("<p>Really thank you for your food! I have been starving for weeks. Forget to mention, my name is Playerian. This is the developer's hut, enjoy yourself here!</p>");
+                } else if (TomatoFood > 0){
+                $("#word").append("<p>Hey, I know you, you are the person who gave me food! That really helps me a lot, now I don't need to eat food now! I acutally forget, my name is Playerian. This is the developer's hut, enjoy yourself here!</p>");
+                TomatoSatis = true;
+                } else {
+                $("#word").append("<p>Nice to meet you! My name is Playerian. This is the developer's hut, enjoy yourself here.</p>");
+                TomatoSatis = true;
+                }
+                Image("P2");
+                $(".B2").hide();
+                $("#b6").show();
+                $("#b6").html("Talk with Playerian(He actually prevents you from accessing other button. Maybe through hacking.)");
+            }
+            if (PlayerianTalk === 1){
+                Say("Playerian asks you would you like some drinks. Then he shows you some green juices.");
+                Image("P3");
+                $("#b6").html("OK");
+                $("#b7").show();
+                $("#b7").html("No Thanks");
+            }
+            if (PlayerianTalk === 2){
+                Say("Playerian says: You are so nice! Many people don't want to drink it, I don't know why.");
+                $("#word").append("<p>You feel that this liquid has some ridiculous taste, so you just sip a little bit.</p>");
+                Food += 10;
+                Image("P4");
+                $("#b6").html("Can I talk to other people?");
+                $("#b7").hide();
+            }
+            if (PlayerianTalk === 3){
+                Say("Well, I would not let you go so easily! First, you have to prove yourself fit, and to prove yourself fit, you need to win me in rock-paper-scissor!");
+            }
+            PlayerianTalk ++;
+        }
     });
     //Button 7
     $("#b7").click(function(){
@@ -979,6 +1020,15 @@ $("#b4").click(function(){
             Caveman = "Killed";
             Murmur("You are so into the way of cannibalism, they are human too.");
         }
+        //Dev's Hut Playerian -- Say no to drink
+        if (PlayerianTalk === 2){
+                Say("Playerian says: Well, many people don't like it, you are not the only one.");
+                $("#word").append("<p>You feel lucky that you didn't drink that, because Playerian throw it in the trash.</p>");
+                Image("P5");
+                PlayerianTalk ++;
+                $("#b6").html("Can I talk to other people?");
+                $("#b7").hide();
+            }
     });
 
     //Button 8
