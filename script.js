@@ -501,6 +501,16 @@ function TomatoMan(){
     }
 }
 
+function DevHutMenu(){
+        DevHut = true;
+        $("#b5").show();
+        $("#b5").html("Leave the Developer's Hut");
+        $("#b6").show();
+        $("#b6").html("Talk with a Tomato guy");
+        $(".B").hide();
+        Image("DevHut");
+}
+
 //Randomly execute(function) Events
 function Events(){
     eval(arguments[Randoming(0,arguments.length-1)]+"()");
@@ -512,13 +522,7 @@ function EventList(){
     //Developer's Hut
     if (X <= -100 && Y <= -75){
         Say("You see a small wooden house in the thick trees that is covered by the fog. A sign above the wooden house is a sign: Developer's Hut");
-        DevHut = true;
-        $("#b5").show();
-        $("#b5").html("Leave the Developer's Hut");
-        $("#b6").show();
-        $("#b6").html("Talk with a Tomato guy");
-        $(".B").hide();
-        Image("DevHut");
+        DevHutMenu();
         return;
     }
     //Fertile Land
@@ -997,7 +1001,27 @@ $("#b4").click(function(){
             }
             if (PlayerianTalk === 3){
                 Say("Well, I would not let you go so easily! First, you have to prove yourself fit, and to prove yourself fit, you need to win me in rock-paper-scissor!");
+                $("#b6").html("Rock");
+                $("#b7").show();
+                $("#b7").html("Paper");
+                $("#b8").html("Scissor");
+                $("#b8").show();
             }
+            if (PlayerianTalk >= 4 && PlayerianTalk <= 6){
+                Say("He uses paper, you lose.");
+            }
+            if (PlayerianTalk === 6){
+            $(".B3").hide();
+            $("#b6").html("Gun");
+        }
+            if (PlayerianTalk === 7){
+                Say("Wow, you cheater! Fine, I'll let you go.");
+                $(".B3").hide();
+                DevHutMenu();
+            }
+            if (PlayerianTalk >= 8){
+            }
+            
             PlayerianTalk ++;
         }
     });
@@ -1029,6 +1053,17 @@ $("#b4").click(function(){
                 $("#b6").html("Can I talk to other people?");
                 $("#b7").hide();
             }
+        //Dev's Hut Playerian -- When you go paper
+        if (PlayerianTalk >= 4 && PlayerianTalk <= 6){
+                Say("He uses scissor, you lose.");
+                PlayerianTalk ++;
+            }
+        if (PlayerianTalk === 6){
+            $(".B3").hide();
+            $("#b6").html("Gun");
+            PlayerianTalk ++;
+        }
+        
     });
 
     //Button 8
@@ -1068,6 +1103,16 @@ $("#b4").click(function(){
         Say("The villagers have hail you as their god. They give you a lots of compass components.");
         CC += 4;
         }
+        }
+        //Dev's Hut -- You uses scissor
+        if (PlayerianTalk >= 4 && PlayerianTalk <= 6){
+                Say("He uses rock, you lose.");
+                PlayerianTalk ++;
+            }
+        if (PlayerianTalk === 6){
+            $(".B3").hide();
+            $("#b6").html("Gun");
+            PlayerianTalk ++;
         }
 }); 
 
