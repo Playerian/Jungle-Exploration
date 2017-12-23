@@ -755,6 +755,7 @@ function EventList(){
      Lostking = true;
      Say ("You know me, right? I'm Julius Caesar, emperor of Rome. After a long period of waiting, I get a thought, of not living anymore. At first, it's only a small thought, but as time progress, it gets bigger and bigger. Now, I'm near the edge of being blacken. I have always in regrets of one things, the building of the Roman Aura, it keeps people who should be dead alive. Its very bad, very very bad. Only one thing I can be sure, I'll be blacken in a few day, so, young man, if you want, do you want to be the king of Rome?");
         //show and hide
+         EventsMet += 1;
          $(".B").hide();
          $("#b5").show("accept");
          $("#b6").show("reject");
