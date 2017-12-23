@@ -127,6 +127,18 @@ function Image(lol){
     if(lol === "P5" ){
         $("#image").html("<img src= 'https://rawgit.com/Playerian/Jungle-Exploration/master/Playerian5.png' >");
     }
+    
+    if(lol === "PR" ){
+        $("#image").html("<img src= 'https://rawgit.com/Playerian/Jungle-Exploration/master/PlayerianRock.png' >");
+    }
+    
+    if(lol === "PP" ){
+        $("#image").html("<img src= 'https://rawgit.com/Playerian/Jungle-Exploration/master/PlayerianPaper.png' >");
+    }
+    
+    if(lol === "PS" ){
+        $("#image").html("<img src= 'https://rawgit.com/Playerian/Jungle-Exploration/master/PlayerianScisscor.png' >");
+    }
 }
 
 function GainFood(fooding){
@@ -1049,6 +1061,7 @@ $("#b4").click(function(){
                 Image("P1");
             }
             if (PlayerianTalk >= 4 && PlayerianTalk <= 8){
+                Image("PP");
                 Say("He uses paper, you lose.");
             }
             if (PlayerianTalk === 8){
@@ -1083,6 +1096,10 @@ $("#b4").click(function(){
                 if (Randomer === 5){
                 Say("Didn't you want to talk to others, now you remember I'm a good guy uh?");
                 }
+            }
+            if (PlayerianTalk === 15){
+                Image("P1");
+                Say("Well, you know me, if you talk with me enough times, you get some important information. (I wouldn't tell you that I'm good at doing this.)");
             }
             if (PlayerianTalk === 20){
                 Image("P1");
@@ -1157,6 +1174,7 @@ $("#b4").click(function(){
         if (PlayerianTalk >= 4 && PlayerianTalk <= 8){
                 Say("He uses scissor, you lose.");
                 PlayerianTalk ++;
+                Image("PS");
             }
         if (PlayerianTalk === 8){
             $(".B3").hide();
@@ -1207,6 +1225,7 @@ $("#b4").click(function(){
         }
         //Dev's Hut -- You uses scissor
         if (PlayerianTalk >= 4 && PlayerianTalk <= 8){
+                Image("PR");
                 Say("He uses rock, you lose.");
                 PlayerianTalk ++;
             }
