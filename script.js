@@ -1015,15 +1015,72 @@ $("#b4").click(function(){
             $(".B3").hide();
             $("#b6").show();
             $("#b6").html("Gun");
-        }
+            }
             if (PlayerianTalk === 9){
                 Say("Wow, you cheater! Fine, I'll let you go.");
                 $(".B3").hide();
                 DevHutMenu();
             }
             if (PlayerianTalk >= 10){
+                Image("P1");
+                Randomer = Randomng(0,5);
+                if (Randomer === 0){
+                Say("You want more drink of mine? Sorry, I don't have any left.");
+                }
+                if (Randomer === 1){
+                Say("You say I cheat during the game? No, you do.");
+                }
+                if (Randomer === 2){
+                Say("It's fun running in the jungle, I must say, but I always starve to death.");
+                }
+                if (Randomer === 3){
+                Say("I used to voyage in a jungle and see a black village with white houses. You can get to there by walking east 50 times and south 30 times after you get to the center of the jungle.");
+                }
+                if (Randomer === 4){
+                Say("There is a dangerous wild in northwest of the origin. I escaped by disguise as a tomato.");
+                }
+                if (Randomer === 5){
+                Say("Didn't you want to talk to others, now you remember I'm a good guy uh?");
+                }
             }
-            
+            if (PlayerianTalk === 20){
+                Image("P1");
+                Say("Do you want me to spill some secret stuff?");
+            }
+            if (PlayerianTalk === 30){
+                Image("P1");
+                Say("I already know that you talk with me because you want some secret stuff, but not really likes me.);
+            }   
+            if (PlayerianTalk === 40){
+                Image("P1");
+                Say("Take this compass component, it helps you.");
+                CC ++;
+            }
+            if (PlayerianTalk === 50){
+                Image("P1");
+                Say("You should really get to bed now.");
+            }
+            if (PlayerianTalk === 60){
+                Image("P1");
+                Say("I can't spill everything on you, that should be discover by yourself.");
+            }
+            if (PlayerianTalk === 61){
+                Image("P1");
+                Say("So yeah, nothing more, nothing less.");
+            }
+            if (PlayerianTalk === 62){
+                Image("P1");
+                Say("Isn't that the fun of the game? Discovering stuff?");
+            }
+            if (PlayerianTalk === 100){
+                Image("P1");
+                Say("You've tried, I can see your hard job. Well, follow your heart is sometimes really hard to do, because there is outside forces that is constantly changing you. Food, compass component, your valuable weapon, did you ever make it to here without those stuffs? No, you may want to spare a monkey or two, but you can't, this is what you do to live. All things depend on other things to live, this can't be change. What you can change, is the choices that are given to you. That's all I have to say.");
+            }
+            if (PlayerianTalk > 100){
+                Image("P1");
+                Say("I'm just gonna keep smiling at you.");
+            }
+
             PlayerianTalk ++;
         }
     });
