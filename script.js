@@ -46,6 +46,8 @@ var ChiefTalking = 0;
 var EventsMet = 0;
 var DevHut = false;
 var PlayerianTalk = 0;
+var Lostking = false;
+var King =false;
 
 $("#b8").hide();
 $("#b9").hide();
@@ -747,6 +749,42 @@ function EventList(){
             EventsMet += 1;
         return;
     }
+    
+    //Lost King
+     if(Math.pow(2*X+120,2)+Math.pow(3*Y,2)<=100 && Lostking === false){
+     Lostking = true;
+     Say ("You know me, right? I'm Julius Caesar, emperor of Rome. After a long period of waiting, I get a thought, of not living anymore. At first, it's only a small thought, but as time progress, it gets bigger and bigger. Now, I'm near the edge of being blacken. I have always in regrets of one things, the building of the Roman Aura, it keeps people who should be dead alive. Its very bad, very very bad. Only one thing I can be sure, I'll be blacken in a few day, so, young man, if you want, do you want to be the king of Rome?");
+        //show and hide
+         $(".B").hide();
+         $("#b5").show("accept");
+         $("#b6").show("reject");
+         $("#b7").show("ignore");
+         //click function
+     $("#b5").click(function(){
+         Say("You made a wise choice young man...");
+         King = true;
+         $("#b5").hide("accept");
+         $("#b6").hide("reject");
+         $("#b7").hide("ignore");
+         $(".B").show();
+         });
+     $("#b6").click(function(){
+         Say("Have I not suffer enough?");
+         $("#b5").hide("accept");
+         $("#b6").hide("reject");
+         $("#b7").hide("ignore");
+         $(".B").show();
+     });
+     $("#b7").click(function(){
+         Say("You ignore the powerless emperor and walked away...");
+         $("#b5").hide("accept");
+         $("#b6").hide("reject");
+         $("#b7").hide("ignore");
+         $(".B").show();
+     });
+ 
+         return;
+     }
 
     //Fog Events
     if (InFog === true && Y <= -75){
@@ -1049,7 +1087,7 @@ $("#b4").click(function(){
             }
             if (PlayerianTalk === 30){
                 Image("P1");
-                Say("I already know that you talk with me because you want some secret stuff, but not really likes me.);
+                Say("I already know that you talk with me because you want some secret stuff, but not really likes me.");
             }   
             if (PlayerianTalk === 40){
                 Image("P1");
