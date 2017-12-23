@@ -105,6 +105,25 @@ function Image(lol){
         $("#image").html("<img src= 'https://rawgit.com/Playerian/Jungle-Exploration/master/DeveloperHut.png' >");
     }
     
+    if(lol === "P1" ){
+        $("#image").html("<img src= 'https://rawgit.com/Playerian/Jungle-Exploration/master/Playerian.png' >");
+    }
+    
+    if(lol === "P2" ){
+        $("#image").html("<img src= 'https://rawgit.com/Playerian/Jungle-Exploration/master/Playerian2.png' >");
+    }
+    
+    if(lol === "P3" ){
+        $("#image").html("<img src= 'https://rawgit.com/Playerian/Jungle-Exploration/master/Playerian3.png' >");
+    }
+    
+    if(lol === "P4" ){
+        $("#image").html("<img src= 'https://rawgit.com/Playerian/Jungle-Exploration/master/Playerian4.png' >");
+    }
+    
+    if(lol === "P5" ){
+        $("#image").html("<img src= 'https://rawgit.com/Playerian/Jungle-Exploration/master/Playerian5.png' >");
+    }
 }
 
 function GainFood(fooding){
