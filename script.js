@@ -1006,6 +1006,7 @@ $("#b4").click(function(){
                 $("#b7").html("Paper");
                 $("#b8").html("Scissor");
                 $("#b8").show();
+                Image("P1");
             }
             if (PlayerianTalk >= 4 && PlayerianTalk <= 8){
                 Say("He uses paper, you lose.");
