@@ -1007,19 +1007,20 @@ $("#b4").click(function(){
                 $("#b8").html("Scissor");
                 $("#b8").show();
             }
-            if (PlayerianTalk >= 4 && PlayerianTalk <= 6){
+            if (PlayerianTalk >= 4 && PlayerianTalk <= 8){
                 Say("He uses paper, you lose.");
             }
-            if (PlayerianTalk === 6){
+            if (PlayerianTalk === 8){
             $(".B3").hide();
+            $("#b6").show();
             $("#b6").html("Gun");
         }
-            if (PlayerianTalk === 7){
+            if (PlayerianTalk === 9){
                 Say("Wow, you cheater! Fine, I'll let you go.");
                 $(".B3").hide();
                 DevHutMenu();
             }
-            if (PlayerianTalk >= 8){
+            if (PlayerianTalk >= 10){
             }
             
             PlayerianTalk ++;
@@ -1054,12 +1055,13 @@ $("#b4").click(function(){
                 $("#b7").hide();
             }
         //Dev's Hut Playerian -- When you go paper
-        if (PlayerianTalk >= 4 && PlayerianTalk <= 6){
+        if (PlayerianTalk >= 4 && PlayerianTalk <= 8){
                 Say("He uses scissor, you lose.");
                 PlayerianTalk ++;
             }
-        if (PlayerianTalk === 6){
+        if (PlayerianTalk === 8){
             $(".B3").hide();
+            $("#b6").show();
             $("#b6").html("Gun");
             PlayerianTalk ++;
         }
@@ -1105,13 +1107,14 @@ $("#b4").click(function(){
         }
         }
         //Dev's Hut -- You uses scissor
-        if (PlayerianTalk >= 4 && PlayerianTalk <= 6){
+        if (PlayerianTalk >= 4 && PlayerianTalk <= 8){
                 Say("He uses rock, you lose.");
                 PlayerianTalk ++;
             }
-        if (PlayerianTalk === 6){
+        if (PlayerianTalk === 8){
             $(".B3").hide();
             $("#b6").html("Gun");
+            $("#b6").show();
             PlayerianTalk ++;
         }
 }); 
@@ -1315,4 +1318,3 @@ $(".B2").click(function(){
         $("#word").append("<p>You starved to death!</p>");
     }
 });
-
