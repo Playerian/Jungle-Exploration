@@ -751,42 +751,43 @@ function EventList(){
     }
     
     //Lost King
-     if(Math.pow(2*X+120,2)+Math.pow(3*Y,2)<=100 && Lostking === false){
-     Lostking = true;
-     Say ("You know me, right? I'm Julius Caesar, emperor of Rome. After a long period of waiting, I get a thought, of not living anymore. At first, it's only a small thought, but as time progress, it gets bigger and bigger. Now, I'm near the edge of being blacken. I have always in regrets of one things, the building of the Roman Aura, it keeps people who should be dead alive. Its very bad, very very bad. Only one thing I can be sure, I'll be blacken in a few day, so, young man, if you want, do you want to be the king of Rome?");
-        //show and hide
-         EventsMet += 1;
-         $(".B").hide();
-         $("#b5").show("accept");
-         $("#b6").show("reject");
-         $("#b7").show("ignore");
-         //click function
-     $("#b5").click(function(){
-         Say("You made a wise choice young man...");
-         King = true;
-         $("#b5").hide("accept");
-         $("#b6").hide("reject");
-         $("#b7").hide("ignore");
-         $(".B").show();
-         });
-     $("#b6").click(function(){
-         Say("Have I not suffer enough?");
-         $("#b5").hide("accept");
-         $("#b6").hide("reject");
-         $("#b7").hide("ignore");
-         $(".B").show();
-     });
-     $("#b7").click(function(){
-         Say("You ignore the powerless emperor and walked away...");
-         $("#b5").hide("accept");
-         $("#b6").hide("reject");
-         $("#b7").hide("ignore");
-         $(".B").show();
-     });
- 
-         return;
-     }
-
+    if(Math.pow(2*X+120,2)+Math.pow(3*Y,2)<=100 && Lostking === false){
+    Lostking = true;
+    Say ("You know me, right? I'm Julius Caesar, emperor of Rome. After a long period of waiting, I get a thought, of not living anymore. At first, it's only a small thought, but as time progress, it gets bigger and bigger. Now, I'm near the edge of being blacken. I have always in regrets of one things, the building of the Roman Aura, it keeps people who should be dead alive. Its very bad, very very bad. Only one thing I can be sure, I'll be blacken in a few day, so, young man, if you want, do you want to be the king of Rome?");
+       //show and hide
+        $(".B").hide();
+        $("#b5").show();
+        $("#b6").show();
+        $("#b7").show();
+       //button
+        $("#b5").html("accept");
+        $("#b6").html("reject");
+        $("#b7").html("ignore");
+        //click function
+    $("#b5").click(function(){
+        Say("You made a wise choice young man...");
+        King = true;
+        $("#b5").hide();
+        $("#b6").hide();
+        $("#b7").hide();
+        $(".B").show();
+        });
+    $("#b6").click(function(){
+        Say("Have I not suffer enough?");
+        $("#b5").hide();
+        $("#b6").hide();
+        $("#b7").hide();
+        $(".B").show();
+    });
+    $("#b7").click(function(){
+        Say("You ignore the powerless emperor and walked away.");
+        $("#b5").hide();
+        $("#b6").hide();
+        $("#b7").hide();
+        $(".B").show();
+    });
+        return;
+    
     //Fog Events
     if (InFog === true && Y <= -75){
         //Snowman Or Not?
