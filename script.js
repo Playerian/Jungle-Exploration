@@ -48,6 +48,8 @@ var DevHut = false;
 var PlayerianTalk = 0;
 var Lostking = false;
 var King = false;
+var Church = false;
+var InChurch = false;
 
 //Function declare area
     //Shortcuts
@@ -819,6 +821,16 @@ function EventList(){
         return;
     }
     
+    //Church 
+    if (Church === false && Math.pow(X-5,2)+Math.pow(Y+3,2) < 7){
+        Say("You thought see a glorious church, but you look around, all you see is a ruin. There is a small room that is still standing in this wild jungle. You enter that room");
+        $(".B").hide();
+        $("#b5").show();
+        $("#b5").html("Go In");
+        InChurch = true;
+        return;
+        }
+    
     //Fog Events
     if (InFog === true && Y <= -75){
         //Snowman Or Not?
@@ -1005,6 +1017,12 @@ $("#b4").click(function(){
             DevHut = false;
             X = -100;
             Y = -75;
+        }
+        //Church - Inside
+        if (InChurch === true){
+            Say("You see some statues of Roman gods, they looks old. On the wall, there are some text you can read: As the emperor gets the holy branch of the life tree, the whole tree collaspes in a second... The words after that is shredded off.");
+            $("#b5").hide();
+            $(".B").show();
         }
     });
 
