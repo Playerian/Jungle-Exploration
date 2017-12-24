@@ -1096,7 +1096,7 @@ $("#b4").click(function(){
             }
             if (PlayerianTalk >= 10){
                 Image("P1");
-                Randomer = Randomng(0,5);
+                Randomer = Randoming(0,5);
                 if (Randomer === 0){
                 Say("You want more drink of mine? Sorry, I don't have any left.");
                 }
