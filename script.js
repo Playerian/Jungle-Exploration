@@ -783,7 +783,8 @@ function EventList(){
     if(Math.pow(2*X+120,2)+Math.pow(3*Y,2)<=100 && Lostking === false){
     Lostking = true;
     Say ("You know me, right? I'm Julius Caesar, emperor of Rome. After a long period of waiting, I get a thought, of not living anymore. At first, it's only a small thought, but as time progress, it gets bigger and bigger. Now, I'm near the edge of being blacken. I have always in regrets of one things, the building of the Roman Aura, it keeps people who should be dead alive. Its very bad, very very bad. Only one thing I can be sure, I'll be blacken in a few day, so, young man, if you want, do you want to be the king of Rome?");
-       //show and hide
+    $("#word").prepend("<p>You encounter a very old man that live in a tent. He starts to speak to you.</p>");
+        //show and hide
         $(".B").hide();
         $("#b5").show();
         $("#b6").show();
