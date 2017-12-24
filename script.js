@@ -1171,7 +1171,7 @@ $("#b4").click(function(){
             }
             if (PlayerianTalk === 100){
                 Image("P1");
-                Say("You've tried, I can see your hard job. Well, follow your heart is sometimes really hard to do, because there is outside forces that is constantly changing you. Food, compass component, your valuable weapon, did you ever make it to here without those stuffs? No, you may want to spare a monkey or two, but you can't, this is what you do to live. All things depend on other things to live, this can't be change. What you can change, is the choices that are given to you. That's all I have to say.");
+                Say("You've tried, I can see your hard job. Well, follow your heart is sometimes really hard to do, because there are outside forces that is constantly changing you. Food, compass components, your valuable weapon, did you ever make it to here without those stuffs? No, you may want to spare a monkey or two, but you can't, this is what you do to live. All things depend on other things to live, this can't be changed. What you can change, is the choices that are given to you. That's all I have to say.");
             }
             if (PlayerianTalk > 100){
                 Image("P1");
@@ -1203,7 +1203,7 @@ $("#b4").click(function(){
         //Dev's Hut Playerian -- Say no to drink
         if (PlayerianTalk === 2){
                 Say("Playerian says: Well, many people don't like it, you are not the only one.");
-                $("#word").append("<p>You feel lucky that you didn't drink that, because Playerian throw it in the trash.</p>");
+                $("#word").append("<p>You feel lucky that you didn't drink that, because Playerian threw it in the trash.</p>");
                 Image("P5");
                 PlayerianTalk ++;
                 $("#b6").html("Can I talk to other people?");
