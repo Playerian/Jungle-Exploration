@@ -47,10 +47,7 @@ var EventsMet = 0;
 var DevHut = false;
 var PlayerianTalk = 0;
 var Lostking = false;
-var King =false;
-
-$("#b8").hide();
-$("#b9").hide();
+var King = false;
 
 //Function declare area
     //Shortcuts
