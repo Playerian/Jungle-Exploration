@@ -1352,6 +1352,15 @@ $("#b11").click(function(){
 $(".B").click(function(){
     EventList();
     GainFood(-1);
+    //LostKing
+    if(Math.pow(2*X+120,2)+Math.pow(3*Y,2)<=100 && LostKing === false){
+        LostKing = true;
+    }
+    if(LostKing===true){
+        $(".B").click(function(){
+    StepAfterVistingLostKing ++;
+    });
+        
     //Dialogue
     if (Randoming(0,10) < 2 && (X !== 0 && Y !== 0) && Dialogue < 25  ){
         Dialogue ++;
@@ -1433,6 +1442,7 @@ $(".B").click(function(){
         $("#wiseword").css("font-size" , "15px");
         $("#wiseword").css("border" , "5px dotted black");
     }
+
 });
 
 
