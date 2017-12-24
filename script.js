@@ -146,9 +146,9 @@ function Randoming(min, max) { // Random Integer Generator
     return Math.floor(Math.random() * (max + 1 - min) ) + min;
 }
 
-    //Events
+    //Function of Events
 function Nothing(){
-    Randomer = Randoming(0,100);
+    Randomer = Randoming(0,200);
     Food ++;
     if (Randomer <= 25){
         Say("The calm of night makes you feel happier, you don't need to eat food today.");
@@ -158,17 +158,33 @@ function Nothing(){
         Say("You decided to skip a meal, and it was a success.");
     } else if (Randomer <= 100 && Randomer >= 76) {
         Say("You ate some dirt, and it tasted horrible.");
+    } else if (Randomer <= 125 && Randomer >= 101) {
+        Say("You think you are a brave person, so you eat a mushroom on the ground.");
+    } else if (Randomer <= 150 && Randomer >= 126) {
+        Say("You skip breakfast, thinking about lunch.");
+    } else if (Randomer <= 175 && Randomer >= 151) {
+        Say("You skip lunch, thinking about dinner.");
+    } else if (Randomer <= 200 && Randomer >= 176) {
+        Say("You skip dinner because you have skipped breakfast and lunch.");
     }
 }
 
 function Shrub(){
-    Randomer = Randoming(0,100);
-    if (Randomer <=50){
+    Randomer = Randoming(0,125);
+    if (Randomer <= 25){
     Say("You found a shrub, got 3 foods");
-    } else if (Randomer < 75){
+    }
+    if (Randomer > 25 && Randomer <= 50){
     Say("You found some berries from the shrub, got 3 foods.");
-    } else{
+    } 
+    if (Randomer > 50 && Randomer <= 75){
     Say("You found some high-quality fruit from the ground, got 3 foods.");
+    }
+    if (Randomer > 75 && Randomer <= 100){
+    Say("You eat some fruits, they feel very, very tasty.");
+    }
+    if (Randomer > 100 && Randomer <= 125){
+    Say("You are starving, so you gather yourself some extensively nice fruits and veggies.");
     }
     GainFood(3);
 }
@@ -189,10 +205,14 @@ function Herb(){
 
 function Wilding(){
     Randomer = Randoming(0,100);
-    if (Randomer <= 50){
+    if (Randomer <= 25){
     Say("The sun is too hot for you to continue walking. You have to eat one more food.");
-    } else {
+    } else if (Randomer <= 50) {
     Say("Your food had been stole by a naughty squirrel.");
+    } else if (Randomer <= 75) {
+    Say("Your food dries under the hot sun, you decided to throw it out.");
+    } else if (Randomer <= 100) {
+    Say("Your food got snatched by a hanging monkey.");
     }
     GainFood(-1);
 }
