@@ -46,10 +46,12 @@ var ChiefTalking = 0;
 var EventsMet = 0;
 var DevHut = false;
 var PlayerianTalk = 0;
+var PlayerianInTalk = false;
 var Lostking = false;
 var King = false;
 var Church = false;
 var InChurch = false;
+var penguin = false;
 
 //Function declare area
     //Shortcuts
@@ -536,10 +538,13 @@ function TomatoMan(){
 
 function DevHutMenu(){
         DevHut = true;
+        PlayerianInTalk = false;
         $("#b5").show();
         $("#b5").html("Leave the Developer's Hut");
         $("#b6").show();
         $("#b6").html("Talk with a Tomato guy");
+        $("#b7").show();
+        $("#b7").html("Talk with a penguin");
         $(".B").hide();
         Image("DevHut");
 }
@@ -1060,6 +1065,7 @@ $("#b4").click(function(){
         //Developer's Hut -- Playerian
         if (DevHut === true){
             if (PlayerianTalk === 0){
+                PlayerianInTalk = true;
                 Say("A tomato guy has speak to you.");
                 if (TomatoSatis === true){
                 $("#word").append("<p>Really thank you for your food! I have been starving for weeks. Forget to mention, my name is Playerian. This is the developer's hut, enjoy yourself here!</p>");
@@ -1201,7 +1207,7 @@ $("#b4").click(function(){
             Murmur("You are so into the way of cannibalism, they are human too.");
         }
         //Dev's Hut Playerian -- Say no to drink
-        if (PlayerianTalk === 2){
+        if (PlayerianTalk === 2 && PlayerianInTalk === true){
                 Say("Playerian says: Well, many people don't like it, you are not the only one.");
                 $("#word").append("<p>You feel lucky that you didn't drink that, because Playerian threw it in the trash.</p>");
                 Image("P5");
@@ -1210,7 +1216,7 @@ $("#b4").click(function(){
                 $("#b7").hide();
             }
         //Dev's Hut Playerian -- When you go paper
-        if (DevHut === true){
+        if (DevHut === true && PlayerianInTalk === true){
         if (PlayerianTalk >= 4 && PlayerianTalk < 8){
                 Say("He uses scissor, you lose.");
                 Image("PS");
@@ -1221,6 +1227,11 @@ $("#b4").click(function(){
             $("#b6").html("Gun");
         }
         PlayerianTalk ++;
+        }
+        //Dev's Hut Penguin guy
+        if (DevHut === true && PlayerianInTalk === false){
+            Say("Debugging In Place");
+            $("#word").append("<p> <img class='penguin' src='https://a-z-animals.com/media/animals/images/original/penguin2.jpg'> </p>");
         }
     });
 
