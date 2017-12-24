@@ -1230,7 +1230,7 @@ $("#b4").click(function(){
         }
         //Dev's Hut Penguin guy
         if (DevHut === true && PlayerianInTalk === false){
-            Say("Debugging In Place");
+            Say("Hi, I am Eeerrrf and I usually like to wing it. That is all I am going to say because I am shy.");
             $("#word").append("<p> <img class='penguin' src='https://a-z-animals.com/media/animals/images/original/penguin2.jpg'> </p>");
         }
     });
