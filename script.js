@@ -1121,7 +1121,7 @@ $("#b4").click(function(){
                 Say("You want more drink of mine? Sorry, I don't have any left.");
                 }
                 if (Randomer === 1){
-                Say("You say I cheat during the game? No, you do.");
+                Say("You say I cheat during the game? OK, I admit I did, but it is just a game, isn't it? That's what people usually say, 'just a game'. But, what matter the most is your feeling right?");
                 }
                 if (Randomer === 2){
                 Say("It's fun running in the jungle, I must say, but I always starve to death.");
