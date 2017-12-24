@@ -1021,7 +1021,7 @@ $("#b4").click(function(){
         }
         //Church - Inside
         if (InChurch === true){
-            Say("You see some statues of Roman gods, they looks old. On the wall, there are some text you can read: As the emperor gets the holy branch of the life tree, the whole tree collaspes in a second... The words after that is shredded off.");
+            Say("You see some statues of Roman gods, they looks old. On the wall, there are some text you can read: As the emperor gets the holy branch of the life tree in the deep jungle in the west, the whole tree collaspes in a second... The words after that is shredded off.");
             $("#b5").hide();
             $(".B").show();
             InChurch = false;
