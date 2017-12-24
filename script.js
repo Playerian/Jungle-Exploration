@@ -816,6 +816,7 @@ function EventList(){
         $(".B").show();
     });
         return;
+    }
     
     //Fog Events
     if (InFog === true && Y <= -75){
