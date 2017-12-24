@@ -828,6 +828,7 @@ function EventList(){
         $("#b5").show();
         $("#b5").html("Go In");
         InChurch = true;
+        Church = true;
         return;
         }
     
@@ -1023,6 +1024,7 @@ $("#b4").click(function(){
             Say("You see some statues of Roman gods, they looks old. On the wall, there are some text you can read: As the emperor gets the holy branch of the life tree, the whole tree collaspes in a second... The words after that is shredded off.");
             $("#b5").hide();
             $(".B").show();
+            InChurch = false;
         }
     });
 
