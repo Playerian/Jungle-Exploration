@@ -50,7 +50,6 @@ var Lostking = false;
 var King = false;
 var Church = false;
 var InChurch = false;
-var penguin = false;
 
 //Function declare area
     //Shortcuts
@@ -1091,14 +1090,7 @@ $("#b4").click(function(){
                 $("#b6").html("Can I talk to other people?");
                 $("#b7").hide();
             }
-            
-              if (PlayerianTalk === 3){
-                Say("Playerian says: 'Okay, come out guys, it is nobody special, just the guy we killed a few thousand times.' Out of the hut came a penguin and two more. The penguin said, 'Hi I am Eeerrrf, hopefully this conversation doesn't turn dead serious.");
-                $("#b6").html("How about you guys");
-                $("#word").append("<p> <img class='penguin' src='https://a-z-animals.com/media/animals/images/original/penguin2.jpg'> </p>");
-            }
-            
-            if (PlayerianTalk === 4){
+            if (PlayerianTalk === 3){
                 Say("Well, I would not let you go so easily! First, you have to prove yourself fit, and to prove yourself fit, you need to win me in rock-paper-scissor!");
                 $("#b6").html("Rock");
                 $("#b7").show();
@@ -1107,30 +1099,29 @@ $("#b4").click(function(){
                 $("#b8").show();
                 Image("P1");
             }
-            if (PlayerianTalk >= 5 && PlayerianTalk <= 9){
+            if (PlayerianTalk >= 4 && PlayerianTalk <= 8){
                 Image("PP");
-                Say("He uses paper, you lose. Eeerrrf says, 'Well that seems to wrap things up.'");
-            
+                Say("He uses paper, you lose.");
             }
-            if (PlayerianTalk === 9){
+            if (PlayerianTalk === 8){
             $(".B3").hide();
             $("#b6").show();
             $("#b6").html("Gun");
             }
-            if (PlayerianTalk === 10){
+            if (PlayerianTalk === 9){
                 Say("Wow, you cheater! Fine, I'll let you go.");
                 $(".B3").hide();
                 DevHutMenu();
                 Image("P5");
             }
-            if (PlayerianTalk >= 11){
+            if (PlayerianTalk >= 10){
                 Image("P1");
                 Randomer = Randoming(0,5);
                 if (Randomer === 0){
                 Say("You want more drink of mine? Sorry, I don't have any left.");
                 }
                 if (Randomer === 1){
-                Say("You say I cheat during the game? No, you do.");
+                Say("You say I cheat during the game? OK, I admit I did, but it is just a game, isn't it? That's what people usually say, 'just a game'. But, what matter the most is your feeling right?");
                 }
                 if (Randomer === 2){
                 Say("It's fun running in the jungle, I must say, but I always starve to death.");
@@ -1180,7 +1171,7 @@ $("#b4").click(function(){
             }
             if (PlayerianTalk === 100){
                 Image("P1");
-                Say("You've tried, I can see your hard job. Well, follow your heart is sometimes really hard to do, because there is outside forces that is constantly changing you. Food, compass component, your valuable weapon, did you ever make it to here without those stuffs? No, you may want to spare a monkey or two, but you can't, this is what you do to live. All things depend on other things to live, this can't be change. What you can change, is the choices that are given to you. That's all I have to say.");
+                Say("You've tried, I can see your hard job. Well, follow your heart is sometimes really hard to do, because there are outside forces that is constantly changing you. Food, compass components, your valuable weapon, did you ever make it to here without those stuffs? No, you may want to spare a monkey or two, but you can't, this is what you do to live. All things depend on other things to live, this can't be changed. What you can change, is the choices that are given to you. That's all I have to say.");
             }
             if (PlayerianTalk > 100){
                 Image("P1");
@@ -1212,7 +1203,7 @@ $("#b4").click(function(){
         //Dev's Hut Playerian -- Say no to drink
         if (PlayerianTalk === 2){
                 Say("Playerian says: Well, many people don't like it, you are not the only one.");
-                $("#word").append("<p>You feel lucky that you didn't drink that, because Playerian throw it in the trash.</p>");
+                $("#word").append("<p>You feel lucky that you didn't drink that, because Playerian threw it in the trash.</p>");
                 Image("P5");
                 PlayerianTalk ++;
                 $("#b6").html("Can I talk to other people?");
