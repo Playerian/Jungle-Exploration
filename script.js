@@ -1219,18 +1219,18 @@ $("#b4").click(function(){
                 $("#b7").hide();
             }
         //Dev's Hut Playerian -- When you go paper
-        if (PlayerianTalk >= 4 && PlayerianTalk <= 8){
+        if (DevHut === true){
+        if (PlayerianTalk >= 4 && PlayerianTalk < 8){
                 Say("He uses scissor, you lose.");
-                PlayerianTalk ++;
                 Image("PS");
             }
         if (PlayerianTalk === 8){
             $(".B3").hide();
             $("#b6").show();
             $("#b6").html("Gun");
-            PlayerianTalk ++;
         }
-        
+        PlayerianTalk ++;
+        }
     });
 
     //Button 8
@@ -1272,15 +1272,17 @@ $("#b4").click(function(){
         }
         }
         //Dev's Hut -- You uses scissor
-        if (PlayerianTalk >= 4 && PlayerianTalk <= 8){
+        if (DevHut === true){
+        if (PlayerianTalk >= 4 && PlayerianTalk < 8){
                 Image("PR");
                 Say("He uses rock, you lose.");
-                PlayerianTalk ++;
             }
         if (PlayerianTalk === 8){
             $(".B3").hide();
             $("#b6").html("Gun");
             $("#b6").show();
+            
+        }
             PlayerianTalk ++;
         }
 }); 
