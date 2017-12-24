@@ -134,7 +134,7 @@ function Image(lol){
     }
     
     if(lol === "PS" ){
-        $("#image").html("<img src= 'https://rawgit.com/Playerian/Jungle-Exploration/master/PlayerianScisscor.png' >");
+        $("#image").html("<img src= 'https://rawgit.com/Playerian/Jungle-Exploration/master/PlayerianScissor.png' >");
     }
 }
 
@@ -1089,10 +1089,10 @@ $("#b4").click(function(){
             $("#b6").html("Gun");
             }
             if (PlayerianTalk === 9){
-                Image("P5");
                 Say("Wow, you cheater! Fine, I'll let you go.");
                 $(".B3").hide();
                 DevHutMenu();
+                Image("P5");
             }
             if (PlayerianTalk >= 10){
                 Image("P1");
