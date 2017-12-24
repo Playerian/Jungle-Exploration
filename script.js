@@ -1352,6 +1352,11 @@ $("#b11").click(function(){
 $(".B").click(function(){
     EventList();
     GainFood(-1);
+    //Lostking
+    if(LostKing===true){
+        $(".B").click(function(){
+    StepAfterVistingLostKing ++;
+    });
     //Dialogue
     if (Randoming(0,10) < 2 && (X !== 0 && Y !== 0) && Dialogue < 25  ){
         Dialogue ++;
