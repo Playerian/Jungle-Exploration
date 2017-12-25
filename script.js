@@ -945,6 +945,9 @@ $("#b4").click(function(){
             }
             if (ChiefTalking === 1){
             Say("Hello, my name is Bold.");
+                if (King === true){
+                Say("Hello, my name is Bold, nice to meet you, young king of Rome.");
+                }
             Murmur("Is that really him? Too long no see.");
             $("#b5").html("Talk with Bold");
             }
@@ -953,11 +956,20 @@ $("#b4").click(function(){
             }
             if (ChiefTalking === 3){
             Say("Well, I would like to give you a prediction for your future, since you had help the village.");
+                if (King === true){
+                Say("Well, I would like to give our young king a prediction for your future, since you had help the village and you are the king of rome.");
+                }
             }
             if (ChiefTalking === 4){
                 Say("");
+                if (King === true){
+                $("#word").append("<p>As a king of Rome, you have lots of responsibility.</p>");
+                }
                 if (EventsMet <= 4){
                 $("#word").append("<p>The jungle is way bigger than you think, explore more.</p>");
+                }
+                if (Lostking === true && King === false){
+                $("#word").append("<p>I can see that you made a wrong choice.</p>");
                 }
                 if (TombC === true && (TombA === false || TombB === false)){
                 $("#word").append("<p>You should notice that you got a good luck</p>");
@@ -987,13 +999,20 @@ $("#b4").click(function(){
                            }
                 
                 if (Caveman === "Rescue"){
-                $("#word").append("<p>You are a nice person, atleast you try.</p>");
+                $("#word").append("<p>You are a nice person, atleast you try to be one.</p>");
                 }
                 if (Caveman === "Ignore"){
-                $("#word").append("<p>You are a person who takes benefit for yourself.</p>");
+                    if (King === true){
+                        $("#word").append("<p>I would like to see our new king being more responsible to its citizens.</p>");
+                    } else {
+                        $("#word").append("<p>You are a person who takes benefit for yourself.</p>");
+                    }
                 }
                 if (Caveman === "Killed"){
                 $("#word").append("<p>Maybe you should keep your inner beast in check.</p>");
+                    if (King === true){
+                        $("#word").append("<p>Just because you are the king doesn't mean you can do that.</p>");
+                    }
                 $("#word").append("<p>You ask why?</p>");
                 $("#word").append("<p style='color:red;'>ASK YOURSELF</p>");
                 }
