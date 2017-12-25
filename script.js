@@ -578,7 +578,11 @@ function EventList(){
     if ( Math.pow(X-5, 2)+Math.pow(Y-15,2) <= 20 && Plane === false ){
         Plane = true;
         EventsMet += 1;
+        Murmur("Well, how could I forgot there is this thing?");
         Say("You saw a empty land with a crashed small plane that has dust all over the place. You decided to go in and search for some valuables. You found some food and 1 compass component.");
+        $("#word").append(" Inside the plane you found a small journal in the cabin. You decided to read a few pages.");
+        $("#word").append("<p>Front Cover: <i>Dr.Italic</i><br>Title: <i>Journal</i></p>");
+        $("#word").append("<p><i>I have decided to go on this exploration, in The Jungle that stay ignorant to human. Well, I was honored by having my long time friend Bold going with me and professer Underline serve as my pilot. Now, I think this trip will go pretty well, I can foresee it in the future.</i></p>");
         Food += 20;
         CC += 1;
         return;
