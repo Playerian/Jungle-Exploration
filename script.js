@@ -800,9 +800,15 @@ function EventList(){
     
     //Lost King
     if(Math.pow(2*X+120,2)+Math.pow(3*Y,2)<=100 && Lostking === false){
-    Lostking = true;
-    Say ("You know me, right? I'm Julius Caesar, emperor of Rome. After a long period of waiting, I get a thought, of not living anymore. At first, it's only a small thought, but as time progress, it gets bigger and bigger. Now, I'm near the edge of being blacken. I have always in regrets of one things, the building of the Roman Aura, it keeps people who should be dead alive. Its very bad, very very bad. Only one thing I can be sure, I'll be blacken in a few day, so, young man, if you want, do you want to be the king of Rome?");
-    $("#word").prepend("<p>You encounter a very old man that live in a tent. He starts to speak to you.</p>");
+        Lostking = true;
+        if (Step > 200){
+            Say("Young man.... Can you please... Become the king of Rome...");
+            $("#word").prepend("<p>You encounter a very old man that looks weak and is ready to die./p>");
+        } else {
+            Say("You know me, right? I'm Julius Caesar, emperor of Rome. After a long period of waiting, I get a thought, of not living anymore. At first, it's only a small thought, but as time progress, it gets bigger and bigger. Now, I'm near the edge of being blacken. I have always in regrets of one things, the building of the Roman Aura, it keeps people who should be dead alive. Its very bad, very very bad. Only one thing I can be sure, I'll be blacken in a few day, so, young man, if you want, do you want to be the king of Rome?");
+            $("#word").prepend("<p>You encounter a very old man that live in a tent. He starts to speak to you.</p>");
+        }
+        
         //show and hide
         $(".B").hide();
         $("#b5").show();
@@ -814,7 +820,12 @@ function EventList(){
         $("#b7").html("ignore");
         //click function
     $("#b5").click(function(){
+        if (Step > 200){
         Say("You made a wise choice young man...");
+        $("#word").append("<p>You see him falling onto the ground. Slowly and slowly, every part of him turns into pure black.</p>");
+        } else {
+        Say("Thank you, I know its hard for you, but being a king is no joke, its more like you bear all the responsibility for protecting the citizens, but remember, the most important thing for a king is its citizen. Good luck, young man. Also, if you have a chance, can you destroy the Roman Aura for me? I don't want to live more, no one wants to live more.");
+        }
         King = true;
         $("#b5").hide();
         $("#b6").hide();
@@ -822,7 +833,12 @@ function EventList(){
         $(".B").show();
         });
     $("#b6").click(function(){
-        Say("Have I not suffer enough?");
+        if (Step > 200){
+            Say("You... made a... bad choice.....");
+            $("#word").append("<p>You see him falling onto the ground. Slowly and slowly, every part of him turns into pure black.</p>");
+        } else {
+            Say("Have I not suffer enough?");
+        }
         $("#b5").hide();
         $("#b6").hide();
         $("#b7").hide();
