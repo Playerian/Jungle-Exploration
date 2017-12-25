@@ -574,6 +574,10 @@ function EventList(){
     Origin();
         return;
     }
+    //Noticing Same Place
+    if (Step >= 15 && Step <= 20 && X <= 3 && X >= -3 && Y >= -3 && Y <= 3){ 
+        Murmur("You should not walking around in a circle, that's not how you can find a way to escape a big jungle.");
+    }
     //Plane Crush site
     if ( Math.pow(X-5, 2)+Math.pow(Y-15,2) <= 20 && Plane === false ){
         Plane = true;
@@ -774,7 +778,11 @@ function EventList(){
     
     //Black Village
     if( X === 50 && Y === -30 ){
-    Say ("You have encountered the Black Village, a place where the shadows of the past life take form.....  A villager say hi to you when you walk into the village.");
+        if (King === true){
+            Say ("You have encountered the Black Village, a place where the shadows of the past life take form.....  Villagers greet you as the king of Rome when you walk into the village.");
+        } else {
+            Say ("You have encountered the Black Village, a place where the shadows of the past life take form.....  A villager say hi to you when you walk into the village.");
+        }
             $("#b8").show();
             $("#b8").html("Trade with the Black Village people");
             $("#b9").show();
@@ -1273,12 +1281,21 @@ $("#b4").click(function(){
         }
         if (VFriendly === 1){
         Say("The villager likes you.");
+            if (King === true){
+            Say("The villagers think this king is good");
+            }
         }
         if (VFriendly === 2){
         Say("The villager likes you very much.");
+            if (King === true){
+            Say("The villagers spread the words that this king is good.");
+            }
         }
         if (VFriendly >= 3){
         Say("The villagers think you are a friend of the black village.");
+            if (King === true){
+            Say("The villagers serve loyally to their king.");
+            }
         }
         if (VFriendly === 4 && ChiefHouse === false){
         Say("The villagers take you to a big, totally white house, state that this is the chief's house.");
@@ -1290,10 +1307,18 @@ $("#b4").click(function(){
         if (VFriendly >= 5){
         Say("The villagers are appreciating you and give you 1 food.");
         Food ++;
+            if (King === true){
+            Say("The villagers think this king is amazing and give you 2 food.");
+            Food ++;
+            }
         }
         if (VFriendly === 100){
         Say("The villagers have hail you as their god. They give you a lots of compass components.");
         CC += 4;
+            if (King === true){
+            Say("The villagers now really believe that this king is the descendant of the god, so they give you lots of food and compass components.");
+            Food += 300;
+            }
         }
         }
         //Dev's Hut -- You uses scissor
