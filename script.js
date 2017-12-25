@@ -981,6 +981,7 @@ $("#b4").click(function(){
             $("#b11").show();
             VillageSlaughter = true;
             Food += 100;
+            VillageRed = false;
             return;
             }
             //Chief
@@ -1394,7 +1395,18 @@ $("#b9").click(function(){
             VillageRed = false;
             }
         if (King === true){
+            if (VFriendly <= 0)
+            {
             Say("The villagers say that this king is annoying.");
+            }
+            if (VFriendly <= -3)
+            {
+            Say("The villagers say that this king is bringing us doom.");
+            }
+            if (VFriendly <= -5)
+            {
+            Say("The villagers say that this king is the worst of all.");
+            }
         }
         if (King === false){
             Randomer = Randoming(0,10);
