@@ -303,10 +303,10 @@ function Slip(){
 }
 
 function Bear(){
-    if (WD >= 9) {
+    if (WD >= 10) {
         Say("You encounter a big bear! You fight it with all of your strength, and you kill it and eat its meat, but your weapon took some damage.");
-        WD -= 3;
-        Food += 10;
+        WD -= 5;
+        Food += 20;
     } else {
         Say("You encounter a big bear! It attacks you and you can't defend againdt it! You lost some food!");
         Food -= 5;
