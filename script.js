@@ -52,6 +52,8 @@ var King = false;
 var Church = false;
 var InChurch = false;
 var penguin = false;
+var VillageRed = false;
+var VillageSlaughter = false;
 
 //Function declare area
     //Shortcuts
@@ -783,6 +785,7 @@ function EventList(){
         } else {
             Say ("You have encountered the Black Village, a place where the shadows of the past life take form.....  A villager say hi to you when you walk into the village.");
         }
+        if (VillageSlaughter === false){
             $("#b8").show();
             $("#b8").html("Trade with the Black Village people");
             $("#b9").show();
@@ -793,6 +796,12 @@ function EventList(){
             $("#b11").html("exit the village");
             $(".B").hide();
             Image("V1");
+        } else {
+            Say("You see the ruin of the black village");
+            $(".B").hide();
+            $("#b11").show();
+            $("#b11").html("exit the village");
+        }
             WalkVillage = true;
             EventsMet += 1;
         return;
@@ -961,8 +970,20 @@ $("#b4").click(function(){
             Caveman = "Rescue";
             Murmur("That's a high cost you have pay, don't ever think you deserve something back, that's not good.");
         }
-        //Black Village Chief
+        
+        //Black Village
         if (WalkVillage === true){
+            //Slaghter
+            if (VillageRed === true){
+            $("#word").css("color","black");
+            Say("You kill off all the villagers.");
+            $(".B2").hide();
+            $("#b11").show();
+            VillageSlaughter = true;
+            Food += 100;
+            return;
+            }
+            //Chief
             if (ChiefTalking === 0){
             Say("You go into the house, and you see a totally black person.");
             $("#b5").html("Talk with him");
@@ -1078,6 +1099,7 @@ $("#b4").click(function(){
             $(".B").show();
             InChurch = false;
         }
+        
     });
 
     //Button 6
@@ -1292,6 +1314,11 @@ $("#b4").click(function(){
         Food -= 3;
         WD += 5;
         VFriendly += 1;
+        if (VFriendly > -5){
+            VillageRed = false;
+            $("#b5").hide();
+            $("#b5").css("color","black");
+        }
         if (VFriendly <= 0){
         Say("The villagers have changed the way they think about you.");
         }
@@ -1353,45 +1380,59 @@ $("#b4").click(function(){
         }
 }); 
 
-    //Button 9
-    $("#b9").click(function(){
+//Button 9
+$("#b9").click(function(){
         //Village doesn't trade
-        if (WalkVillage === true){
-    VFriendly -= 1;
-    Randomer = Randoming(0,10);
-    if (Randomer === 0){
-    Say("The villager doesn't like you.");
-    }
-    if (Randomer === 1){
-    Say("The villager give you a white eye.");
-    }
-    if (Randomer === 2){
-    Say("The villager walk back.");
-    }
-    if (Randomer === 3){
-    Say("The villager think you are a bad person.");
-    }
-    if (Randomer === 4){
-    Say("Why are you asking to trade when you don't want to trade? a villager asked.");
-    }
-    if (Randomer === 5){
-    Say("The villager think you're funny.");
-    }
-    if (Randomer === 6){
-    Say("The villager looks at you, looks offended");
-    }
-    if (Randomer === 7){
-    Say("The villager looks at you, think you're funny.");
-    }
-    if (Randomer === 8){
-    Say("The villager think you are dumb.");
-    }
-    if (Randomer === 9){
-    Say("The villager doesn't like you.");
-    }
-    if (Randomer === 10){
-    Say("LOL. Said the villager");
-    }
+    if (WalkVillage === true){
+            VFriendly -= 1;
+            if (King === true && VFriendly <= -5){
+                $("#b5").show();
+                $("#b5").css("color","red");
+                $("#b5").html("Slaghter all the Villagers");
+                VillageRed = true;
+            } else {
+            VillageRed = false;
+            }
+        if (King === true){
+            Say("The villagers say that this king is annoying.");
+        }
+        if (King === false){
+            Randomer = Randoming(0,10);
+            if (Randomer === 0){
+            Say("The villager doesn't like you.");
+            }
+            if (Randomer === 1){
+            Say("The villager give you a white eye.");
+            }
+            if (Randomer === 2){
+            Say("The villager walk back.");
+            }
+            if (Randomer === 3){
+            Say("The villager think you are a bad person.");
+            }
+            if (Randomer === 4){
+            Say("Why are you asking to trade when you don't want to trade? a villager asked.");
+            }
+            if (Randomer === 5){
+            Say("The villager think you're funny.");
+            }
+            if (Randomer === 6){
+            Say("The villager looks at you, looks offended");
+            }
+            if (Randomer === 7){
+            Say("The villager looks at you, think you're funny.");
+            }
+            if (Randomer === 8){
+            Say("The villager think you are dumb.");
+            }
+            if (Randomer === 9){
+            Say("The villager doesn't like you.");
+            }
+            if (Randomer === 10){
+            Say("LOL. Said the villager");
+            }
+        }
+            
         }
 }); 
 
