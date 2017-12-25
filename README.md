@@ -65,10 +65,15 @@ know what is that looks like. Well, they are still, considerably, humans. Someho
   _One quick story, I saw someone in the Black Village that looks like my long time friend, Bold. What looks like means is that his hair style is pretty similar. What interest me is that I found Bold's pendant in his house. Now I really think that he is Bold, but I was not sure. I try to ask him directly, he doesn't answer anything. After that, I give up trying, just knowing that he is fine is enough for me.
 
 # About the Roman Aura
-  _The Roman Aura keeps people alive, you know that right? But I after my research, not all people will be kept alive by Roman Aura, only some, but they all got a same characteristic: the will to live. People without the will to live will be treated as a lost soul, not dead, not alive, only merely a human shape. They also will slowly lose theor memory, little bu little, as they can not gain more. And yes, they're the black villagers. My friend, Bold, also a member of thr the black villager, has lost his memory. I feel sad, so, never give up your will to live. If uou lose your will to live, you are a merely phantom, lost in the black village.
+  _The Roman Aura keeps people alive, you know that right? But I after my research, not all people will be kept alive by Roman Aura, only some, but they all got a same characteristic: the will to live. People without the will to live will be treated as a lost soul, not dead, not alive, only merely a human shape. They also will slowly lose theor memory, little by little, as they can not gain more. And yes, they're the black villagers. My friend, Bold, also a member of thr the black villager, has lost his memory. I feel sad, so, never give up your will to live. If uou lose your will to live, you are a merely phantom, lost in the black village.
   
 # Julius Caesar's words
   You know me, right? I'm Julius Caesar, emperor of Rome. After a long period of waiting, I get a thought, of not living anymore. At first, it's only a small thought, but as time progress, it gets bigger and bigger. Now, I'm near the edge of being blacken. I have always in regrets of one things, the building of the Roman Aura, it keeps people who should be dead alive. Its very bad, very very bad. Only one thing I can be sure, I'll be blacken in a few day, so, young man, if you want, do you want to be the king of Rome?
+
+# Julius Caesar's more words
+  Thank you, I know its hard for you, but being a king is no joke, its more like you bear all the responsibility for protecting the citizens, but remember, the most important thing for a king is its citizen. Good luck, young man. Also, if you have a chance, can you destroy the Roman Aura for me? I don't want to live more, no one wants to live more.
+
+
 # The Poem:
 /*
 we voyage far
