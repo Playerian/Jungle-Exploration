@@ -883,6 +883,40 @@ function EventList(){
         return;
         }
     
+    //Fog Guardian
+    if ( FogGuardian === false && Math.abs(X-30)+Math.abs(2Y+170)<15 ){
+        if (GuardianCount === 0){
+            Say("You see a black figure walking in the jungle, when he sees you, he shouted.");
+            $("#word").append("<p>You! Don't get into the fog, this place is dangerous!</p>");
+        }
+        if (GuardianCount === 1){
+            Say("He comes closer");
+            $("#word").append("<p>Can you hear me? This place is dangerous!</p>");
+        }
+        if (GuardianCount === 2){
+            Say("The black figure stands next to you, you see it clear now, he has some armors and weapons on him.");
+            $("#word").append("<p>I could bring you to black village in the north, just leave now, it's very dangerous.</p>");
+            $(".B").hide();
+            $("#b5").show();
+            $("#b6").show();
+            $("#b5").html("Go to Black Village with him");
+            $("#b6").html("Say: I am fine.");
+            if (King === true){
+                $("#b7").show();
+                $("#b7").html("Kill Him");
+            }
+        }
+        GuardianCount ++;
+        return;
+    } else {
+    if (GuardianCount > 0){
+        FogGuardian = true;
+        GuardianCount = 0;
+        Say("You leave the area.");
+        return;
+    }
+    }
+    
     //Fog Events
     if (InFog === true && Y <= -75){
         //Snowman Or Not?
@@ -1122,6 +1156,15 @@ $("#b4").click(function(){
             $(".B").show();
             InChurch = false;
         }
+        //Fog Guardian 
+        if (GuardianCount === 3){
+            Say("Here we go!");
+            $("#word").html("In a matter of hours, you get to the black village's south door.");
+            X = 50;
+            Y = -31;
+            FogGuardian = true;
+            GuardianCount = 0;
+        }
         
     });
 
@@ -1278,6 +1321,12 @@ $("#b4").click(function(){
 
             PlayerianTalk ++;
         }
+        //Fog Guardian
+        if (GuardianCount === 3){
+            Say("Fine, I'll leave you alone.");
+            GuardianCount = 0;
+            FogGuardian = truel
+        }
     });
     //Button 7
     $("#b7").click(function(){
@@ -1324,6 +1373,13 @@ $("#b4").click(function(){
         if (DevHut === true && PlayerianInTalk === false){
             Say("Hi, I am Eeerrrf and I usually like to wing it. That is all I am going to say because I am shy.");
             $("#word").append("<p> <img class='penguin' src='https://a-z-animals.com/media/animals/images/original/penguin2.jpg'> </p>");
+        }
+        //FogGuardian
+        if (GuardianCount === 3){
+            Say("You mercilessly kill the fog guardian.");
+            GuardianCount = 0;
+            FogGuardian = true;
+            GuardianKilled = true;
         }
     });
 
