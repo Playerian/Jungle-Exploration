@@ -884,7 +884,7 @@ function EventList(){
         }
     
     //Fog Guardian
-    if ( FogGuardian === false && Math.abs(X-30)+Math.abs(2Y+170)<15 ){
+    if ( FogGuardian === false && Math.abs(X-30)+Math.abs(2*Y+170) < 15){
         if (GuardianCount === 0){
             Say("You see a black figure walking in the jungle, when he sees you, he shouted.");
             $("#word").append("<p>You! Don't get into the fog, this place is dangerous!</p>");
@@ -1164,6 +1164,9 @@ $("#b4").click(function(){
             Y = -31;
             FogGuardian = true;
             GuardianCount = 0;
+            $(".B3").hide();
+            $(".B").show();
+            InFog = false;
         }
         
     });
@@ -1325,7 +1328,9 @@ $("#b4").click(function(){
         if (GuardianCount === 3){
             Say("Fine, I'll leave you alone.");
             GuardianCount = 0;
-            FogGuardian = truel
+            FogGuardian = true;
+            $(".B3").hide();
+            $(".B").show();
         }
     });
     //Button 7
@@ -1380,6 +1385,8 @@ $("#b4").click(function(){
             GuardianCount = 0;
             FogGuardian = true;
             GuardianKilled = true;
+            $(".B3").hide();
+            $(".B").show();
         }
     });
 
