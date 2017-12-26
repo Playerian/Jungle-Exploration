@@ -57,6 +57,7 @@ var VillageSlaughter = false;
 var FogGuardian = false;
 var GuardianCount = 0;
 var GuardianKilled = false;
+var KingWord = false;
 
 //Function declare area
     //Shortcuts
@@ -849,7 +850,7 @@ function EventList(){
             Say("You... made a... bad choice.....");
             $("#word").append("<p>You see him falling onto the ground. Then, a black figure stands up from the fallen body.</p>");
         } else {
-            Say("Have I not suffer enough?");
+            Say("Have I not suffer enough? Well, you made your choice.");
         }
         $("#b5").hide();
         $("#b6").hide();
@@ -857,11 +858,16 @@ function EventList(){
         $(".B").show();
     });
     $("#b7").click(function(){
+        if (KingWord === false && Step <= 70){
+            KingWord = true;
+            Say("Wait, don't go yet! I can tell you some of my story before you make your consideration. My, uh, relatives, they built a tomb for me somewhere in the jungle after I leave the Roman palace. I don't know where is it, but, I believe you will find it if you become the king of Rome, so please, ok?");
+        } else {
         Say("You ignore the powerless emperor and walked away.");
         $("#b5").hide();
         $("#b6").hide();
         $("#b7").hide();
         $(".B").show();
+        }
     });
         return;
     }
