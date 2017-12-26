@@ -54,6 +54,9 @@ var InChurch = false;
 var penguin = false;
 var VillageRed = false;
 var VillageSlaughter = false;
+var FogGuardian = false;
+var GuardianCount = 0;
+var GuardianKilled = false;
 
 //Function declare area
     //Shortcuts
