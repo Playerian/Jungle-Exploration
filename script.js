@@ -1076,9 +1076,22 @@ $("#b4").click(function(){
             if (ChiefTalking === 5){
                 if (Caveman === "Killed"){
                 Say("Now, if you please, can you get out from here?");
+                $("#b5").hide();
+                $("#b8").show();
+                $("#b9").show();
+                $("#b10").show();
+                $("#b11").show();
                 } else {
-                Say("That's all I have to say, good luck on your future trips!");
+                Say("OK, you looks like a nice person, come here, let me show you some custom of the black village.");
+                $("#b5").html("Go with Bold");
                 }
+            }
+            if (ChiefTalking === 6){
+                Say("This is where the lineage of black village chief lay, from the first one, the creator of black village, Claudius, to me, the thirteen chief, Bold. Everyone get promoted to be chief, then they work as a chief, until they lost the will to move, they close their eyes, and let the time flow. This is what we consider as a 'slumber'. They never wake up, do they? I have never seen one, and I don't think there will be one.");
+                $("#b5").html("Continue");
+            }
+            if (ChiefTalking === 7){
+                Say("Well, this is all I have to say, farewell!");
                 $("#b5").hide();
                 $("#b8").show();
                 $("#b9").show();
@@ -1104,7 +1117,7 @@ $("#b4").click(function(){
         }
         //Church - Inside
         if (InChurch === true){
-            Say("You see some statues of Roman gods, they looks old. On the wall, there are some text you can read: As the emperor gets the holy branch of the life tree in the deep jungle in the west, the whole tree collaspes in a second... The words after that is shredded off.");
+            Say("You see some statues of Roman gods, they looks old. On the wall, there are some text you can read: As the emperor gets the holy branch of the life tree in the deep jungle in the west, the whole tree shrink in a second... The words after that is shredded off.");
             $("#b5").hide();
             $(".B").show();
             InChurch = false;
