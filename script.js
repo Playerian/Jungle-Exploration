@@ -834,7 +834,7 @@ function EventList(){
     $("#b5").click(function(){
         if (Step > 200){
         Say("You made a wise choice young man...");
-        $("#word").append("<p>You see him falling onto the ground. Slowly and slowly, every part of him turns into pure black.</p>");
+        $("#word").append("<p>You see him falling onto the ground. Then, a black figure stands up from the fallen body.</p>");
         } else {
         Say("Thank you, I know its hard for you, but being a king is no joke, its more like you bear all the responsibility for protecting the citizens, but remember, the most important thing for a king is its citizen. Good luck, young man. Also, if you have a chance, can you destroy the Roman Aura for me? I don't want to live more, no one wants to live more.");
         }
@@ -847,7 +847,7 @@ function EventList(){
     $("#b6").click(function(){
         if (Step > 200){
             Say("You... made a... bad choice.....");
-            $("#word").append("<p>You see him falling onto the ground. Slowly and slowly, every part of him turns into pure black.</p>");
+            $("#word").append("<p>You see him falling onto the ground. Then, a black figure stands up from the fallen body.</p>");
         } else {
             Say("Have I not suffer enough?");
         }
