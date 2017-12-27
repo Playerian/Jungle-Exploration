@@ -149,7 +149,7 @@ function Image(lol){
     if(lol === "PS" ){
         $("#image").html("<img src= 'https://rawgit.com/Playerian/Jungle-Exploration/master/PlayerianScissor.png' >");
     }
-    if(lol === "TOE" ){
+    if(lol === "TOL" ){
         $("#image").html("<img src= 'https://rawgit.com/Playerian/Jungle-Exploration/master/TreeOfLife.png' >");
     }
 }
@@ -1231,6 +1231,7 @@ $("#b4").click(function(){
             Say("You look at the center of 'Tree of Life', there is a hole in the center of it, looks like something is missing.");
             $(".B2").hide();
             $(".B").show();
+            Image("TOL");
         }
         
     });
