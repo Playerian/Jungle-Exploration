@@ -210,6 +210,15 @@ function Battle(enemy2, health2){
         //After Battle
         $("#b5, #b6").click(function(){
             if (InBattle === true){
+                //If you lose
+                if (Food <= 1 && InColiseum === true){
+                    Say("Hey, young man, you should get prepared before you challenge our challengers! I'll give you some food before you leave!");
+                    Food = 20;
+                    health = NaN;
+                    InBattle = false;
+                    Coliseum();
+                }
+                //If you win
                 if (health <= 0){
                     InBattle = false;
                     Say("You defeated "+enemy+"!");
