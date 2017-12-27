@@ -61,10 +61,13 @@ var KingWord = false;
 var Lcrate = false;
 var TOL = false;
 var TreeE = false;
-var InBattle = true;
+var InBattle = false;
 var Battling = 0;
 var InColiseum = false;
 var ColiseumE = 0;
+var enemy;
+var health;
+var ColiseumLeave = false;
 
 //Function declare area
     //Shortcuts
@@ -166,7 +169,26 @@ function Randoming(min, max) { // Random Integer Generator
     return Math.floor(Math.random() * (max + 1 - min) ) + min;
 }
 
-function Battle(enemy, health){
+function Battle(enemy2, health2){
+        enemy = enemy2;
+        health = health2;
+        InBattle = false;
+        //Enemy Determination
+        if (enemy === ColiseumE){
+            Randomer = Randoming(0,3);
+            if (Randomer === 0){
+            enemy = "Wolf";
+            }
+            if (Randomer === 1){
+            enemy = "Bear";
+            }
+            if (Randomer === 2){
+            enemy = "Pig";
+            }
+            if (Randomer === 3){
+            enemy = "Spicy Chicken";
+            }
+        }
         //Initiate the Battle
         InBattle = true;
         $(".B").hide();
@@ -175,44 +197,45 @@ function Battle(enemy, health){
         $("#b5").html("Left");
         $("#b6").html("Right");
         Say(enemy+" is standing infront of you!");
+        
         //Before Battle
         $("#b5, #b6").click(function(){
+            if (InBattle === true){
             Battling = Randoming(0,1);
+            }
         });
         //Checking who will win
-        $("#b5").click(function(){
-            if (Battling === 0){
-                health -= 1;
-                Say("You hit "+enemy+" in the face!<br> "+enemy+" has "+health+" health left!");
-            } else {
-                Say(enemy+" dodge it and return a blow!<br>"+enemy+" has "+health+" health left!");
-                Food --;
-            }
-        });
-        $("#b6").click(function(){
-            if (Battling === 1){
-                health -= 1;
-                Say("You hit "+enemy+" in the face!<br> "+enemy+" has "+health+" health left!");
-            } else {
-                Say(enemy+" dodge it and return a blow!<br>"+enemy+" has "+health+" health left!");
-                Food --;
-            }
-        });
+
+        
         //After Battle
         $("#b5, #b6").click(function(){
-            if (health <= 0){
-                Say("You defeated "+enemy+"!");
-                BattleV(enemy);
+            if (InBattle === true){
+                if (health <= 0){
+                    InBattle = false;
+                    Say("You defeated "+enemy+"!");
+                    if (enemy === "nothing"){
+                    $(".B2").hide();
+                    $(".B").show();
+                    }
+                    if (InColiseum === true){
+                        if (ColiseumE === 1){
+                        $("#word").append("<p>That person walks toward you again, and say: Well done! You are really good at this! You can continue to fight or leave now, the spectators are impressed.</p>");
+                            health = NaN;
+                        } else {
+                        $("#word").append("<p>Nice! Continue Fighting? You have defeated "+ColiseumE+" Enemy!</p>");
+                        health = NaN;
+                        }
+                    ColiseumE ++;
+                    Coliseum();
+                    }
+                }
             }
         });
 }
 
 //Result of battle
 function BattleV(enemy){
-    if (enemy === "nothing"){
-        $(".B2").hide();
-        $(".B").show();
-    }
+    
 }
 
     //Function of Events
@@ -612,6 +635,28 @@ function DevHutMenu(){
         $("#b7").html("Talk with a penguin");
         $(".B").hide();
         Image("DevHut");
+}
+
+function Coliseum(){
+        InColiseum = true;
+        if (ColiseumE === 0){
+            Say("You see a magnificant building standing in the jungle, you walk in and realize this is the coliseum.");
+            $("#word").append("<p>A person walk towards you and say: You are the new gladiator right? Come here, our first show is ready to begin!<br>Then you got pull into the coliseum.</p>");
+            $(".B").hide();
+            $("#b5").show();
+            $("#b5").html("Fight!");
+            ColiseumE ++;
+        } else {
+            
+            $(".B").hide();
+            $("#b5").show();
+            $("#b5").html("Fight!");
+            $("#b6").show();
+            $("#b6").html("Leave");
+        }
+        $("#b5").click(function(){
+            
+        });
 }
 
 //Randomly execute(function) Events
@@ -1030,17 +1075,8 @@ function EventList(){
     //Coliseum
     if (InColiseum === false && Math.pow(2*X+80,2)+Math.pow(4*Y-400,2)<150 ){
         Say("You see the coliseum standing in the deep jungle.");
-        InColiseum = true;
-        if (ColiseumE === 0){
-            Say("You see a magnificant building standing in the jungle, you walk in and realize this is the coliseum.");
-            $("#word").append("<p>A person walk towards you and say: You are the new gladiator right? Come here, our first show is ready to begin!<br>Then you got pull into the coliseum.</p>");
-            $(".B").hide();
-            $("#b5").show();
-            $("#b5").html("Fight!");
-            ColiseumE ++;
-        } else {
-        }
-        
+        Coliseum();
+        return;
     }
 
     //Fog Events
@@ -1302,6 +1338,20 @@ $("#b4").click(function(){
             $(".B").show();
             Image("TOL");
         }
+        //Battle
+        if (InBattle === true){
+            if (Battling === 0){
+                health -= 1;
+                Say("You hit "+enemy+" in the face!<br> "+enemy+" has "+health+" health left!");
+            } else {
+                Say(enemy+" dodge it and return a blow!<br>"+enemy+" has "+health+" health left!");
+                Food --;
+            }
+            }
+        //Coliseum enter battle
+        if (InBattle === false && InColiseum === true){
+                Battle(ColiseumE,ColiseumE*3);
+            }
         
     });
 
@@ -1466,6 +1516,62 @@ $("#b4").click(function(){
             $(".B3").hide();
             $(".B").show();
         }
+        //Battle
+        if (InBattle === true){
+            if (Battling === 1){
+                health -= 1;
+                Say("You hit "+enemy+" in the face!<br> "+enemy+" has "+health+" health left!");
+            } else {
+                Say(enemy+" dodge it and return a blow!<br>"+enemy+" has "+health+" health left!");
+                Food --;
+            }
+            }
+        //Coliseum leave
+        if (InBattle === false && InColiseum === true){
+            ColiseumLeave = true;
+            Say("which way do you want to leave?");
+            $(".B2").hide();
+            $("#b7").show();
+            $("#b8").show();
+            $("#b9").show();
+            $("#b10").show();
+            $("#b7").html("North");
+            $("#b8").html("West");
+            $("#b9").html("East");
+            $("#b10").html("South");
+            $("#b7").click(function(){
+                if (ColiseumLeave === true){
+                    X = -40;
+                    Y = 104;
+                }
+            });
+            $("#b8").click(function(){
+                if (ColiseumLeave === true){
+                    X = -47;
+                    Y = 100;
+                }
+            });
+            $("#b9").click(function(){
+                if (ColiseumLeave === true){
+                    X = -33;
+                    Y = 100;
+                }
+            });
+            $("#b10").click(function(){
+                if (ColiseumLeave === true){
+                    X = -40;
+                    Y = 96;
+                }
+            });
+            $("#b7, #b8, #b9, #b10").click(function(){
+                if (ColiseumLeave === true){
+                    ColiseumLeave = false;
+                    $(".B2").hide();
+                    $(".B").show();
+                    InColiseum = false;
+                }
+            });
+            }
     });
     //Button 7
     $("#b7").click(function(){
