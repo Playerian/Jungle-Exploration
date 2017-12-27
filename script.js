@@ -564,6 +564,7 @@ function DevHutMenu(){
 }
 
 function Battle(enemy, health){
+        //Initiate the Battle
         InBattle = true;
         $(".B").hide();
         $("#b5").show();
@@ -571,9 +572,11 @@ function Battle(enemy, health){
         $("#b5").html("Left");
         $("#b6").html("Right");
         Say(enemy+" is standing infront of you!");
+        //Before Battle
         $("#b5, #b6").click(function(){
             Battling = Randoming(0,1);
         });
+        //Checking who will win
         $("#b5").click(function(){
             if (Battling === 0){
                 health -= 1;
@@ -592,6 +595,7 @@ function Battle(enemy, health){
                 Food --;
             }
         });
+        //After Battle
         $("#b5, #b6").click(function(){
             if (health <= 0){
                 Say("You defeated "+enemy+"!");
@@ -600,7 +604,7 @@ function Battle(enemy, health){
         });
 }
 
-//BattleVictory
+//Result of battle
 function BattleV(enemy){
     if (enemy === "nothing"){
         $(".B2").hide();
