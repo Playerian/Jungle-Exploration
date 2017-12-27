@@ -59,6 +59,7 @@ var GuardianCount = 0;
 var GuardianKilled = false;
 var KingWord = false;
 var Lcrate = false;
+var TOL = false;
 
 //Function declare area
     //Shortcuts
@@ -908,7 +909,11 @@ function EventList(){
                 Lcrate=true;
                 }
             else{
-                Say("You hit the lock with your weapon. Nothing happened.");
+                if (WD === 0){
+                    Say("You want to break the lock open with your weapon, but then you find out you didn't even have a weapon.");
+                } else {
+                    Say("You hit the lock with your weapon. Nothing happened.");
+                }
                 $(".B3").hide();
                 $(".B").show();
                 }
