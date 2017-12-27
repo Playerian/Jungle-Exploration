@@ -60,6 +60,7 @@ var GuardianKilled = false;
 var KingWord = false;
 var Lcrate = false;
 var TOL = false;
+var TreeE = false;
 
 //Function declare area
     //Shortcuts
@@ -959,6 +960,17 @@ function EventList(){
     }
     }
     
+    //Tree of Life
+    if (TOL === false && Math.abs(X+120)+Math.abs(Y+10)<5 ){
+        TOL = true;
+        TreeE = true;
+        Say("You saw a sign that said 'Tree of Life'. But all you see is a small bush.");
+        $(".B").hide();
+        $("#b5").show();
+        $("#b5").html("Examine");
+        return;
+    }
+    
     //Fog Events
     if (InFog === true && Y <= -75){
         //Snowman Or Not?
@@ -1209,6 +1221,13 @@ $("#b4").click(function(){
             $(".B3").hide();
             $(".B").show();
             InFog = false;
+        }
+        //Tree of Life
+        if (TreeE === true){
+            TreeE = false;
+            Say("You look at the center of 'Tree of Life', there is a hole in the center of it, looks like something is missing.");
+            $(".B2").hide();
+            $(".B").show();
         }
         
     });
