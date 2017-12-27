@@ -58,6 +58,7 @@ var FogGuardian = false;
 var GuardianCount = 0;
 var GuardianKilled = false;
 var KingWord = false;
+var Lcrate = false;
 
 //Function declare area
     //Shortcuts
@@ -880,6 +881,42 @@ function EventList(){
         $("#b5").html("Go In");
         InChurch = true;
         Church = true;
+        return;
+        }
+    
+    //Locked Crate
+    if(X===0 && Y===20 && Lcrate === false){
+        Say("You found a half buried crate that have a lock on it.");
+        $(".B").hide();
+        $("#b5").show();
+        $("#b6").show();
+        $("#b7").show();
+        $("#b5").html("Examine lock");
+        $("#b6").html("Break lock with weapon");
+        $("#b7").html("Leave");
+        $("#b5").click(function(){
+           Say("Upon closer examination you realized the lock prevents you from accessing whatever is within the crate..");
+           $("#b5").hide();
+           });
+        $("#b6").click(function(){
+            if(WD>1){
+                Food += 5;
+                WD -= 2;
+                $(".B3").hide();
+                $(".B").show();
+                Say("You broke the lock with your weapon and within the crate you found some food.");
+                Lcrate=true;
+                }
+            else{
+                Say("You hit the lock with your weapon. Nothing happened.");
+                $(".B3").hide();
+                $(".B").show();
+                }
+            });
+        $("#b7").click(function(){
+            $(".B3").hide();
+            $(".B").show();
+            });
         return;
         }
     
