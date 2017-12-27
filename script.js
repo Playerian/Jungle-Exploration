@@ -222,8 +222,17 @@ function Battle(enemy2, health2){
                         $("#word").append("<p>That person walks toward you again, and say: Well done! You are really good at this! You can continue to fight or leave now, the spectators are impressed.</p>");
                             health = NaN;
                         } else {
-                        $("#word").append("<p>Nice! Continue Fighting? You have defeated "+ColiseumE+" Enemy!</p>");
-                        health = NaN;
+                            if (ColiseumE % 3 === 0){
+                                $("#word").append("<p>Nice! You get some food for you participaton in the coliseum!</p>");
+                                Food += 30;
+                            } else {
+                                if (ColiseumE === 8){
+                                    $("#word").append("<p>Wow! You have already defeated 8 enemies! Get this compass component!</p>");
+                                } else {
+                                $("#word").append("<p>Nice! Continue Fighting? You have defeated "+ColiseumE+" Enemy! You may get some prices if you defeat more!</p>");
+                                }
+                            }
+                            health = NaN;
                         }
                     ColiseumE ++;
                     Coliseum();
@@ -231,11 +240,6 @@ function Battle(enemy2, health2){
                 }
             }
         });
-}
-
-//Result of battle
-function BattleV(enemy){
-    
 }
 
     //Function of Events
