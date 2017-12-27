@@ -164,6 +164,55 @@ function Randoming(min, max) { // Random Integer Generator
     return Math.floor(Math.random() * (max + 1 - min) ) + min;
 }
 
+function Battle(enemy, health){
+        //Initiate the Battle
+        InBattle = true;
+        $(".B").hide();
+        $("#b5").show();
+        $("#b6").show();
+        $("#b5").html("Left");
+        $("#b6").html("Right");
+        Say(enemy+" is standing infront of you!");
+        //Before Battle
+        $("#b5, #b6").click(function(){
+            Battling = Randoming(0,1);
+        });
+        //Checking who will win
+        $("#b5").click(function(){
+            if (Battling === 0){
+                health -= 1;
+                Say("You hit "+enemy+" in the face!<br> "+enemy+" has "+health+" health left!");
+            } else {
+                Say(enemy+" dodge it and return a blow!<br>"+enemy+" has "+health+" health left!");
+                Food --;
+            }
+        });
+        $("#b6").click(function(){
+            if (Battling === 1){
+                health -= 1;
+                Say("You hit "+enemy+" in the face!<br> "+enemy+" has "+health+" health left!");
+            } else {
+                Say(enemy+" dodge it and return a blow!<br>"+enemy+" has "+health+" health left!");
+                Food --;
+            }
+        });
+        //After Battle
+        $("#b5, #b6").click(function(){
+            if (health <= 0){
+                Say("You defeated "+enemy+"!");
+                BattleV(enemy);
+            }
+        });
+}
+
+//Result of battle
+function BattleV(enemy){
+    if (enemy === "nothing"){
+        $(".B2").hide();
+        $(".B").show();
+    }
+}
+
     //Function of Events
 function Nothing(){
     Randomer = Randoming(0,200);
@@ -561,55 +610,6 @@ function DevHutMenu(){
         $("#b7").html("Talk with a penguin");
         $(".B").hide();
         Image("DevHut");
-}
-
-function Battle(enemy, health){
-        //Initiate the Battle
-        InBattle = true;
-        $(".B").hide();
-        $("#b5").show();
-        $("#b6").show();
-        $("#b5").html("Left");
-        $("#b6").html("Right");
-        Say(enemy+" is standing infront of you!");
-        //Before Battle
-        $("#b5, #b6").click(function(){
-            Battling = Randoming(0,1);
-        });
-        //Checking who will win
-        $("#b5").click(function(){
-            if (Battling === 0){
-                health -= 1;
-                Say("You hit "+enemy+" in the face!<br> "+enemy+" has "+health+" health left!");
-            } else {
-                Say(enemy+" dodge it and return a blow!<br>"+enemy+" has "+health+" health left!");
-                Food --;
-            }
-        });
-        $("#b6").click(function(){
-            if (Battling === 1){
-                health -= 1;
-                Say("You hit "+enemy+" in the face!<br> "+enemy+" has "+health+" health left!");
-            } else {
-                Say(enemy+" dodge it and return a blow!<br>"+enemy+" has "+health+" health left!");
-                Food --;
-            }
-        });
-        //After Battle
-        $("#b5, #b6").click(function(){
-            if (health <= 0){
-                Say("You defeated "+enemy+"!");
-                BattleV(enemy);
-            }
-        });
-}
-
-//Result of battle
-function BattleV(enemy){
-    if (enemy === "nothing"){
-        $(".B2").hide();
-        $(".B").show();
-    }
 }
 
 //Randomly execute(function) Events
