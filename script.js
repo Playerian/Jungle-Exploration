@@ -149,6 +149,9 @@ function Image(lol){
     if(lol === "PS" ){
         $("#image").html("<img src= 'https://rawgit.com/Playerian/Jungle-Exploration/master/PlayerianScissor.png' >");
     }
+    if(lol === "TOE" ){
+        $("#image").html("<img src= 'https://rawgit.com/Playerian/Jungle-Exploration/master/TreeOfLife.png' >");
+    }
 }
 
 function GainFood(fooding){
