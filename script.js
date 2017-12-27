@@ -63,6 +63,8 @@ var TOL = false;
 var TreeE = false;
 var InBattle = true;
 var Battling = 0;
+var InColiseum = false;
+var ColiseumE = 0;
 
 //Function declare area
     //Shortcuts
@@ -1025,6 +1027,22 @@ function EventList(){
         return;
     }
     
+    //Coliseum
+    if (InColiseum === false && Math.pow(2*X+80,2)+Math.pow(4*Y-400,2)<150 ){
+        Say("You see the coliseum standing in the deep jungle.");
+        InColiseum = true;
+        if (ColiseumE === 0){
+            Say("You see a magnificant building standing in the jungle, you walk in and realize this is the coliseum.");
+            $("#word").append("<p>A person walk towards you and say: You are the new gladiator right? Come here, our first show is ready to begin!<br>Then you got pull into the coliseum.</p>");
+            $(".B").hide();
+            $("#b5").show();
+            $("#b5").html("Fight!");
+            ColiseumE ++;
+        } else {
+        }
+        
+    }
+
     //Fog Events
     if (InFog === true && Y <= -75){
         //Snowman Or Not?
