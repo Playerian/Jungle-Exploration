@@ -68,6 +68,7 @@ var ColiseumE = 0;
 var enemy;
 var health;
 var ColiseumLeave = false;
+var BoldFriend = false;
 
 //Function declare area
     //Shortcuts
@@ -1709,6 +1710,11 @@ $("#b4").click(function(){
             Say("The villagers think this king is amazing and give you 2 food.");
             Food ++;
             }
+        }
+        if (VFriendly === 10){
+        Say("Bold is talking to you.");
+        $("#word").append("<h1>Bold:<br><br>I really appreciate your help to the black village, I think we could be friends.</h1>");
+        BoldFriend = true;
         }
         if (VFriendly === 100){
         Say("The villagers have hail you as their god. They give you a lots of compass components.");
