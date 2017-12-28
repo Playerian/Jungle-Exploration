@@ -36,6 +36,8 @@
     height:400px;
     width:400px;
     
+}
+
      .penguin:hover{transition:all 1s;
        border-radius:200px;
       animation:spin 2s;
@@ -45,3 +47,4 @@
     @keyframes spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(1440deg); }
+}
