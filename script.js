@@ -878,14 +878,18 @@ function EventList(){
     if (BeastCave === true && CaveOutcome1 === false && X <= 50 && Caveman==="Rescue"){
         CaveOutcome1 = true;
         if (BeastKilled === true){
-            Say("You saw some totally black people walking toward south, looks like the group that you has been released! They have the same destination, that's what you observed. One of them talk with you: There is a place that you can find the lost king in the west, that's what I heard from someone.");
-            } else {
+            if (Y <= -30){
+                Say("You saw some totally black people walking toward north, looks like the group that you has been released! They have the same destination, that's what you observed. One of them talk with you: There is a fog area in the south, looks pretty dangerous.");
+                } else {
+                Say("You saw some totally black people walking toward south, looks like the group that you has been released! They have the same destination, that's what you observed. One of them talk with you: There is a place that you can find the lost king in the west, that's what I heard from someone.");
+                }
+        } else {
             Say("You see the beast slaughtering the totally black people! You are mad, so you get up and kill the beast. Although the beast dies, tons of totally black people are dead.");
             Food += BeastHealth * 15;
             BeastX = NaN;
             BeastY = NaN;
             BeastDirection = NaN;
-            }
+        }
         return;
     }
     
