@@ -238,7 +238,7 @@ function Battle(enemy2, health2){
                                 if (ColiseumE === 8){
                                     $("#word").append("<p>Wow! You have already defeated 8 enemies! Get this compass component!</p>");
                                 } else {
-                                $("#word").append("<p>Nice! Continue Fighting? You have defeated "+ColiseumE+" Enemy! You may get some prices if you defeat more!</p>");
+                                $("#word").append("<p>Nice! Continue Fighting? You have defeated "+ColiseumE+" Enemy! You may get some prizes if you defeat more!</p>");
                                 }
                             }
                             health = NaN;
