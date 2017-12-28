@@ -1138,11 +1138,17 @@ $(".B2").click(function(){
     //North
 $("#b1").click(function(){
     Y ++;
+    if (Y > 150){
+    Y = -150;
+    }
 });
 
     //West
 $("#b2").click(function(){
     X --;
+    if (X < -150){
+    X = 150;
+    }
 });
 
     //East
@@ -1153,11 +1159,17 @@ $("#b3").click(function(){
     $("#wiseword").css("border" , "5px solid black");
     Murmur("If you go east you will encounter the beast!");
     }
+    if (X > 150){
+    X = -150;
+    }
 });
 
     //South
 $("#b4").click(function(){
     Y --;
+    if (Y < -150){
+    Y = 150;
+    }
 }); 
 
 //Other Buttons
