@@ -1190,7 +1190,7 @@ $("#b4").click(function(){
             $(".B3").hide();
             $(".B").show();
             Caveman = "Rescue";
-            Murmur("That's a high cost you have pay, don't ever think you deserve something back, that's not good.");
+            Murmur("That's a high cost you have pay, don't ever think you deserve something back, that's not a good ideology.");
         }
         
         //Black Village
