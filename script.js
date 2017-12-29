@@ -1261,7 +1261,26 @@ function EventList(){
         Coliseum();
         return;
     }
+    
+    //Into the Wild
+    if (InWild === false && Math.pow(2*X+120,2)+Math.pow(4*Y-300,2) < 2000 ){
+        Say("You suddenly find yourself in a place that has no trees compare to the jungle.");
+        InWild = true;
+        return;
+    }
 
+    //Finally Out!
+    if (InWild === true && !(Math.pow(2*X+120,2)+Math.pow(4*Y-300,2) < 2000) ){
+        Say("You escape the wild!");
+        InWild = false;
+        return;
+    }
+    //Wild Events
+    if (InWild === true && Math.pow(2*X+120,2)+Math.pow(4*Y-300,2) < 2000 ){
+        Events("Scorpion","Dry","Cactus","StrongWind","Raining","Leopard","Tiger","Stinger","Oasis");
+        return;
+    }
+    
     //Fog Events
     if (InFog === true && Y <= -75){
         //Snowman Or Not?
