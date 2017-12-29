@@ -70,6 +70,7 @@ var health;
 var ColiseumLeave = false;
 var BoldFriend = false;
 var STFriend = false;
+var InWild = false;
 
 //Function declare area
     //Shortcuts
