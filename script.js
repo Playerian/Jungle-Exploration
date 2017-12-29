@@ -74,6 +74,10 @@ var InWild = false;
 var TigerBattle = false;
 var MeetTiger = false;
 
+//Musics
+var BlackVillage = new Audio('https://rawgit.com/Playerian/Jungle-Exploration/master/BlackVillage.mp3');
+BlackVillage.loop = true;
+
 //Function declare area
     //Shortcuts
 function Say(word){
@@ -1071,6 +1075,7 @@ function EventList(){
     
     //Black Village
     if( X === 50 && Y === -30 ){
+        BlackVillage.play();
         if (King === true){
             Say ("You have encountered the Black Village, a place where the shadows of the past life take form.....  Villagers greet you as the king of Rome when you walk into the village.");
         } else {
@@ -2035,6 +2040,8 @@ $("#b9").click(function(){
 //Button 11
 $("#b11").click(function(){
     if (WalkVillage === true){
+        BlackVillage.pause();
+        BlackVillage.currentTime = 0;
         WalkVillage = false;
         $(".B3").hide();
         $(".B").show();
