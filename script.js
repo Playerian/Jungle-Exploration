@@ -571,6 +571,85 @@ function Strawberries(){
     Food += 2;
 }
 
+    //Wild Events
+function Scorpion(){
+    if (WD >= 2){
+        Say("You saw a black scorpian lunges at you. You block it off with your weapon.");
+        WD -= 1;
+    } else {
+        Say("You saw a black scorpian lunges at you. You got bited and lose some food.");
+        Food -= 3;
+    }
+}
+
+function Dry(){
+    Randomer = Randoming(0,3);
+    if (Randomer === 0){
+        Say("The sun is way too hot, you have to eat 1 more food.");
+    }
+    if (Randomer === 1){
+        Say("You don't have any water, you have to eat 1 more food.");
+    }
+    if (Randomer === 2){
+        Say("One of your food dries up under the hot sun, you lose 1 food.");
+    }
+    if (Randomer === 3){
+        Say("You feel exhausted, you have to eat 1 more food");
+    }
+    Food --;
+}
+
+function Cactus(){
+    Randomer = Randoming(0,2);
+    if (Randomer === 0){
+        Say("You see a dry cactus");
+    }
+    if (Randomer === 1){
+        Say("You see a cactus, you suck some water from it.");
+        Food ++;
+    }
+    if (Randomer === 2){
+        Say("You see a good cactus, you eat it.");
+        Food += 3;
+    }
+}
+
+function StrongWind(){
+    Randomer = Randoming(0,2);
+    if (Randomer === 0){
+        Say("The wind is too strong for you to walk.");
+    }
+    if (Randomer === 1){
+        Say("The wind is too strong, you got blew around.");
+        X += Randoming(-1,1);
+        Y -= Randoming(-1,1);
+    }
+    if (Randoming === 2){
+        Say("The wind is way too strong, you don't know where you are when the wind end.");
+        X += Randoming(-3,3);
+        Y -= Randoming(-3,3);
+    }
+}
+
+function Raining(){
+    Say("It's finally raining, you feel relieved, so you don't eat food.");
+    Food ++;
+}
+
+function Leopard(){
+    if (WD >= 5){
+        Say("You encounter a leopard! You use your weapon and kill it! Then your weapon gets a little broken");
+        WD -= 2;
+        Food += 4;
+    } else {
+        Say("You encounter a leopard! It attacks you and you run away! During the escape, you drop some food!");
+        Food --;
+    }
+}
+
+function Tiger(){
+}
+
     //Uncommon Events
 function Origin(){
     Origing ++;
