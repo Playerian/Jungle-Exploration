@@ -71,6 +71,8 @@ var ColiseumLeave = false;
 var BoldFriend = false;
 var STFriend = false;
 var InWild = false;
+var TigerBattle = false;
+var MeetTiger = false;
 
 //Function declare area
     //Shortcuts
@@ -212,8 +214,9 @@ function Battle(enemy2, health2){
         
         //After Battle
         $("#b5, #b6").click(function(){
+            // If in battle
             if (InBattle === true){
-                //If you lose
+                //If you lose in coliseum
                 if (Food <= 1 && InColiseum === true){
                     Say("Hey, young man, you should get prepared before you challenge our challengers! I'll give you some food before you leave!");
                     Food = 20;
@@ -221,7 +224,7 @@ function Battle(enemy2, health2){
                     InBattle = false;
                     Coliseum();
                 }
-                //If you win
+                //If you win in coliseum
                 if (health <= 0){
                     InBattle = false;
                     Say("You defeated "+enemy+"!");
@@ -270,11 +273,22 @@ function Battle(enemy2, health2){
                             } else {
                                 $("#word").append("<p style='text-decoration: line-through;'>Nice! Continue Fighting? You have defeated "+ColiseumE+" Enemy! You may get some prizes if you defeat more!</p>");
                             }
-                            health = NaN;
                         }
                     ColiseumE ++;
                     Coliseum();
                     }
+                }
+                //Tiger Battle
+                if (TigerBattle === true && health <= 0){
+                    TigerBattle = false;
+                    $("#word").append("<br>You also get a nice feast!");
+                    Food += 6;
+                    $(".B2").hide();
+                    $(".B").show();
+                }
+                //Stuffs
+                if (health <= 0){
+                health = NaN;
                 }
             }
         });
@@ -648,6 +662,50 @@ function Leopard(){
 }
 
 function Tiger(){
+    MeetTiger = true;
+    Say("You saw a tiger! It is runing towards you, what do you want to do?");
+    $(".B").hide();
+    $("#b5").show();
+    $("#b6").show();
+    $("#b5").html("Battle");
+    $("#b6").html("Escape");
+    $("#b5").click(function(){
+        if (MeetTiger === true){
+            MeetTiger = false;
+            TigerBattle = true;
+            Battle("Tiger",Randoming(3,6));
+        }
+    });
+    $("#b6").click(function(){
+        if (MeetTiger === true){
+            MeetTiger = false;
+            Randomer = Randoming(0,1);
+            if (Randomer === 0){
+                Say("You easily escape the tiger!");
+            } else {
+                Say("You can't escape! You give tiger one food, then it gives up its chasing.");
+                Food --;
+            }
+            $(".B2").hide();
+            $(".B").show();
+        }
+    });
+}
+
+function Stinger(){
+    Randomer = Randoming(0,1);
+    if (Randomer === 0){
+        Say("You get stabbed by a stinger on the ground, so you need to eat 1 food before you can get going on.");
+        Food --;
+    } else {
+        Say("You see a sharp stinger on the ground, you use it to strengthen your weapon.");
+        WD ++;
+    }
+}
+
+function Oasis(){
+    Say("You see an oasis in the wild. You drink some water, they felt tasty.");
+    Food += 2;
 }
 
     //Uncommon Events
