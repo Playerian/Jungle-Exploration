@@ -83,7 +83,7 @@ function Say(word){
 }
 
 function Murmur(puns){
-    $("#wiseword").css("font-size" , "10px");
+    $("#wiseword").css("font-size" , "20px");
     $("#wiseword").css("border" , "5px solid black");
     $("#wiseword").show();
     $("#wiseword").html(puns);
