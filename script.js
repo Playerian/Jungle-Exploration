@@ -69,6 +69,7 @@ var enemy;
 var health;
 var ColiseumLeave = false;
 var BoldFriend = false;
+var STFriend = false;
 
 //Function declare area
     //Shortcuts
@@ -229,18 +230,44 @@ function Battle(enemy2, health2){
                     }
                     if (InColiseum === true){
                         if (ColiseumE === 1){
-                        $("#word").append("<p>That person walks toward you again, and say: Well done! You are really good at this! You can continue to fight or leave now, the spectators are impressed.</p>");
+                        $("#word").append("<p>That person walks toward you again, and say: "+"<div style='text-decoration: line-through;'>Well done! You are really good at this! You can continue to fight or leave now, the spectators are impressed. Forgot to mention, my name is Strikethrough.</div></p>");
                             health = NaN;
                         } else {
                             if (ColiseumE % 3 === 0){
-                                $("#word").append("<p>Nice! You get some food for you participaton in the coliseum!</p>");
+                                $("#word").append("<p style='text-decoration: line-through;'>Nice! You get some food for your participaton in the coliseum!</p>");
                                 Food += 30;
+                            } 
+                            if (ColiseumE === 8){
+                                $("#word").append("<p style='text-decoration: line-through;'>Wow! You have already defeated 8 enemies! Get this compass component!</p>");
+                            } else if (ColiseumE === 10){
+                                $("#word").append("<p style='text-decoration: line-through;'>Wow! You are really good! Now I want to be your friend now!</p>");
+                                STFriend = true;
+                            } else if (ColiseumE === 11){
+                                $("#word").append("<p style='text-decoration: line-through;'>Um... Now we are friends now. What should we do?</p>");
+                            } else if (ColiseumE === 12){
+                                $("#word").append("<p style='text-decoration: line-through;'>I haven't decided yet, but I would give you some advice because you are so good!<br>I actually means food!</p>");
+                                Food += 10;
+                            } else if (ColiseumE === 13){
+                                $("#word").append("<p style='text-decoration: line-through;'>There's a dangerous place in southwest call the wild! Don't go there!</p>");
+                            } else if (ColiseumE === 14){
+                                $("#word").append("<p style='text-decoration: line-through;'>(I don't know other things about the jungle. What should I do...)</p>");
+                            } else if (ColiseumE === 15){
+                                $("#word").append("<p style='text-decoration: line-through;'>I will tell you some story about the coliseum. I have been the manager for coliseum for a long time. I don't know since when, but it is a long time for sure.</p>");
+                            } else if (ColiseumE === 16){
+                                $("#word").append("<p style='text-decoration: line-through;'>We, the managers, also recruit people to come into the coliseum. I usually find them in the edge of the wild</p>");
+                            } else if (ColiseumE === 17){
+                                $("#word").append("<p style='text-decoration: line-through;'>Then I pass around some offer paper on the ground, hope for people to pick it up.</p>");
+                            } else if (ColiseumE === 18){
+                                $("#word").append("<p style='text-decoration: line-through;'>Well, that's pretty much it. Want some hammerburgers?</p>");
+                                Food += 100;
+                            } else if (ColiseumE % 2 === 0 && ColiseumE > 18){
+                                $("#word").append("<p style='text-decoration: line-through;'>Get some hammerburger! My friend!");
+                                Food += 100;
+                            } else if (ColiseumE % 7 === 0 && ColiseumE > 20){
+                                $("#word").append("<p style='text-decoration: line-through;'>Also try this new, freshly cooked spicy chicken burger! My friend!");
+                                Food += 300;
                             } else {
-                                if (ColiseumE === 8){
-                                    $("#word").append("<p>Wow! You have already defeated 8 enemies! Get this compass component!</p>");
-                                } else {
-                                $("#word").append("<p>Nice! Continue Fighting? You have defeated "+ColiseumE+" Enemy! You may get some prizes if you defeat more!</p>");
-                                }
+                                $("#word").append("<p style='text-decoration: line-through;'>Nice! Continue Fighting? You have defeated "+ColiseumE+" Enemy! You may get some prizes if you defeat more!</p>");
                             }
                             health = NaN;
                         }
@@ -655,7 +682,7 @@ function Coliseum(){
         InColiseum = true;
         if (ColiseumE === 0){
             Say("You see a magnificant building standing in the jungle, you walk in and realize this is the coliseum.");
-            $("#word").append("<p>A person walk towards you and say: You are the new gladiator right? Come here, our first show is ready to begin!<br>Then you got pull into the coliseum.</p>");
+            $("#word").append("<p>A person walk towards you and say: "+"<div style='text-decoration: line-through;'>You are the new gladiator right? Come here, our first show is ready to begin!</div><br>Then you got pull into the coliseum.</p>");
             $(".B").hide();
             $("#b5").show();
             $("#b5").html("Fight!");
