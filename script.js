@@ -73,6 +73,9 @@ var STFriend = false;
 var InWild = false;
 var TigerBattle = false;
 var MeetTiger = false;
+var Underline = false;
+var UnderlineMeet = false;
+var UnderlineC;
 
 //Musics
 var BlackVillage = new Audio('https://rawgit.com/Playerian/Jungle-Exploration/master/BlackVillage.mp3');
@@ -1283,6 +1286,11 @@ function EventList(){
         Say("You escape the wild!");
         InWild = false;
         return;
+    }
+    //Underline 
+    if (X === -100 && 90 >= Y && Y >= 60 && Underline === false){
+        Say("You see a wounded man lying on the ground.");
+        Underline = true;
     }
     //Wild Events
     if (InWild === true && Math.pow(2*X+120,2)+Math.pow(4*Y-300,2) < 2000 ){
