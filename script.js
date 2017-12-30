@@ -75,7 +75,7 @@ var TigerBattle = false;
 var MeetTiger = false;
 var Underline = false;
 var UnderlineMeet = false;
-var UnderlineC;
+var UnderlineC = "Laying";
 var CrateMeet = false;
 
 //Musics
@@ -1114,6 +1114,7 @@ function EventList(){
     //Lost King
     if(Math.pow(2*X+120,2)+Math.pow(3*Y,2)<=100 && Lostking === false){
         Lostking = true;
+        KingWord = true;
         if (Step > 200){
             Say("Young man.... Can you please... Become the king of Rome...");
             $("#word").prepend("<p>You encounter a very old man that looks weak and is ready to die./p>");
@@ -1133,6 +1134,8 @@ function EventList(){
         $("#b7").html("ignore");
         //click function
     $("#b5").click(function(){
+        if (KingWord === true){
+            KingWord = false;
         if (Step > 200){
         Say("You made a wise choice young man...");
         $("#word").append("<p>You see him falling onto the ground. Then, a black figure stands up from the fallen body.</p>");
@@ -1144,8 +1147,11 @@ function EventList(){
         $("#b6").hide();
         $("#b7").hide();
         $(".B").show();
+        }
         });
     $("#b6").click(function(){
+        if (KingWord === true){
+            KingWord = false;
         if (Step > 200){
             Say("You... made a... bad choice.....");
             $("#word").append("<p>You see him falling onto the ground. Then, a black figure stands up from the fallen body.</p>");
@@ -1156,17 +1162,21 @@ function EventList(){
         $("#b6").hide();
         $("#b7").hide();
         $(".B").show();
+        }
     });
     $("#b7").click(function(){
-        if (KingWord === false && Step <= 70){
-            KingWord = true;
+        if (KingWord === true){
+            KingWord = false;
+        if (Step <= 70){
             Say("Wait, don't go yet! I can tell you some of my story before you make your consideration. My, uh, relatives, they built a tomb for me somewhere in the jungle after I leave the Roman palace. I don't know where is it, but, I believe you will find it if you become the king of Rome, so please, ok?");
+            KingWord = true;
         } else {
         Say("You ignore the powerless emperor and walked away.");
         $("#b5").hide();
         $("#b6").hide();
         $("#b7").hide();
         $(".B").show();
+        }
         }
     });
         return;
@@ -1312,19 +1322,32 @@ function EventList(){
         $("#b5").click(function(){
             if (UnderlineMeet === true){
                 UnderlineMeet = false;
-                Say("You give him some food, he stands up and say thank you.");
-                $("#word").append("<div ></div>");
+                Say("You give him some food, he stands up and say thank you. He wears a thick glasses and a white suit. He also has some white hair.");
+                $("#word").append("<div style='text-decoration: underline;'>Professor Underline:<br><br>Thank you, young man. You really saved my life, my name is call Underline, a professor that studies biology. I will tell you my story. Long story short, I got bited by a tiger. Now, may I ask, can I go with you? The wild is pretty dangerous. (A force makes you approve, you are pretty sure it is not come from professor Underline.)</div>");
+                Murmur("Wow! You are a really great explorer! I wish I could talk with him, but I don't have a chance. So YOU will be the person that talk with him.");
                 Food = Math.round(Food / 1.5);
+                UnderlineC = "Beside";
             }
         });
         $("#b6").click(function(){
             if (UnderlineMeet === true){
                 UnderlineMeet = false;
+                Say("You ignore the man and walk away.");
+                Underline = false;
+                UnderlineC = "Ignored";
             }
         });
         $("#b7").click(function(){
             if (UnderlineMeet === true){
                 UnderlineMeet = false;
+                if (WD > 0){
+                    Say("You steal some food and some sharping stone from him.");
+                } else {
+                    Say("You steal some food and one sharp blade from him.");
+                }
+                Food += 10;
+                WD += 5;
+                UnderlineC = "Robbed";
             }
         });
     }
