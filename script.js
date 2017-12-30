@@ -1192,11 +1192,11 @@ function EventList(){
         $("#b5").html("Examine lock");
         $("#b6").html("Break lock with weapon");
         $("#b7").html("Leave");
-        $("#b5").click(function(){
+        $("#b5").one("click",function(){
            Say("Upon closer examination you realized the lock prevents you from accessing whatever is within the crate..");
            $("#b5").hide();
            });
-        $("#b6").click(function(){
+        $("#b6").one("click",function(){
             if(WD>1){
                 Food += 5;
                 WD -= 2;
@@ -1215,7 +1215,7 @@ function EventList(){
                 $(".B").show();
                 }
             });
-        $("#b7").click(function(){
+        $("#b7").one("click",function(){
             $(".B3").hide();
             $(".B").show();
             });
