@@ -1222,14 +1222,17 @@ function EventList(){
                 Lcrate=true;
                 }
             else{
-                if (WD === 0){
                     Say("You want to break the lock open with your weapon, but then you find out you didn't even have a weapon.");
-                } else {
-                    Say("You hit the lock with your weapon. Nothing happened.");
                 }
                 $(".B3").hide();
                 $(".B").show();
-                }
+            });
+        $("#b7").click(function(){
+            $(".B3").hide();
+            $(".B").show();
+            });
+        return;
+        }
                 CrateMeet = false;
             }
             });
