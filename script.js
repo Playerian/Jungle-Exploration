@@ -1501,6 +1501,7 @@ $("#b4").click(function(){
                 Say("Well, I would like to give our young king a prediction for your future, since you had help the village and you are the king of rome.");
                 }
             }
+            //Determination
             if (ChiefTalking === 4){
                 Say("");
                 if (King === true){
@@ -1508,6 +1509,8 @@ $("#b4").click(function(){
                 }
                 if (EventsMet <= 4){
                 $("#word").append("<p>The jungle is way bigger than you think, explore more.</p>");
+                } else {
+                $("#word").append("<p>Get a map of the jungle helps you find the buildings, but, is there really a map?</p>");
                 }
                 if (Lostking === true && King === false){
                 $("#word").append("<p>I can see that you made a wrong choice.</p>");
@@ -1516,7 +1519,28 @@ $("#b4").click(function(){
                 $("#word").append("<p>You should notice that you got a good luck</p>");
                 }
                 if (Reinhardt === true){
-                $("#word").append("<p>You encounter something you shouldn't have.</p>");
+                $("#word").append("<p>You had encounter something you shouldn't have.</p>");
+                }
+                if (ColiseumE > 0){
+                $("#word").append("<p>You've been to the coliseum right? That place is fun!</p>");
+                }
+                if (UnderlineC === "Ignored"){
+                $("#word").append("<p>You should help people sometimes, they are important.</p>");
+                } else if (UnderlineC === "Robbed"){
+                $("#word").append("<p></p>");
+                } else if (UnderlineC === "Beside"){
+                $("#word").append("<p>I will tell you a big hint! If you help the villagers more, you can befriend with me and trigger something! I don't even know what it is!</p>");
+                } else {
+                $("#word").append("<p>There is a man waiting for you to save in the west of the wild.</p>");
+                }
+                if (MonkeyKilled >= 30){
+                $("#word").append("<p>You really kill tons of monkey, LOL.</p>");
+                }
+                if (Origing <= 12){
+                $("#word").append("<p>Maybe getting help from the person besides you is a good idea.</p>");
+                }
+                if (Church === true){
+                $("#word").append("<p>You must walked southeast when you...... I can't see it.</p>");
                 }
                 if (DroppedSupply === true && Plane === true){
                 $("#word").append("<p>You get the help from someone, who is always by your side.</p>");
