@@ -1512,6 +1512,9 @@ $("#b4").click(function(){
                 } else {
                 $("#word").append("<p>Get a map of the jungle helps you find the buildings, but, is there really a map?</p>");
                 }
+                if (BeastKilled === true){
+                $("#word").append("<p>You really slayed a vicious monster.</p>");
+                }
                 if (Lostking === true && King === false){
                 $("#word").append("<p>I can see that you made a wrong choice.</p>");
                 }
@@ -1523,6 +1526,9 @@ $("#b4").click(function(){
                 }
                 if (ColiseumE > 0){
                 $("#word").append("<p>You've been to the coliseum right? That place is fun!</p>");
+                }
+                if (ColiseumE > 30){
+                $("#word").append("<p>You should really go to bed.</p>");
                 }
                 if (UnderlineC === "Ignored"){
                 $("#word").append("<p>You should help people sometimes, they are important.</p>");
