@@ -1082,6 +1082,10 @@ function EventList(){
             Say ("You have encountered the Black Village, a place where the shadows of the past life take form.....  A villager say hi to you when you walk into the village.");
         }
         if (VillageSlaughter === false){
+            if (BoldFriend === true){
+                $("#b6").show();
+                $("#b6").html("Talk with Bold");
+            }   
             $("#b8").show();
             $("#b8").html("Trade with the Black Village people");
             $("#b9").show();
@@ -1791,6 +1795,25 @@ $("#b4").click(function(){
                 }
             });
             }
+        if (WalkVillage === true){
+            Randomer = Randoming(0,4);
+            Say("");
+            if (Randomer === 0){
+            $("#word").prepend("<div style='font-weight: bold;'>Bold:<br><br>I used to think we are just people who lost the will to live, but now I think more about how to improve our village.</div>");
+            }
+            if (Randomer === 1){
+            $("#word").prepend("<div style='font-weight: bold;'>Bold:<br><br>The village can only sustain a low amount of people, so we need foods from outside.</div>");
+            }
+            if (Randomer === 2){
+            $("#word").prepend("<div style='font-weight: bold;'>Bold:<br><br>I usually let my villagers go whatever they want to go, but more often, they just want to stay in village.</div>");
+            }
+            if (Randomer === 3){
+            $("#word").prepend("<div style='font-weight: bold;'>Bold:<br><br>There is a coliseum on the far north west, the managers ask our villagers to go there. I usually approve them, but only a few returned, and I'm scared.</div>");
+            }
+            if (Randomer === 4){
+            $("#word").prepend("<div style='font-weight: bold;'>Bold:<br><br>Sometimes I am curious, are we just walking deads or something else? I don't feel like I'm living either, there is no motivation for me to live.</div>");
+            }
+        }
     });
     //Button 7
     $("#b7").click(function(){
