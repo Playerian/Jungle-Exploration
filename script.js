@@ -76,6 +76,7 @@ var MeetTiger = false;
 var Underline = false;
 var UnderlineMeet = false;
 var UnderlineC;
+var CrateMeet = false;
 
 //Musics
 var BlackVillage = new Audio('https://rawgit.com/Playerian/Jungle-Exploration/master/BlackVillage.mp3');
@@ -1184,6 +1185,7 @@ function EventList(){
     
     //Locked Crate
     if(X===0 && Y===20 && Lcrate === false){
+        CrateMeet = true;
         Say("You found a half buried crate that have a lock on it.");
         $(".B").hide();
         $("#b5").show();
@@ -1193,10 +1195,14 @@ function EventList(){
         $("#b6").html("Break lock with weapon");
         $("#b7").html("Leave");
         $("#b5").one("click",function(){
+           if (CrateMeet = true){
            Say("Upon closer examination you realized the lock prevents you from accessing whatever is within the crate..");
            $("#b5").hide();
+               CrateMeet = false;
+           }
            });
         $("#b6").one("click",function(){
+            if (CrateMeet = true){
             if(WD>1){
                 Food += 5;
                 WD -= 2;
@@ -1214,10 +1220,15 @@ function EventList(){
                 $(".B3").hide();
                 $(".B").show();
                 }
+                CrateMeet = false;
+            }
             });
         $("#b7").one("click",function(){
+            if (CrateMeet = true){
             $(".B3").hide();
             $(".B").show();
+                CrateMeet = false;
+            }
             });
         return;
         }
@@ -1291,6 +1302,31 @@ function EventList(){
     if (X === -100 && 90 >= Y && Y >= 60 && Underline === false){
         Say("You see a wounded man lying on the ground.");
         Underline = true;
+        UnderlineMeet = true;
+        $("#b5").show();
+        $("#b6").show();
+        $("#b7").show();
+        $("#b5").html("Rescue");
+        $("#b6").html("Ignore");
+        $("#b7").html("Steal");
+        $("#b5").click(function(){
+            if (UnderlineMeet === true){
+                UnderlineMeet = false;
+                Say("You give him some food, he stands up and say thank you.");
+                $("#word").append("<div ></div>");
+                Food = Math.round(Food / 1.5);
+            }
+        });
+        $("#b6").click(function(){
+            if (UnderlineMeet === true){
+                UnderlineMeet = false;
+            }
+        });
+        $("#b7").click(function(){
+            if (UnderlineMeet === true){
+                UnderlineMeet = false;
+            }
+        });
     }
     //Wild Events
     if (InWild === true && Math.pow(2*X+120,2)+Math.pow(4*Y-300,2) < 2000 ){
