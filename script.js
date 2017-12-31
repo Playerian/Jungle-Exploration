@@ -215,10 +215,15 @@ function Battle(enemy2, health2){
         //Before Battle
         $("#b5, #b6").click(function(){
             if (InBattle === true){
-            Battling = Randoming(0,1);
+                Randoming = Randomer(1,100);
+                if (Randoming <= 50){
+                    Battling = Randoming(3,7);
+                } else {
+                    Battling = Randoming(1,10);
+                }
             }
         });
-        //Checking who will win
+        //Checking who will win is now moved out into buttons category
 
         
         //After Battle
@@ -1688,7 +1693,7 @@ $("#b4").click(function(){
         }
         //Battle
         if (InBattle === true){
-            if (Battling === 0){
+            if (Battling <= 6){
                 health -= 1;
                 Say("You hit "+enemy+" in the face!<br> "+enemy+" has "+health+" health left!");
             } else {
@@ -1866,7 +1871,7 @@ $("#b4").click(function(){
         }
         //Battle
         if (InBattle === true){
-            if (Battling === 1){
+            if (Battling >= 4){
                 health -= 1;
                 Say("You hit "+enemy+" in the face!<br> "+enemy+" has "+health+" health left!");
             } else {
