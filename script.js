@@ -78,6 +78,9 @@ var UnderlineMeet = false;
 var UnderlineC = "Laying";
 var CrateMeet = false;
 var UnderlineColiseum = false;
+var HammerGet = false;
+var Critical = false;
+var InFood = 0;
 
 //Musics
 var BlackVillage = new Audio('https://rawgit.com/Playerian/Jungle-Exploration/master/BlackVillage.mp3');
@@ -187,6 +190,8 @@ function Battle(enemy2, health2){
         enemy = enemy2;
         health = health2;
         InBattle = false;
+        InFood = Food;
+        Critical = false;
         //Enemy Determination
         if (enemy === ColiseumE){
             Randomer = Randoming(0,3);
@@ -215,11 +220,22 @@ function Battle(enemy2, health2){
         //Before Battle
         $("#b5, #b6").click(function(){
             if (InBattle === true){
-                Randoming = Randomer(1,100);
-                if (Randoming <= 50){
-                    Battling = Randoming(3,7);
+                Randomer = Randoming(1,100);
+                if (Randomer <= 33){
+                    Battling = Randoming(20,80);
+                    Critical = true;
                 } else {
-                    Battling = Randoming(1,10);
+                    Battling = Randoming(10,100);
+                }
+                if (HammerGet === true){
+                    Battling = Randoming(30,70);
+                }
+                if (InFood <= Food / 2){
+                    if (Battling <= 50){
+                        Battling += 10;
+                    } else {
+                        Battling -= 10;
+                    }
                 }
             }
         });
@@ -1693,7 +1709,7 @@ $("#b4").click(function(){
         }
         //Battle
         if (InBattle === true){
-            if (Battling <= 6){
+            if (Battling <= 60){
                 health -= 1;
                 Say("You hit "+enemy+" in the face!<br> "+enemy+" has "+health+" health left!");
             } else {
@@ -1871,7 +1887,7 @@ $("#b4").click(function(){
         }
         //Battle
         if (InBattle === true){
-            if (Battling >= 4){
+            if (Battling >= 40){
                 health -= 1;
                 Say("You hit "+enemy+" in the face!<br> "+enemy+" has "+health+" health left!");
             } else {
