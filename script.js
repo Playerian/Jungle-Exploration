@@ -77,6 +77,7 @@ var Underline = false;
 var UnderlineMeet = false;
 var UnderlineC = "Laying";
 var CrateMeet = false;
+var UnderlineColiseum = false;
 
 //Musics
 var BlackVillage = new Audio('https://rawgit.com/Playerian/Jungle-Exploration/master/BlackVillage.mp3');
@@ -272,6 +273,12 @@ function Battle(enemy2, health2){
                             } else if (ColiseumE === 18){
                                 $("#word").append("<p style='text-decoration: line-through;'>Well, that's pretty much it. Want some hammerburgers?</p>");
                                 Food += 100;
+                            } else if (ColiseumE === 19){
+                                $("#word").append("<p style='text-decoration: line-through;'>I also recruit people from the black village, but I think they are addicted to it don't want to go back...</p>");
+                            } else if (ColiseumE === 20){
+                                $("#word").append("<p style='text-decoration: line-through;'>And I still don't know where the village is!</p>");
+                            } else if (ColiseumE === 19){
+                                $("#word").append("<p style='text-decoration: line-through;'>You want to know the recipe for the spicy chicken burger? Secret!</p>");
                             } else if (ColiseumE % 2 === 0 && ColiseumE > 18){
                                 $("#word").append("<p style='text-decoration: line-through;'>Get some hammerburger! My friend!");
                                 Food += 100;
@@ -829,21 +836,48 @@ function Coliseum(){
         if (ColiseumE === 0){
             Say("You see a magnificant building standing in the jungle, you walk in and realize this is the coliseum.");
             $("#word").append("<p>A person walk towards you and say: "+"<div style='text-decoration: line-through;'>You are the new gladiator right? Come here, our first show is ready to begin!</div><br>Then you got pull into the coliseum.</p>");
+            if (UnderlineC === "Beside" && UnderlineColiseum === false){
+                UnderlineColiseum = true;
+                Say("You see a mgnificant building standing in the jungle. Professor Underline is calling you to go in to the coliseum.");
+                $("#word").append("<p>A person walk towards you and say: "+"<div style='text-decoration: line-through;'>Hey, you are the person that I saved last time! You finally make it to the coliseum now! My name is Strikethrough, a manager in the coliseum. Now, would you like a fight or two?</p>");
+                $("#word").append("<p>Underline: "+"<div style='text-decoration: underline;'>Well, I got attacked by tiger again in the wild, and this person saved me. Hey young man, if you don't mind, can you fight for me?</p>");
+            }
             $(".B").hide();
             $("#b5").show();
             $("#b5").html("Fight!");
             ColiseumE ++;
         } else {
-            
             $(".B").hide();
             $("#b5").show();
             $("#b5").html("Fight!");
             $("#b6").show();
             $("#b6").html("Leave");
+            if (UnderlineColiseum === false && UnderlineC === "Beside"){
+                $("#b7").show();
+                $("#b7").html("Talk with Strikethrough");
+                $("#b7").click(function(){
+                    if (InColiseum === true && UnderlineColiseum === false){
+                        Say("");
+                        if (UnderlineC !== "Beside"){
+                            Say("'How could this be happening?' Said Underline, 'You dirty hacker.'");
+                        }
+                        UnderlineColiseum = true;
+                        $("#word").append("<p>Strikethrough: "+"<div style='text-decoration: line-through;'>Woah? Aren't you the person that I saved?</p>");
+                        $("#word").append("<p>Underline: "+"<div style='text-decoration: underline;'>And you tell me to go to this coliseum?</p>");
+                        $("#word").append("<p>Strikethrough: "+"<div style='text-decoration: line-through;'>I thought this person is whom I saved!(Point towards me)</p>");
+                        $("#word").append("<p>Underline: "+"<div style='text-decoration: underline;'>You must recognized the wrong person!</p>");
+                        if (STFriend === true){
+                            $("#word").append("<p>Strikethrough: "+"<div style='text-decoration: line-through;'>Well, this is not important, friends, let's eat some hammerburger together!</p>");
+                            Food += 100;
+                        } else {
+                            $("#word").append("<p>Strikethrough: "+"<div style='text-decoration: line-through;'>Fine, would you guys like a fight or two?</p>");
+                            $("#word").append("<p>Underline: "+"<div style='text-decoration: underline;'>Well, my friend here would like some!</p>");
+                        }
+                        $("#b7").hide();
+                    }
+                });
+            }
         }
-        $("#b5").click(function(){
-            
-        });
 }
 
 //Randomly execute(function) Events
@@ -851,7 +885,7 @@ function Events(){
     eval(arguments[Randoming(0,arguments.length-1)]+"()");
 }
 
-//Events List (If you want to add event, add to the bottom of this function, on top of Fog Events. Remember to add return to the bottom
+//Events List (If you want to add event, add to the bottom of this function, on top of Fog Events(I actually mean Wild Events). Remember to add return to the bottom
 //of the event, or else it will not work. Use if with constrains in order to develop your event.)
 function EventList(){
     //Developer's Hut
