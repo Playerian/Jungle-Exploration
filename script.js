@@ -1242,28 +1242,27 @@ function EventList(){
            if (CrateMeet === true){
            Say("Upon closer examination you realized the lock prevents you from accessing whatever is within the crate..");
            $("#b5").hide();
-               CrateMeet = false;
            }
            });
         $("#b6").one("click",function(){
             if (CrateMeet === true){
-            if(WD>1){
-                Food += 5;
-                WD -= 2;
-                $(".B3").hide();
-                $(".B").show();
-                Say("You broke the lock with your weapon and within the crate you found some food.");
-                Lcrate=true;
-                }
-            else{
+                if(WD>1){
+                    Food += 5;
+                    WD -= 2;
+                    $(".B3").hide();
+                    $(".B").show();
+                    Say("You broke the lock with your weapon and within the crate you found some food.");
+                    Lcrate=true;
+                } else {
                     Say("You want to break the lock open with your weapon, but then you find out you didn't even have a weapon.");
                 }
                 $(".B3").hide();
                 $(".B").show();
+                CrateMeet = false;
                 }
             });
         $("#b7").one("click",function(){
-            if (CrateMeet = true){
+            if (CrateMeet === true){
             $(".B3").hide();
             $(".B").show();
                 CrateMeet = false;
