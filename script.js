@@ -1260,15 +1260,7 @@ function EventList(){
                 }
                 $(".B3").hide();
                 $(".B").show();
-            });
-        $("#b7").click(function(){
-            $(".B3").hide();
-            $(".B").show();
-            });
-        return;
-        }
-                CrateMeet = false;
-            }
+                }
             });
         $("#b7").one("click",function(){
             if (CrateMeet = true){
