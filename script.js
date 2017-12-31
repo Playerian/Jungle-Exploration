@@ -1239,14 +1239,14 @@ function EventList(){
         $("#b6").html("Break lock with weapon");
         $("#b7").html("Leave");
         $("#b5").one("click",function(){
-           if (CrateMeet = true){
+           if (CrateMeet === true){
            Say("Upon closer examination you realized the lock prevents you from accessing whatever is within the crate..");
            $("#b5").hide();
                CrateMeet = false;
            }
            });
         $("#b6").one("click",function(){
-            if (CrateMeet = true){
+            if (CrateMeet === true){
             if(WD>1){
                 Food += 5;
                 WD -= 2;
