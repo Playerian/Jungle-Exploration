@@ -82,6 +82,10 @@ var HammerGet = false;
 var Critical = false;
 var InFood = 0;
 var Sign1 = false;
+var Church2 = false;
+var Church3 = false;
+var InChurch2 = false;
+var InChurch3 = false;
 
 //Musics
 var BlackVillage = new Audio('https://rawgit.com/Playerian/Jungle-Exploration/master/BlackVillage.mp3');
@@ -1238,9 +1242,9 @@ function EventList(){
         return;
     }
     
-    //Church 
+    //Church 1
     if (Church === false && Math.pow(X-5,2)+Math.pow(Y+3,2) < 7){
-        Say("You thought see a glorious church, but you look around, all you see is a ruin. There is a small room that is still standing in this wild jungle. You enter that room");
+        Say("You thought see a glorious church, but you look around, all you see is a ruin. There is a small room that is still standing in this wild jungle.");
         $(".B").hide();
         $("#b5").show();
         $("#b5").html("Go In");
@@ -1248,7 +1252,26 @@ function EventList(){
         Church = true;
         return;
         }
-    
+    //Church 2
+    if (Church2 === false && Math.pow(2*X+80,2)+Math.pow(Y+50,2) < 50){
+        Say("You see a ruin with some broken glass. There is a small room that is still standing in there.");
+        $(".B").hide();
+        $("#b5").show();
+        $("#b5").html("Go In");
+        InChurch2 = true;
+        Church2 = true;
+        return;
+        }
+    //Church 3
+    if (Church3 === false && Math.pow(X+60,2)+Math.pow(5*Y-50,2) < 400){
+        Say("You see a broken church, with some white pillar");
+        $(".B").hide();
+        $("#b5").show();
+        $("#b5").html("Go In");
+        InChurch3 = true;
+        Church3 = true;
+        return;
+        }
     //Locked Crate
     if(X===0 && Y===20 && Lcrate === false){
         CrateMeet = true;
@@ -1692,6 +1715,20 @@ $("#b4").click(function(){
             $("#b5").hide();
             $(".B").show();
             InChurch = false;
+        }
+        //Church2 - Inside
+        if (InChurch2 === true){
+            Say("You see a glass that is not broken, there is some words on it: The Tree of Life, inside the deep jungle has the power of... The words after that is shredded off.");
+            $("#b5").hide();
+            $(".B").show();
+            InChurch2 = false;
+        }
+        //Church3 - Inside
+        if (InChurch3 === true){
+            Say("You see some boxes, tables, and chairs, and there is some text written on a table: The Hammer, represents the holy power, only acquired by pray... The words after that is shredded off.");
+            $("#b5").hide();
+            $(".B").show();
+            InChurch3 = false;
         }
         //Fog Guardian 
         if (GuardianCount === 3){
