@@ -1351,7 +1351,7 @@ function EventList(){
     }
     
     //Tree of Life
-    if (TOL === false && Math.abs(X+120)+Math.abs(Y+10)<5 ){
+    if (TOL === false && Math.abs(X+120)+Math.abs(Y+10)<15 ){
         TOL = true;
         TreeE = true;
         Say("You saw a sign that said 'Tree of Life'. But all you see is a small bush.");
