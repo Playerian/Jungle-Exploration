@@ -273,13 +273,27 @@ function Battle(enemy2, health2){
                             health = NaN;
                         } else {
                             if (ColiseumE % 3 === 0){
-                                $("#word").append("<p style='text-decoration: line-through;'>Nice! You get some food for your participaton in the coliseum!</p>");
-                                Food += 30;
+                                if (King === false){
+                                    $("#word").append("<p style='text-decoration: line-through;'>Nice! You get some food for your participaton in the coliseum!</p>");
+                                    Food += 30;
+                                } else {
+                                    $("#word").append("<p style='text-decoration: line-through;'>Nice! My majesty! Would you like some food?</p>");
+                                    Food += 20;
+                                }
                             } 
                             if (ColiseumE === 8){
-                                $("#word").append("<p style='text-decoration: line-through;'>Wow! You have already defeated 8 enemies! Get this compass component!</p>");
+                                if (King === false){
+                                    $("#word").append("<p style='text-decoration: line-through;'>Wow! You have already defeated 8 enemies! Get this compass component!</p>");
+                                } else {
+                                    $("#word").append("<p style='text-decoration: line-through;'>You are really skillful! My majesty! You ahve already defeated 8 enemies! Get this compass component!</p>");
+                                }
+                                CC ++;
                             } else if (ColiseumE === 10){
-                                $("#word").append("<p style='text-decoration: line-through;'>Wow! You are really good! Now I want to be your friend now!</p>");
+                                if (King === false){
+                                    $("#word").append("<p style='text-decoration: line-through;'>Wow! You are really good! Now I want to be your friend now!</p>");
+                                } else {
+                                    $("#word").append("<p style='text-decoration: line-through;'>Um...My majesty, would you like to be my friend? Yes? Wow, I'm amazed.</p>");
+                                }
                                 STFriend = true;
                             } else if (ColiseumE === 11){
                                 $("#word").append("<p style='text-decoration: line-through;'>Um... Now we are friends now. What should we do?</p>");
@@ -287,7 +301,11 @@ function Battle(enemy2, health2){
                                 $("#word").append("<p style='text-decoration: line-through;'>I haven't decided yet, but I would give you some advice because you are so good!<br>I actually means food!</p>");
                                 Food += 10;
                             } else if (ColiseumE === 13){
-                                $("#word").append("<p style='text-decoration: line-through;'>There's a dangerous place in southwest call the wild! Don't go there!</p>");
+                                if (King === false){
+                                    $("#word").append("<p style='text-decoration: line-through;'>There's a dangerous place in southwest call the wild! Don't go there!</p>");
+                                } else {
+                                    $("#word").append("<p style='text-decoration: line-through;'>There's a dangerous place in southwest call the wild! But I think you can go through it easily!</p>");
+                                }
                             } else if (ColiseumE === 14){
                                 $("#word").append("<p style='text-decoration: line-through;'>(I don't know other things about the jungle. What should I do...)</p>");
                             } else if (ColiseumE === 15){
@@ -297,20 +315,39 @@ function Battle(enemy2, health2){
                             } else if (ColiseumE === 17){
                                 $("#word").append("<p style='text-decoration: line-through;'>Then I pass around some offer paper on the ground, hope for people to pick it up.</p>");
                             } else if (ColiseumE === 18){
-                                $("#word").append("<p style='text-decoration: line-through;'>Well, that's pretty much it. Want some hammerburgers?</p>");
-                                Food += 100;
+                                if (King === false){
+                                    $("#word").append("<p style='text-decoration: line-through;'>Well, that's pretty much it. Want some hammerburgers?</p>");
+                                    Food += 100;
+                                } else {
+                                    $("#word").append("<p style='text-decoration: line-through;'>Thank you for listening, my majesty! This is my special hammerburger! Want to get some?</p>");
+                                    Food += 150;
+                                }
                             } else if (ColiseumE === 19){
                                 $("#word").append("<p style='text-decoration: line-through;'>I also recruit people from the black village, but I think they are addicted to it don't want to go back...</p>");
                             } else if (ColiseumE === 20){
                                 $("#word").append("<p style='text-decoration: line-through;'>And I still don't know where the village is!</p>");
-                            } else if (ColiseumE === 19){
-                                $("#word").append("<p style='text-decoration: line-through;'>You want to know the recipe for the spicy chicken burger? Secret!</p>");
+                            } else if (ColiseumE === 21){
+                                if (King === false){
+                                    $("#word").append("<p style='text-decoration: line-through;'>You want to know the recipe for the spicy chicken burger? Secret!</p>");
+                                } else {
+                                    $("#word").append("<p style='text-decoration: line-through;'>You want to know the recipe for the spicy chicken burger, my majesty? Um... It's made from spicy chicken with bread...</p>");
+                                }
                             } else if (ColiseumE % 2 === 0 && ColiseumE > 18){
-                                $("#word").append("<p style='text-decoration: line-through;'>Get some hammerburger! My friend!");
+                                if (King === false){
+                                    $("#word").append("<p style='text-decoration: line-through;'>Get some hammerburger! My friend!");
+                                } else {
+                                    $("#word").append("<p style='text-decoration: line-through;'>Get some hammerburger! My majesty!");
+                                    Food += 25;
+                                }
                                 Food += 100;
                             } else if (ColiseumE % 7 === 0 && ColiseumE > 20){
-                                $("#word").append("<p style='text-decoration: line-through;'>Also try this new, freshly cooked spicy chicken burger! My friend!");
-                                Food += 300;
+                                if (King === false){
+                                    $("#word").append("<p style='text-decoration: line-through;'>Also try this new, freshly cooked spicy chicken burger! My friend!");
+                                    Food += 300;
+                                } else {
+                                    $("#word").append("<p style='text-decoration: line-through;'>Also try this new, freshly cooked, healthy spicy chicken burger! My majesty!!");
+                                    Food += 400;
+                                }
                             } else {
                                 $("#word").append("<p style='text-decoration: line-through;'>Nice! Continue Fighting? You have defeated "+ColiseumE+" Enemy! You may get some prizes if you defeat more!</p>");
                             }
@@ -862,6 +899,12 @@ function Coliseum(){
         if (ColiseumE === 0){
             Say("You see a magnificant building standing in the jungle, you walk in and realize this is the coliseum.");
             $("#word").append("<p>A person walk towards you and say: "+"<div style='text-decoration: line-through;'>You are the new gladiator right? Come here, our first show is ready to begin!</div><br>Then you got pull into the coliseum.</p>");
+            if (King === true){
+                Say("You see coliseum in the jungle, you walk in.");
+                $("#word").append("<p>A person walk towards you and say: "+"<div style='text-decoration: line-through;'>Welcome! My name Strikethrough! Do you want to have a fight or two, my majesty?</p>");
+                $("#b6").show();
+                $("#b6").html("Leave");
+            }
             if (UnderlineC === "Beside" && UnderlineColiseum === false){
                 UnderlineColiseum = true;
                 Say("You see a mgnificant building standing in the jungle. Professor Underline is calling you to go in to the coliseum.");
@@ -885,13 +928,20 @@ function Coliseum(){
                     if (InColiseum === true && UnderlineColiseum === false){
                         Say("");
                         if (UnderlineC !== "Beside"){
-                            Say("'How could this be happening?' Said Underline, 'You dirty hacker.'");
+                            Say("'How could this be happening?' Said Strikethrough, 'You dirty hacker.'");
                         }
                         UnderlineColiseum = true;
                         $("#word").append("<p>Strikethrough: "+"<div style='text-decoration: line-through;'>Woah? Aren't you the person that I saved?</p>");
                         $("#word").append("<p>Underline: "+"<div style='text-decoration: underline;'>And you tell me to go to this coliseum?</p>");
-                        $("#word").append("<p>Strikethrough: "+"<div style='text-decoration: line-through;'>I thought this person is whom I saved!(Point towards me)</p>");
-                        $("#word").append("<p>Underline: "+"<div style='text-decoration: underline;'>You must recognized the wrong person!</p>");
+                        if (King === false){
+                            $("#word").append("<p>Strikethrough: "+"<div style='text-decoration: line-through;'>I thought this person is whom I saved!(Point towards me)</p>");
+                            $("#word").append("<p>Underline: "+"<div style='text-decoration: underline;'>You must recognized the wrong person!</p>");
+                        } else {
+                            $("#word").append("<p>Strikethrough: "+"<div style='text-decoration: line-through;'>Yes, do you know this person?(Point towards me)</p>");
+                            $("#word").append("<p>Underline: "+"<div style='text-decoration: underline;'>He saved me in the edge of the wild.</p>");
+                            $("#word").append("<p>Strikethrough: "+"<div style='text-decoration: line-through;'>He is also the king of Rome! You can see it by the crown on his head!</p>");
+                            $("#word").append("<p>Underline: "+"<div style='text-decoration: underline;'>Wow! I didn't notice that!</p>");
+                        }
                         if (STFriend === true){
                             $("#word").append("<p>Strikethrough: "+"<div style='text-decoration: line-through;'>Well, this is not important, friends, let's eat some hammerburger together!</p>");
                             Food += 100;
@@ -2185,7 +2235,7 @@ $("#b9").click(function(){
         //Village doesn't trade
     if (WalkVillage === true){
             VFriendly -= 1;
-            if (King === true && VFriendly <= -5){
+            if (King === true && VFriendly <= -5 && BoldFriend === false){
                 $("#b5").show();
                 $("#b5").css("color","red");
                 $("#b5").html("Slaghter all the Villagers");
@@ -2198,13 +2248,13 @@ $("#b9").click(function(){
             {
             Say("The villagers say that this king is annoying.");
             }
-            if (VFriendly <= -3)
+            if (VFriendly <= -2)
             {
-            Say("The villagers say that this king is bringing us doom.");
+            Say("The villagers say that this king is the worst of all");
             }
             if (VFriendly <= -5)
             {
-            Say("The villagers say that this king is the worst of all.");
+            Say("The villagers say that this king is bringing them doom.");
             }
         }
         if (King === false){
