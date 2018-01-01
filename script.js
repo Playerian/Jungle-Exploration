@@ -78,6 +78,7 @@ var UnderlineMeet = false;
 var UnderlineC = "Laying";
 var CrateMeet = false;
 var UnderlineColiseum = false;
+var UnderlineBV = false;
 var HammerGet = false;
 var Critical = false;
 var InFood = 0;
@@ -1159,11 +1160,18 @@ function EventList(){
             $("#b11").html("exit the village");
             $(".B").hide();
             Image("V1");
+            if (BoldFriend === true && STFriend === true && UnderlineC === "Beside" && Caveman === "Rescue" && King === false){
+                HammerGet = true;
+            }
         } else {
-            Say("You see the ruin of the black village");
+            Say("You see the ruin of the black village.");
             $(".B").hide();
             $("#b11").show();
             $("#b11").html("exit the village");
+            if (VillageSlaughter === true && BoldFriend === false && STFriend === false && UnderlineC === "Robbed" && Caveman === "Killed"){
+                Say("You see the ruin of the black village.<br><br>A hammer is laying on the ground, it looks old. You pick it up.");
+                HammerGet = true;
+            }
         }
             WalkVillage = true;
             EventsMet += 1;
@@ -2013,6 +2021,22 @@ $("#b4").click(function(){
             }
             if (Randomer === 4){
             $("#word").prepend("<div style='font-weight: bold;'>Bold:<br><br>Sometimes I am curious, are we just walking deads or something else? I don't feel like I'm living either, there is no motivation for me to live.</div>");
+            }
+            if (UnderlineBV === false && UnderlineC === "Beside"){
+                UnderlineBV = true;
+                Say("Underline is talking with Bold.");
+                $("#word").append();
+                $("#word").append("<div style='text-decoration: underline;'>Underline: Hey, you are Bold right? I thought you are dead.</div>");
+                $("#word").append("<h1>Bold: Really? We the black villagers don't recognize our past, but I still know my name is Bold.</h1>");
+                $("#word").append("<div style='text-decoration: underline;'>Underline: Yes, you are surely Bold, Dr.Italic's long time friend. We fly to this jungle, and the plane crashed and we all fall.</div>");
+                $("#word").append("<h1>Bold: That's...real?</h1>");
+                $("#word").append("<div style='text-decoration: underline;'>Underline: Apparently, I can identify that by your voice and your body shape.</div>");
+                $("#word").append("<h1>Bold: OK, do you know any other things about me?</h1>");
+                $("#word").append("<div style='text-decoration: underline;'>Underline: No, not really. I think Dr.Italic knows more about you.</div>");
+                $("#word").append("<h1>Bold: Who is that?</h1>");
+                $("#word").append("<div style='text-decoration: underline;'>Underline: I don't know him much either, but I know he is your long time friend. I drove the plane that we came here.</div>");
+                $("#word").append("<h1>Bold: In this way, I have some clues for my investigation now. Thank you</h1>");
+                $("#word").append("<div style='text-decoration: underline;'>Underline: You should thank him(Points to you), this person saved me and bring me here.</div>");
             }
         }
     });
