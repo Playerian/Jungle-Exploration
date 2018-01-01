@@ -1160,7 +1160,9 @@ function EventList(){
             $("#b11").html("exit the village");
             $(".B").hide();
             Image("V1");
-            if (BoldFriend === true && STFriend === true && UnderlineC === "Beside" && Caveman === "Rescue" && King === false){
+            if (BoldFriend === true && STFriend === true && UnderlineC === "Beside" && Caveman === "Rescue" && King === false && UnderlineColiseum === true && UnderlineBV === true){
+                Say("Bold is talking to you.");
+                $("#word").append("<div style='font-weight: bold;'>Bold:<br><br>I must tell you now, you have been a good person and has always been my friend. Now, this is the hammer that has tons of power, I now give it to you.</div>");
                 HammerGet = true;
             }
         } else {
