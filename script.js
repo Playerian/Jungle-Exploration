@@ -81,7 +81,6 @@ var UnderlineColiseum = false;
 var HammerGet = false;
 var Critical = false;
 var InFood = 0;
-var Sign1 = false;
 var Church2 = false;
 var Church3 = false;
 var InChurch2 = false;
@@ -1425,7 +1424,12 @@ function EventList(){
         });
     }
     //Sign1
-    if (Sign1 === false && X === 20 && Y === -30){
+    if (X === 20 && Y === -30){
+        Say("You see a street sign:<br><br>East: Black Village<br><br>South: Fog Area<br><br>West: Don't know, someone plz add.");
+        return;
+    }
+    //Sign2
+    if (Y === 45 && -80 <= X && X <= -40){
         Say("You see a street sign:<br><br>East: Black Village<br><br>South: Fog Area<br><br>West: Don't know, someone plz add.");
         return;
     }
