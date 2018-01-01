@@ -13,10 +13,9 @@ Website: https://playerian.github.io/Jungle-Exploration/.
 3. In game achievement system
 
 # Agenda:
-1. The lost king.(Officially taken by Anthony)
-2. End game Roman Ruin.
-3. Coliseum.
-4. Dev's home
+1. End game Roman Ruin.
+2. Dev's home.
+3. Multiple endings
 
 # Jungle Map(Subject to Change):
 https://www.desmos.com/calculator/wzox2cx7lh
