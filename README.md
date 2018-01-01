@@ -17,6 +17,10 @@ Website: https://playerian.github.io/Jungle-Exploration/.
 2. Dev's home.
 3. Multiple endings
 
+# Endings:
+## Normal Endings:
+
+
 # Jungle Map(Subject to Change):
 https://www.desmos.com/calculator/wzox2cx7lh
 
