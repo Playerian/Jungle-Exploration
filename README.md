@@ -19,6 +19,14 @@ Website: https://playerian.github.io/Jungle-Exploration/.
 
 # Endings:
 ## Normal Endings:
+1. 
+2.
+## King Endings:
+1. Befriend Italic, Bold, Strikethrough, and Underline. Acquire the hammer and smash the Roman altar. The Player can choose to stay in the jungle or continue living in the jungle.
+2. 
+## Escape Endings:
+1. Befriend Italic, Bold, Strikethrough, and Underline. Acquire the hammer and smash the Roman altar. Kill Nero and Augustus. The magic of the jungle ceases and the team finally get out from the jungle.
+2. Befriend Italic, Bold, Strikethrough, and Underline. Kill Nero and defeated Augustus. Underline rebuilds the plane and fly out the jungle.
 
 
 # Jungle Map(Subject to Change):
