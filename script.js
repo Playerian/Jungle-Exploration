@@ -1711,7 +1711,11 @@ $("#b4").click(function(){
         if (InBattle === true){
             if (Battling <= 60){
                 health -= 1;
-                Say("You hit "+enemy+" in the face!<br> "+enemy+" has "+health+" health left!");
+                if (Critical === true){
+                    Say("You hit "+enemy+" with a critical attack!<br> "+enemy+" has "+health+" health left!");
+                } else {
+                    Say("You hit "+enemy+" in the face!<br> "+enemy+" has "+health+" health left!");
+                }
             } else {
                 Say(enemy+" dodge it and return a blow!<br>"+enemy+" has "+health+" health left!");
                 Food --;
@@ -1889,7 +1893,11 @@ $("#b4").click(function(){
         if (InBattle === true){
             if (Battling >= 40){
                 health -= 1;
-                Say("You hit "+enemy+" in the face!<br> "+enemy+" has "+health+" health left!");
+                if (Critical === true){
+                    Say("You hit "+enemy+" with a critical attack!<br> "+enemy+" has "+health+" health left!");
+                } else {
+                    Say("You hit "+enemy+" in the face!<br> "+enemy+" has "+health+" health left!");
+                }
             } else {
                 Say(enemy+" dodge it and return a blow!<br>"+enemy+" has "+health+" health left!");
                 Food --;
