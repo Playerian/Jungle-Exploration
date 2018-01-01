@@ -253,8 +253,13 @@ function Battle(enemy2, health2){
             if (InBattle === true){
                 //If you lose in coliseum
                 if (Food <= 1 && InColiseum === true){
-                    Say("Hey, young man, you should get prepared before you challenge our challengers! I'll give you some food before you leave!");
-                    Food = 20;
+                    if (King === false){
+                        Say("<div style='text-decoration: line-through;'>Hey, young man, you should get prepared before you challenge our challengers! I'll give you some food before you leave!</div>");
+                        Food = 20;
+                    } else {
+                        Say("<div style='text-decoration: line-through;'>Hey, don't hurt yourself! I'll give you some food before you leave!</div>");
+                        Food = 30;
+                    }
                     health = NaN;
                     InBattle = false;
                     Coliseum();
