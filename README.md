@@ -19,7 +19,7 @@ Website: https://playerian.github.io/Jungle-Exploration/.
 4. Dev's home
 
 # Jungle Map(Subject to Change):
-https://www.desmos.com/calculator/0puut2lebi
+https://www.desmos.com/calculator/pinf4ssx41
 
 # Javascripts:
 Adding events: For you to add events, go to line 417 or so, and there is a function call event list, then follow the instruction there.
