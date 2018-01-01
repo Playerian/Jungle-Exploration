@@ -81,6 +81,7 @@ var UnderlineColiseum = false;
 var HammerGet = false;
 var Critical = false;
 var InFood = 0;
+var Sign1 = false;
 
 //Musics
 var BlackVillage = new Audio('https://rawgit.com/Playerian/Jungle-Exploration/master/BlackVillage.mp3');
@@ -1399,6 +1400,11 @@ function EventList(){
                 UnderlineC = "Robbed";
             }
         });
+    }
+    //Sign1
+    if (Sign1 === false && X === 20 && Y === -30){
+        Say("You see a street sign:<br><br>East: Black Village<br><br>South: Fog Area<br><br>West: Don't know, someone plz add.");
+        return;
     }
     //Wild Events
     if (InWild === true && Math.pow(2*X+120,2)+Math.pow(4*Y-300,2) < 2000 ){
