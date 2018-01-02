@@ -19,15 +19,17 @@ Website: https://playerian.github.io/Jungle-Exploration/.
 
 # Endings:
 ## Normal Endings:
-1. Not King and not escape, traps in the jungle, whatever.
+1. Stuck in jungle. If befriend anyone, they will also live with friends. If Augustus is befriended and Nero is spared, the player live in the Ruin.
 ## King Endings:
-1. Befriend Italic, Bold, Strikethrough, and Underline. Acquire the hammer and smash the Roman altar. The Player can choose to stay in the jungle or continue living in the jungle.
-2. Kill off the black villagers, the cavemen, rob Underline, never fight in the coliseum, smash the roman altar. (Didn't have a clue yet.)
-3. Kill off the black villagers, the cavemen, rob Underline, never fight in the coliseum, didn't acquire the hammer, but killed Augustus and Nero. The Player rules the jungle with mighty forces.
+1. Befriend Italic, Bold, Strikethrough, and Underline. Acquire the hammer and smash the Roman altar. The Player can choose to stay in the jungle or continue living in the jungle.(The King)
+2. Befriend Italic, Bold, Strikethrough, Underline, and Augustus. Spare Nero, and didn't acquire the hammer. The Player rules the jungle from now on, and spare any people that goes into the jungle.(The Kind King.)
+3. Kill off the black villagers, the cavemen, rob Underline, never fight in the coliseum, smash the roman altar. (The Lone King.)
+4. Kill off the black villagers, the cavemen, rob Underline, never fight in the coliseum, didn't acquire the hammer, but killed Augustus and Nero. The Player rules the jungle with mighty forces.(You rule nothing.)
 ## Escape Endings:
-1. Befriend Italic, Bold, Strikethrough, and Underline. Acquire the hammer and smash the Roman altar. Kill Nero and Augustus. The magic of the jungle ceases and the team finally get out from the jungle.
-2. Befriend Italic, Bold, Strikethrough, and Underline. Kill Nero and defeated Augustus. Underline rebuilds the plane and they fly out   of the jungle.
-
+1. Befriend Italic, Bold, Strikethrough, and Underline. Acquire the hammer and smash the Roman altar. Kill Nero and Augustus. The magic of the jungle ceases and the team finally get out from the jungle.(Back into the reality)
+2. Befriend Italic, Bold, Strikethrough, and Underline. Kill Nero and defeated Augustus. Underline rebuilds the plane and they fly out   of the jungle.(No Roman at all)
+## True Ending:
+1. Acquires the hammer and become the king, get in the root of tree of life and teleport into the ruin. (That's it, nice!)
 
 # Jungle Map(Subject to Change):
 https://www.desmos.com/calculator/wzox2cx7lh
