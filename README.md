@@ -25,6 +25,7 @@ Website: https://playerian.github.io/Jungle-Exploration/.
 2. Befriend Italic, Bold, Strikethrough, Underline, and Augustus. Spare Nero, and didn't acquire the hammer. The Player rules the jungle from now on, and spare any people that goes into the jungle.(The Kind King.)
 3. Kill off the black villagers, the cavemen, rob Underline, never fight in the coliseum, smash the roman altar. (The Lone King.)
 4. Kill off the black villagers, the cavemen, rob Underline, never fight in the coliseum, didn't acquire the hammer, but killed Augustus and Nero. The Player rules the jungle with mighty forces.(You rule nothing.)
+5. Defeated Augustus and Nero, but Augustus thinks The Player is not fit for a king, so The Player becomes the second-hand of Augustus. (The unfit King)
 ## Escape Endings:
 1. Befriend Italic, Bold, Strikethrough, and Underline. Acquire the hammer and smash the Roman altar. Kill Nero and Augustus. The magic of the jungle ceases and the team finally get out from the jungle.(Back into the reality)
 2. Befriend Italic, Bold, Strikethrough, and Underline. Kill Nero and defeated Augustus. Underline rebuilds the plane and they fly out   of the jungle.(No Roman at all)
