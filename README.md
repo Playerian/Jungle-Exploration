@@ -22,11 +22,11 @@ Website: https://playerian.github.io/Jungle-Exploration/.
 1. Not King and not escape, traps in the jungle, whatever.
 ## King Endings:
 1. Befriend Italic, Bold, Strikethrough, and Underline. Acquire the hammer and smash the Roman altar. The Player can choose to stay in the jungle or continue living in the jungle.
-2. Kill off the black villagers, the cavemans, rob underline, never fight in the coliseum, smash the roman altar. (Didn't got a clue yet.)
-3. Kill off the blck villagers, the cavemans, rob underline, never fight in the coliseum, didn't acquire the hammer, but kill augustus and nero. The Player rules the jungle with mighty forces.
+2. Kill off the black villagers, the cavemen, rob Underline, never fight in the coliseum, smash the roman altar. (Didn't have a clue yet.)
+3. Kill off the black villagers, the cavemen, rob Underline, never fight in the coliseum, didn't acquire the hammer, but killed Augustus and Nero. The Player rules the jungle with mighty forces.
 ## Escape Endings:
 1. Befriend Italic, Bold, Strikethrough, and Underline. Acquire the hammer and smash the Roman altar. Kill Nero and Augustus. The magic of the jungle ceases and the team finally get out from the jungle.
-2. Befriend Italic, Bold, Strikethrough, and Underline. Kill Nero and defeated Augustus. Underline rebuilds the plane and fly out the jungle.
+2. Befriend Italic, Bold, Strikethrough, and Underline. Kill Nero and defeated Augustus. Underline rebuilds the plane and they fly out   of the jungle.
 
 
 # Jungle Map(Subject to Change):
