@@ -86,6 +86,7 @@ var Church2 = false;
 var Church3 = false;
 var InChurch2 = false;
 var InChurch3 = false;
+var Aquaduct = false;
 
 //Musics
 var BlackVillage = new Audio('https://rawgit.com/Playerian/Jungle-Exploration/master/BlackVillage.mp3');
@@ -1495,9 +1496,15 @@ function EventList(){
     }
     //Sign2
     if (Y === 45 && -80 <= X && X <= -40){
-        Say("You see a street sign:<br><br>East: Black Village<br><br>South: Fog Area<br><br>West: Don't know, someone plz add.");
+        Say("You see a border sign:<br><br>Wild: North<br>Dangerous.");
         return;
     }
+    //Aquaduct
+    if (Math.abs(X-20) + Math.abs(Y-60) <= 8 && Aquaduct === false){
+        Aquaduct = true;
+        Say("You see the ruin of Roman aquaduct.<br>Then you decide to take a look inside.<br>Water isn't running, the aquaduct stands there without fear. You can't think about more adjective,");
+    }
+    //
     //Wild Events
     if (InWild === true && Math.pow(2*X+120,2)+Math.pow(4*Y-300,2) < 2000 ){
         Events("Scorpion","Dry","Cactus","StrongWind","Raining","Leopard","Tiger","Stinger","Oasis");
