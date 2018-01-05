@@ -107,6 +107,18 @@ function Murmur(puns){
     $("#wiseword").html(puns);
 }
 
+function BoldTalk(stuff){
+    return "<div style='font-weight: bold;'>"+stuff+"</div>";
+}
+
+function UnderlineTalk(st0ff){
+    return "<div style='text-decoration: underline;'>"+st0ff+"</div>";
+}
+
+function STTalke(st044){
+    return "<div style='text-decoration: line-through;'>"+st044+"</div>";
+}
+
 function Image(lol){
     $("#image").show();
     if (lol === "tombA"){
