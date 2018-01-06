@@ -92,6 +92,7 @@ var CompassGet = false;
 var RuinX;
 var RuinY;
 var InRuin = false;
+var RuinCount = 0;
 
 //Musics
 var BlackVillage = new Audio('https://rawgit.com/Playerian/Jungle-Exploration/master/BlackVillage.mp3');
@@ -993,6 +994,15 @@ function EventList(){
         DevHutMenu();
         return;
     }
+    //Roman Ruin
+    if (CompassGet === true && X === RuinX && Y === RuinY && InRuin === false){
+        InRuin = true;
+        $(".B").hide();
+        $("#b5").show();
+        $("#b5").html("Go Forward");
+        Say("You see a small hill after you passed through the last tree. After climbing that hill, the compass hints you that the ruin is in front of you. Suddenly you see a vast building standing in front of you, but it has time's mark on it. There is a deep tunnel that is completely black, it looks like no lights can go in.");
+        return;
+    }
     //Fertile Land
     if (Step === 10){
     FertileLand();
@@ -1867,6 +1877,82 @@ $("#b4").click(function(){
         if (InBattle === false && InColiseum === true){
                 Battle(ColiseumE,ColiseumE*3);
             }
+        //Roman Ruin
+        if (InRuin === true){
+            if (RuinCount === 0){
+                Say("You go into the dark corridor, the door behind shuts immediately after you set food on the cool stone on the ground.");
+            }
+            if (RuinCount === 1){
+                Say("You walk forward, cold wind is blowing on your face.");
+            }
+            if (RuinCount === 2){
+                Say("You walk forward, you heard some bats' flying sound.");
+            }
+            if (RuinCount === 3){
+                Say("You walk forward, you finally see lights in front.");
+            }
+            if (RuinCount === 4){
+                Say("You walk forward, you see a torch hanging above a door in front. There is also two doors on your left and right, what should you do?.");
+                $("#b6").show();
+                $("#b7").show();
+                $("#b6").html("Go Left");
+                $("#b7").html("Go Right");
+                //Left
+                $("#b6").click(function(){
+                    if (RuinCount === 5){
+                        Say("You see a golden altar with a stick in the middle of it.");
+                        $(".B2").hide();
+                        $("#b8").show();
+                        $("#b8").html("Go Back");
+                    }
+                });
+                //Right
+                $("#b7").click(function(){
+                    if (RuinCount === 5){
+                        Say("You see a board with some writing on it.<br>Code of Rome:<br>1. Anyone who come into the jungle that is not a Roman citizen should be banish out from the jungle.<br>2. Anyone that wear Roman clothes are treated as Roman citizen.<br>3.No stealing, murdering, and any inappropraite action should be allowed in the jungle.<br>4. The king has dut...<br>The rest of the board is covered by heavy dust.");
+                        $(".B2").hide();
+                        $("#b8").show();
+                        $("#b8").html("Go Back");
+                    }
+                });
+                //Back
+                $("#b8").click(function(){
+                    if (RuinCount === 5){
+                        Say("You get back to the three doors intersection.");
+                        $("#b8").hide();
+                        $("#b5").show();
+                        $("#b5").html("Go Forward");
+                        $("#b6").show();
+                        $("#b7").show();
+                        $("#b6").html("Go Left");
+                        $("#b7").html("Go Right");
+                    }
+                });
+            }
+            if (RuinCount === 5){
+                RuinCount ++;
+            }
+            if (RuinCount === 6){
+                Say("You see a table and a few chairs inside the room. A person with white shirt is standing in front of you. Then he talks to you.<br><br>Nice to meet you here! You have gone through a lot of things already, why don't you stop here?");
+                $("#b5").html("Fight!");
+                $("#b6").hide();
+                $("#b7").hide();
+                Murmur("He's pretty dangerous, take care!");
+            }
+            if (RuinCount === 7){
+                Say("Nero: Wait, wait, wait. Don't get so mad now! Let me introduce myself first! My name is Nero, a king of Rome. Now, would you like to hear some story of mine? Come closer.");
+                $("#b5").html("Get Closer");
+            }
+            if (RuinCount === 8){
+                Food = Math.round(Food/2);
+                Say("(Nero stabs you in your back after you get towards him.)<br>Nero: Haha, you really think I would tell you story before you die? Now, prepare to die! You dirty alien!");
+                $("#b5").html("Fight!");
+            }
+            if (RuinCount === 9){
+                Say("As you and Nero are pulling out the weapon, a man with a friendly smile has come into the room.<br>Hey, we finally have a guest, come on in friend, you must have voyage far to come here!");
+            }
+            RuinCount ++;
+        }
         
     });
 
@@ -2502,3 +2588,5 @@ $(".B2").click(function(){
         $("#word").append("<p>You starved to death!</p>");
     }
 });
+
+CC = 100;
