@@ -33,7 +33,7 @@ Website: https://playerian.github.io/Jungle-Exploration/.
 1. Acquires the hammer and become the king, get in the root of tree of life and teleport into the ruin. (That's it, nice!)
 
 # Jungle Map(Subject to Change):
-https://www.desmos.com/calculator/wzox2cx7lh
+https://www.desmos.com/calculator/xlxviuchr1
 
 # Javascripts:
 Adding events: For you to add events, go to line 417 or so, and there is a function call event list, then follow the instruction there.
