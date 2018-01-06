@@ -87,6 +87,11 @@ var Church3 = false;
 var InChurch2 = false;
 var InChurch3 = false;
 var Aquaduct = false;
+var Bathtub = false;
+var CompassGet = false;
+var RuinX;
+var RuinY;
+var InRuin = false;
 
 //Musics
 var BlackVillage = new Audio('https://rawgit.com/Playerian/Jungle-Exploration/master/BlackVillage.mp3');
@@ -1516,6 +1521,11 @@ function EventList(){
         Aquaduct = true;
         Say("You see the ruin of Roman aquaduct.<br>Then you decide to take a look inside.<br>Water isn't running, the aquaduct stands there without fear. You can't think about more adjective, so you decided to look at the structure of the ruin of the aquaduct. Some water tunnels leading to the east.");
     }
+    //Bathtub
+    if (Math.abs(X-40) + Math.abs(Y-60) <= 6 && Bathtub === false){
+        Bathtub = true;
+        Say("You see a big building that only half of the body is standing. There is still some ancient pictures on the side of the wall. There is a big hole in the middle of the building with stinky smell.");
+    }
     //
     //Wild Events
     if (InWild === true && Math.pow(2*X+120,2)+Math.pow(4*Y-300,2) < 2000 ){
@@ -2470,8 +2480,12 @@ $(".B2").click(function(){
     $("#WD").html("Weapon Durability: "+WD);
     
     //Victory?
-    if (CC > 9){
-    $("Body").html("You have voyaged out of the jungle!");
+    if (CC > 9 && CompassGet === false){
+        CompassGet = true;
+        $("#word").append("<p>You have forged your compass components into the compass! Now you need to get to the ruin!</p>");
+        RuinX = Randoming(20,60);
+        RuinY = Randoming(90,110);
+        $("#WD").after("Roman Ruin Location: ("+RuinX+","+RuinY+")");
     }
     
     //Death For Sure
