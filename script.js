@@ -1949,7 +1949,16 @@ $("#b4").click(function(){
                 $("#b5").html("Fight!");
             }
             if (RuinCount === 9){
-                Say("As you and Nero are pulling out the weapon, a man with a friendly smile has come into the room.<br>Hey, we finally have a guest, come on in friend, you must have voyage far to come here!");
+                Say("As you and Nero are pulling out the weapon, a man with a friendly smile has come into the room.<br>Hey, we finally have a guest, come on in friend, you must have voyage far to come here! Forgot to mention, my name is Augustus, the king of Rome.");
+                $("#b5").html("Go with Augustus");
+            }
+            if (RuinCount === 10){
+                Say("As you walk with Augustus, you find out that Nero is gone.<br>Augustus: Hey, just curious, why did you come to this jungle?");
+                $("#b5").html("I fall in by accident");
+                $("#b6").show();
+                $("#b6").html("I need to know the mystery of the jungle");
+                $("#b7").show();
+                $("#b7").html("I just found out I was in the middle of the jungle after I woke up.");
             }
             RuinCount ++;
         }
