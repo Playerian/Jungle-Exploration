@@ -1514,7 +1514,7 @@ function EventList(){
     //Aquaduct
     if (Math.abs(X-20) + Math.abs(Y-60) <= 8 && Aquaduct === false){
         Aquaduct = true;
-        Say("You see the ruin of Roman aquaduct.<br>Then you decide to take a look inside.<br>Water isn't running, the aquaduct stands there without fear. You can't think about more adjective,");
+        Say("You see the ruin of Roman aquaduct.<br>Then you decide to take a look inside.<br>Water isn't running, the aquaduct stands there without fear. You can't think about more adjective, so you decided to look at the structure of the ruin of the aquaduct. Some water tunnels leading to the east.");
     }
     //
     //Wild Events
