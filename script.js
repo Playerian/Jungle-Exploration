@@ -2488,6 +2488,12 @@ $(".B2").click(function(){
         $("#WD").after("Roman Ruin Location: ("+RuinX+","+RuinY+")");
     }
     
+    //Show Location 
+    if (CompassGet === true){
+        $("#Location").show();
+        $("#Location").html("Your Location: ("+X+","+Y+")");
+    }
+    
     //Death For Sure
     if (Food < 0){
         Food = 0;
