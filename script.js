@@ -93,6 +93,7 @@ var RuinX;
 var RuinY;
 var InRuin = false;
 var RuinCount = 0;
+var AugustusFriend = 0;
 
 //Musics
 var BlackVillage = new Audio('https://rawgit.com/Playerian/Jungle-Exploration/master/BlackVillage.mp3');
@@ -111,6 +112,10 @@ function Murmur(puns){
     $("#wiseword").css("border" , "5px solid black");
     $("#wiseword").show();
     $("#wiseword").html(puns);
+}
+
+function Adding(some){
+    return $("#word").append(some);
 }
 
 function BoldTalk(stuff){
@@ -1954,12 +1959,23 @@ $("#b4").click(function(){
             }
             if (RuinCount === 10){
                 Say("As you walk with Augustus, you find out that Nero is gone.<br>Augustus: Hey, just curious, why did you come to this jungle?");
-                $("#b5").html("I fall in by accident");
+                $("#b5").html("I just found out I was in the middle of the jungle after I woke up.");
                 $("#b6").show();
-                $("#b6").html("I need to know the mystery of the jungle");
+                $("#b6").html("I fall in by accident.");
                 $("#b7").show();
-                $("#b7").html("I just found out I was in the middle of the jungle after I woke up.");
+                $("#b7").html("I need to know the mystery of the jungle.");
             }
+            $("#b5,#b6,#b7").click(function(){
+                $("#b5").click(function(){
+                    if (RuinCount >= 11 && RuinCount <= 14){
+                        AugustusFriend ++;
+                    }
+                }
+                if (RuinCount === 11){
+                    Say("OK... What do you want to do next?");
+                }
+            });
+            
             RuinCount ++;
         }
         
