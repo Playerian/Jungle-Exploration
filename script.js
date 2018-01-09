@@ -1970,7 +1970,7 @@ $("#b4").click(function(){
                     if (RuinCount >= 11 && RuinCount <= 14){
                         AugustusFriend ++;
                     }
-                }
+                });
                 if (RuinCount === 11){
                     Say("OK... What do you want to do next?");
                 }
