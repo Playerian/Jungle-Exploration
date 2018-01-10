@@ -1965,14 +1965,33 @@ $("#b4").click(function(){
                 $("#b7").show();
                 $("#b7").html("I need to know the mystery of the jungle.");
             }
+            if (RuinCount >= 11 && RuinCount <= 14){
+                        AugustusFriend += 3;
+            }
             $("#b5,#b6,#b7").click(function(){
-                $("#b5").click(function(){
-                    if (RuinCount >= 11 && RuinCount <= 14){
-                        AugustusFriend ++;
-                    }
-                });
                 if (RuinCount === 11){
-                    Say("OK... What do you want to do next?");
+                    Say("Augustus: OK... What do you want to do next?");
+                    $("#b5").html("I think I'll stay here");
+                    $("#b6").html("I will voyage the jungle");
+                    $("#b7").html("I want to leave here.");
+                }
+                if (RuinCount === 12){
+                    Say("Augustus: That's your decision right there, can you become a good person?");
+                    $("#b5").html("Yes");
+                    $("#b6").html("Maybe");
+                    $("#b7").html("No");
+                }
+                if (RuinCount === 13){
+                    Say("Augustus: Hmmm, what do you think of the Roman Ruin ?");
+                    $("#b5").html("It is a fine place to live");
+                    $("#b6").html("It is... weird");
+                    $("#b7").html("It looks like a place where dead people will live");
+                }
+                if (RuinCount === 14){
+                    Say("Augustus: Aside from your taste, did you notice that you have a soul on your body?");
+                    $("#b5").html("That's really unreal");
+                    $("#b6").html("I really got no idea");
+                    $("#b7").html("That's not my business");
                 }
             });
             
@@ -2238,6 +2257,10 @@ $("#b4").click(function(){
                 $("#word").append("<div style='text-decoration: underline;'>Underline: You should thank him(Points to you), this person saved me and bring me here.</div>");
             }
         }
+        if (RuinCount >= 11 && RuinCount <= 14){
+                        AugustusFriend += 2;
+                        RuinCount ++;
+        }
     });
     //Button 7
     $("#b7").click(function(){
@@ -2293,6 +2316,11 @@ $("#b4").click(function(){
             GuardianKilled = true;
             $(".B3").hide();
             $(".B").show();
+        }
+        //Ruin
+        if (RuinCount >= 11 && RuinCount <= 14){
+                        AugustusFriend += 1;
+                        RuinCount ++;
         }
     });
 
