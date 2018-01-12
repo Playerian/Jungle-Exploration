@@ -1966,7 +1966,7 @@ $("#b4").click(function(){
                 $("#b7").html("I need to know the mystery of the jungle.");
             }
             if (RuinCount >= 11 && RuinCount <= 14){
-                        AugustusFriend += 3;
+                        AugustusFriend += 5;
             }
             $("#b5,#b6,#b7").click(function(){
                 if (RuinCount === 11){
@@ -1994,7 +1994,20 @@ $("#b4").click(function(){
                     $("#b7").html("That's not my business");
                 }
             });
-            
+            if (RuinCount === 15){
+                if (AugustusFriend >= 16){
+                   Say("You are a really good person! I must admit. You are, really, in my way. So...... Now, I give you the hand of friendship!"); 
+                }
+                if (AugustusFriend <= 15 && AugustusFriend >= 10){
+                   Say("You are good, I think Rome will accept you as part of Roman citizen."); 
+                }
+                if (AugustusFriend <= 9 && AugustusFriend >= 5){
+                   Say("Um......You may take some good consideration before you act..."); 
+                }
+                if (AugustusFriend <= 4){
+                   Say("You really want to expose this jungle to everyone else right? Hundreds and hundreds of planes will come here, and they will occupy Rome, without mercy. Please, there is a lots of stuff that we had suffered before. Don't do it."); 
+                }
+            }
             RuinCount ++;
         }
         
@@ -2258,7 +2271,7 @@ $("#b4").click(function(){
             }
         }
         if (RuinCount >= 11 && RuinCount <= 14){
-                        AugustusFriend += 2;
+                        AugustusFriend += 3;
                         RuinCount ++;
         }
     });
