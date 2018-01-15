@@ -118,6 +118,10 @@ function Adding(some){
     return $("#word").append(some);
 }
 
+function ItalicTalk(stu){
+    return "<div style='font-style: italic;'>"+stu+"</div>";
+}
+
 function BoldTalk(stuff){
     return "<div style='font-weight: bold;'>"+stuff+"</div>";
 }
@@ -983,6 +987,27 @@ function Coliseum(){
                 });
             }
         }
+}
+
+//
+function AFriend(){
+                if (AugustusFriend >= 16){
+                   Say("Augustus: You are a really good person! I must admit. You are, really, in my way. So...... Now, I give you the hand of friendship!"); 
+                }
+                if (AugustusFriend <= 15 && AugustusFriend >= 10){
+                   Say("Augustus: You are good, I think Rome will accept you as part of Roman citizen."); 
+                }
+                if (AugustusFriend <= 9 && AugustusFriend >= 5){
+                   Say("Augustus: Um......You may take some good consideration before you act..."); 
+                }
+                if (AugustusFriend <= 4){
+                   Say("Augustus: You really want to expose this jungle to everyone else right? Hundreds and hundreds of planes will come here, and they will occupy Rome, without mercy. Please, there is a lots of stuff that we had suffered before. Don't do it."); 
+                }
+                Adding("<br>Well, that being said, I will now restore the broken soul on your body to a good shape.");
+                $(".B").hide();
+                $("#b5").show();
+                $("#b5").html("Continue");
+                
 }
 
 //Randomly execute(function) Events
@@ -1995,18 +2020,11 @@ $("#b4").click(function(){
                 }
             });
             if (RuinCount === 15){
-                if (AugustusFriend >= 16){
-                   Say("You are a really good person! I must admit. You are, really, in my way. So...... Now, I give you the hand of friendship!"); 
-                }
-                if (AugustusFriend <= 15 && AugustusFriend >= 10){
-                   Say("You are good, I think Rome will accept you as part of Roman citizen."); 
-                }
-                if (AugustusFriend <= 9 && AugustusFriend >= 5){
-                   Say("Um......You may take some good consideration before you act..."); 
-                }
-                if (AugustusFriend <= 4){
-                   Say("You really want to expose this jungle to everyone else right? Hundreds and hundreds of planes will come here, and they will occupy Rome, without mercy. Please, there is a lots of stuff that we had suffered before. Don't do it."); 
-                }
+                AFriend();
+            }
+            if (RuinCount === 16){
+                Say("(You see a small, heart shape object floating in front of you, then a human shape start to form.)<br>"+ItalicTalk("Italic: I'm finally here?! Wow, thank you, mister!")+"<br>Augustus: You guys can take a rest here, we got two rooms to spare.");
+                $("#b5").html("Go to my room");
             }
             RuinCount ++;
         }
@@ -2274,6 +2292,10 @@ $("#b4").click(function(){
                         AugustusFriend += 3;
                         RuinCount ++;
         }
+        if (RuinCount === 15){
+            RuinCount ++;
+            AFriend();
+        }
     });
     //Button 7
     $("#b7").click(function(){
@@ -2334,6 +2356,10 @@ $("#b4").click(function(){
         if (RuinCount >= 11 && RuinCount <= 14){
                         AugustusFriend += 1;
                         RuinCount ++;
+        }
+        if (RuinCount === 15){
+            RuinCount ++;
+            AFriend();
         }
     });
 
