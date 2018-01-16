@@ -94,6 +94,7 @@ var RuinY;
 var InRuin = false;
 var RuinCount = 0;
 var AugustusFriend = 0;
+var RuinWalk = 0;
 
 //Musics
 var BlackVillage = new Audio('https://rawgit.com/Playerian/Jungle-Exploration/master/BlackVillage.mp3');
